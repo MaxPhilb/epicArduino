@@ -2,6 +2,7 @@
 #include <Adafruit_MCP23017.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
+#include <Joystick.h>
 
 //constante
 #define nbDigOutput 32
