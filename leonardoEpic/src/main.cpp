@@ -282,20 +282,4 @@ void loop()
     deserializeJson(doc, messageFromUSB);
     interprete();
   }
-
-  /*
-  {
-    "cmd" : "digOutput",
-    "data" : [
-      {
-        "channel" : 1,
-        "state" : false
-      },
-      {
-        "channel" : "all",
-        "state" : false
-      }
-    ]
-  }!
-  */
 }
