@@ -1,0 +1,727 @@
+%PDF-1.4
+%‚„œ”
+%
+%wPDF by WPCubed GmbH V3.24[40]
+%
+%
+1 0 obj <</Type/Metadata/Subtype/XML/Length 1492 >>
+stream
+<?xpacket begin="Ôªø" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="3.1-701">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about=""
+ xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+ <xmp:CreatorTool>wPDF - http://www.wptools.de</xmp:CreatorTool>
+ <xmp:CreateDate>2021-05-12T15:57:36Z</xmp:CreateDate>
+ <xmp:ModifyDate>2021-05-12T15:57:36Z</xmp:ModifyDate>
+ <xmp:MetadataDate>2021-05-12T15:57:36Z</xmp:MetadataDate>
+</rdf:Description>
+<rdf:Description rdf:about=""
+ xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <dc:format>application/pdf</dc:format>
+ <dc:title>
+ <rdf:Alt>
+  <rdf:li xml:lang="x-default">Adaptateur signal du SM18LVDT vers BUX0836.wh5</rdf:li>
+ </rdf:Alt></dc:title>
+ <dc:description><rdf:Alt>
+  <rdf:li xml:lang="x-default"/>
+</rdf:Alt></dc:description>
+ <dc:subject>
+ <rdf:Bag>
+  <rdf:li/>
+ </rdf:Bag>
+</dc:subject>
+ <dc:creator>
+ <rdf:Bag>
+  <rdf:li>Winschem Version 8.0</rdf:li>
+ </rdf:Bag>
+</dc:creator>
+</rdf:Description>
+<rdf:Description rdf:about=""
+ xmlns:xapMM="http://ns.adobe.com/xap/1.0/mm/">
+ <xapMM:VersionID>1</xapMM:VersionID>
+ <xapMM:DocumentID>8f62d839ca5d2141b99210a2494dbcd5</xapMM:DocumentID>
+ <xapMM:InstanceID>8f62d839ca5d2141b99210a2494dbcd5</xapMM:InstanceID>
+</rdf:Description>
+<rdf:Description rdf:about=""
+ xmlns:pdf="http://ns.adobe.com/pdf/1.3/">
+ <pdf:Keywords/>
+ <pdf:Producer>wPDF3 by WPCubed GmbH</pdf:Producer>
+</rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+<?xpacket end="w"?>
+endstream
+endobj
+2 0 obj <<
+/Creator(wPDF - http://www.wptools.de)
+/Author(Winschem Version 8.0)
+/Title(Adaptateur signal du SM18LVDT vers BUX0836.wh5)
+/Subject()
+/Keywords()
+/CreationDate(D:20210512155736Z)
+/ModDate(D:20210512155736Z)
+/Producer(wPDF3 by WPCubed GmbH)
+>> endobj
+4 0 obj <</Length 20835 >>
+stream
+q 0.2835 0 0 0.2835 0 595 cm 1 1 1 rg  0 G 2 w 1 J 1 j 370 -460 m 363 -460 l S 363 -475 m 220 -475 l S 220 -475 m 205 -460 l S 205 -460 m 220 -445 l S 220 -445 m 363 -445 l S 363 -445 m 363 -475 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 220 -469 Td(A)Tj 18 0 Td(1)Tj ET 370 -400 m 363 -400 l S 363 -415 m 220 -415 l S 220 -415 m 205 -400 l S 205 -400 m 220 -385 l S 220 -385 m 363 -385 l S 363 -385 m 363 -415 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 220 -409 Td(A)Tj 18 0 Td(2)Tj ET 1310 -360 m 1317 -360 l S 1317 -375 m 1460 -375 l S 1460 -375 m 1475 -360 l S 1475 -360 m 1460 -345 l S 1460 -345 m 1317 -345 l S 1317 -345 m 1317 -375 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1325 -369 Td(R)Tj 19 0 Td(S)Tj 18 0 Td(T)Tj ET 2640 -760 m 2647 -760 l S 2647 -775 m 2790 -775 l S 2790 -775 m 2805 -760 l S 2805 -760 m 2790 -745 l S 2790 -745 m 2647 -745 l S 2647 -745 m 2647 -775 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 2655 -769 Td(S)Tj 18 0 Td(C)Tj 19 0 Td(L)Tj ET 1030 -360 m 1023 -360 l S 1023 -375 m 880 -375 l S 880 -375 m 865 -360 l S 865 -360 m 880 -345 l S 880 -345 m 1023 -345 l S 1023 -345 m 1023 -375 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 880 -369 Td(S)Tj 18 0 Td(C)Tj 19 0 Td(L)Tj ET 1030 -400 m 1023 -400 l S 1023 -415 m 880 -415 l S 880 -415 m 865 -400 l S 865 -400 m 880 -385 l S 880 -385 m 1023 -385 l S 1023 -385 m 1023 -415 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 880 -409 Td(S)Tj 18 0 Td(D)Tj 19 0 Td(A)Tj ET 2640 -820 m 2647 -820 l S 2647 -835 m 2790 -835 l S 2790 -835 m 2805 -820 l S 2805 -820 m 2790 -805 l S 2790 -805 m 2647 -805 l S 2647 -805 m 2647 -835 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 2655 -829 Td(S)Tj 18 0 Td(D)Tj 19 0 Td(A)Tj ET 2030 -360 m 2037 -360 l S 2037 -375 m 2180 -375 l S 2180 -375 m 2195 -360 l S 2195 -360 m 2180 -345 l S 2180 -345 m 2037 -345 l S 2037 -345 m 2037 -375 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 2045 -369 Td(R)Tj 19 0 Td(S)Tj 18 0 Td(T)Tj ET 1750 -360 m 1743 -360 l S 1743 -375 m 1600 -375 l S 1600 -375 m 1585 -360 l S 1585 -360 m 1600 -345 l S 1600 -345 m 1743 -345 l S 1743 -345 m 1743 -375 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1600 -369 Td(S)Tj 18 0 Td(C)Tj 19 0 Td(L)Tj ET 1750 -400 m 1743 -400 l S 1743 -415 m 1600 -415 l S 1600 -415 m 1585 -400 l S 1585 -400 m 1600 -385 l S 1600 -385 m 1743 -385 l S 1743 -385 m 1743 -415 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1600 -409 Td(S)Tj 18 0 Td(D)Tj 19 0 Td(A)Tj -277 -795 Td(C)Tj 19 0 Td(1)Tj -49 -210 Td(4)Tj 15 0 Td(7)Tj 15 0 Td(0)Tj 14 0 Td(u)Tj 15 0 Td(F)Tj /F1 36 Tf -1089 781 Td(J)Tj 18 0 Td(2)Tj 392 0 Td(J)Tj 18 0 Td(3)Tj /F1 27 Tf 402 -801 Td(B)Tj 18 0 Td(R)Tj 19 0 Td(1)Tj 673 270 Td(R)Tj 19 0 Td(e)Tj 15 0 Td(g)Tj 15 0 Td(1)Tj 31 -160 Td(7)Tj 15 0 Td(8)Tj 15 0 Td(0)Tj 14 0 Td(5)Tj /F1 36 Tf -1084 -129 Td(J)Tj 18 0 Td(1)Tj /F1 27 Tf 622 249 Td(C)Tj 19 0 Td(2)Tj -39 -210 Td(1)Tj 15 0 Td(0)Tj 15 0 Td(0)Tj 14 0 Td(n)Tj 15 0 Td(F)Tj 291 -80 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 210 290 Td(C)Tj 19 0 Td(3)Tj -39 -210 Td(1)Tj 15 0 Td(0)Tj 15 0 Td(0)Tj 14 0 Td(n)Tj 15 0 Td(F)Tj 161 840 Td(R)Tj 19 0 Td(2)Tj -39 -110 Td(1)Tj 15 0 Td(.)Tj 7 0 Td(5)Tj 15 0 Td(K)Tj 143 110 Td(R)Tj 19 0 Td(3)Tj -39 -110 Td(1)Tj 15 0 Td(.)Tj 7 0 Td(5)Tj 15 0 Td(K)Tj /F1 36 Tf -1177 91 Td(J)Tj 18 0 Td(4)Tj /F1 27 Tf -18 -61 Td(H)Tj 19 0 Td(E)Tj 18 0 Td(1)Tj 15 0 Td(0)Tj 14 0 Td( )Tj 8 0 Td(/)Tj 8 0 Td( )Tj 7 0 Td(1)Tj 15 0 Td(0)Tj /F1 36 Tf 616 61 Td(J)Tj 18 0 Td(5)Tj /F1 27 Tf -18 -61 Td(H)Tj 19 0 Td(E)Tj 18 0 Td(1)Tj 15 0 Td(0)Tj 14 0 Td( )Tj 8 0 Td(/)Tj 8 0 Td( )Tj 7 0 Td(1)Tj 15 0 Td(0)Tj -1594 -470 Td(D)Tj 19 0 Td(L)Tj 15 0 Td(1)Tj -144 -140 Td(R)Tj 19 0 Td(1)Tj -39 -100 Td(4)Tj 15 0 Td(7)Tj 15 0 Td(0)Tj 20 -150 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj ET 2240 -1240 m 2240 -1160 l S  0 g 2240 -1160 m 2230 -1180 l 2250 -1180 l  h  0 g b*  0 g  0 G 3 w 1 J 1 j 1310 -440 m 1290 -430 l 1290 -450 l  h  0 g b*  0 G 2 w 1 J 1 j 2520 -440 m 2520 -360 l S  0 g 2520 -360 m 2510 -380 l 2530 -380 l  h  0 g b*  0 g  0 G 3 w 1 J 1 j 1310 -800 m 1290 -790 l 1290 -810 l  h  0 g b*  0 g 2030 -440 m 2010 -430 l 2010 -450 l  h  0 g b*  0 g 2030 -800 m 2010 -790 l 2010 -810 l  h  0 g b* 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 2220 -1134 Td(5)Tj 15 0 Td(V)Tj -905 680 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 1130 120 Td(5)Tj 15 0 Td(V)Tj -1185 -480 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 680 360 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj -40 -360 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj -1638 90 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -141 0 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 281 0 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -141 0 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 502 -140 Td(L)Tj 15 0 Td(i)Tj 6 0 Td(a)Tj 15 0 Td(i)Tj 5 0 Td(s)Tj 14 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td( )Tj 7 0 Td(I)Tj 8 0 Td(2)Tj 15 0 Td(C)Tj -253 -50 Td(C)Tj 19 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td(n)Tj 14 0 Td(e)Tj 15 0 Td(x)Tj 13 0 Td(i)Tj 6 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td( )Tj 8 0 Td(a)Tj 14 0 Td(v)Tj 14 0 Td(e)Tj 15 0 Td(c)Tj 14 0 Td( )Tj 7 0 Td(A)Tj 18 0 Td(r)Tj 9 0 Td(d)Tj 15 0 Td(u)Tj 15 0 Td(i)Tj 6 0 Td(n)Tj 14 0 Td(o)Tj 15 0 Td( )Tj 8 0 Td(L)Tj 15 0 Td(e)Tj 15 0 Td(o)Tj 14 0 Td(n)Tj 15 0 Td(a)Tj 15 0 Td(r)Tj 9 0 Td(d)Tj 15 0 Td(o)Tj 461 50 Td(L)Tj 15 0 Td(i)Tj 6 0 Td(a)Tj 15 0 Td(i)Tj 5 0 Td(s)Tj 14 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td( )Tj 7 0 Td(I)Tj 8 0 Td(2)Tj 15 0 Td(C)Tj -327 -50 Td(C)Tj 19 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td(n)Tj 14 0 Td(e)Tj 15 0 Td(x)Tj 13 0 Td(i)Tj 6 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td( )Tj 8 0 Td(v)Tj 14 0 Td(e)Tj 14 0 Td(r)Tj 9 0 Td(s)Tj 14 0 Td( )Tj 7 0 Td(m)Tj 23 0 Td(o)Tj 15 0 Td(d)Tj 15 0 Td(u)Tj 14 0 Td(l)Tj 6 0 Td(e)Tj 15 0 Td( )Tj 8 0 Td(s)Tj 13 0 Td(o)Tj 15 0 Td(r)Tj 9 0 Td(t)Tj 8 0 Td(i)Tj 6 0 Td(e)Tj 14 0 Td(s)Tj 14 0 Td( )Tj 7 0 Td(s)Tj 14 0 Td(u)Tj 15 0 Td(p)Tj 15 0 Td(p)Tj 14 0 Td(l)Tj 6 0 Td(È)Tj 15 0 Td(m)Tj 23 0 Td(e)Tj 14 0 Td(n)Tj 15 0 Td(t)Tj 8 0 Td(a)Tj 15 0 Td(i)Tj 6 0 Td(r)Tj 9 0 Td(e)Tj -1133 430 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -789 -630 Td(L)Tj 15 0 Td(i)Tj 6 0 Td(a)Tj 15 0 Td(i)Tj 5 0 Td(s)Tj 14 0 Td(o)Tj 15 0 Td(n)Tj 15 0 Td( )Tj 7 0 Td(I)Tj 8 0 Td(2)Tj 15 0 Td(C)Tj -150 -50 Td(M)Tj 22 0 Td(o)Tj 15 0 Td(d)Tj 15 0 Td(u)Tj 15 0 Td(l)Tj 6 0 Td(e)Tj 15 0 Td( )Tj 7 0 Td(c)Tj 14 0 Td(o)Tj 15 0 Td(n)Tj 14 0 Td(n)Tj 15 0 Td(e)Tj 15 0 Td(c)Tj 14 0 Td(t)Tj 7 0 Td(È)Tj ET 2 w 1420 -1310 m 1340 -1310 l S 1380 -1320 m 1380 -1310 l S 1380 -1290 m 1380 -1280 l S  0 G 10 w 1 J 1 j 1400 -1290 m 1360 -1290 l S  0 G 2 w 1 J 1 j 1420 -1310 m 1420 -1280 l S 1340 -1310 m 1340 -1280 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1375 -1235 10 -10 re b* 1380 -1240 m 1380 -1280 l S 1 0 0 rg 1375 -1355 10 -10 re b* 1380 -1360 m 1380 -1320 l S 0 0 0.502 RG 2 w 1 J 1 j 380 -640 m 380 -630 l S 410 -620 m 390 -620 l S 460 -630 m 460 -640 l S 360 -600 m 360 -640 l S 480 -600 m 360 -600 l S 480 -600 m 480 -640 l S 480 -640 m 360 -640 l S 420 -600 m 420 -610 l S 1 1 1 rg 429.501 -619.999 m 429.501 -614.7523 425.2477 -610.499 420.001 -610.499 c 414.7543 -610.499 410.501 -614.7523 410.501 -619.999 c 410.501 -625.2457 414.7543 -629.499 420.001 -629.499 c 425.2477 -629.499 429.501 -625.2457 429.501 -619.999 c h S 1 1 1 rg 469.501 -619.999 m 469.501 -614.7523 465.2477 -610.499 460.001 -610.499 c 454.7543 -610.499 450.501 -614.7523 450.501 -619.999 c 450.501 -625.2457 454.7543 -629.499 460.001 -629.499 c 465.2477 -629.499 469.501 -625.2457 469.501 -619.999 c h S 1 1 1 rg 389.501 -619.999 m 389.501 -614.7523 385.2477 -610.499 380.001 -610.499 c 374.7543 -610.499 370.501 -614.7523 370.501 -619.999 c 370.501 -625.2457 374.7543 -629.499 380.001 -629.499 c 385.2477 -629.499 389.501 -625.2457 389.501 -619.999 c h S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 375 -675 10 -10 re b* 380 -680 m 380 -640 l S 1 0 0 rg 415 -555 10 -10 re b* 420 -560 m 420 -600 l S 1 0 0 rg 455 -675 10 -10 re b* 460 -680 m 460 -640 l S 0 0 0.502 RG 2 w 1 J 1 j 590 -640 m 590 -630 l S 620 -620 m 600 -620 l S 670 -630 m 670 -640 l S 570 -600 m 570 -640 l S 690 -600 m 570 -600 l S 690 -600 m 690 -640 l S 690 -640 m 570 -640 l S 630 -600 m 630 -610 l S 1 1 1 rg 639.501 -619.999 m 639.501 -614.7523 635.2477 -610.499 630.001 -610.499 c 624.7543 -610.499 620.501 -614.7523 620.501 -619.999 c 620.501 -625.2457 624.7543 -629.499 630.001 -629.499 c 635.2477 -629.499 639.501 -625.2457 639.501 -619.999 c h S 1 1 1 rg 679.501 -619.999 m 679.501 -614.7523 675.2477 -610.499 670.001 -610.499 c 664.7543 -610.499 660.501 -614.7523 660.501 -619.999 c 660.501 -625.2457 664.7543 -629.499 670.001 -629.499 c 675.2477 -629.499 679.501 -625.2457 679.501 -619.999 c h S 1 1 1 rg 599.501 -619.999 m 599.501 -614.7523 595.2477 -610.499 590.001 -610.499 c 584.7543 -610.499 580.501 -614.7523 580.501 -619.999 c 580.501 -625.2457 584.7543 -629.499 590.001 -629.499 c 595.2477 -629.499 599.501 -625.2457 599.501 -619.999 c h S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 585 -675 10 -10 re b* 590 -680 m 590 -640 l S 1 0 0 rg 625 -555 10 -10 re b* 630 -560 m 630 -600 l S 1 0 0 rg 665 -675 10 -10 re b* 670 -680 m 670 -640 l S 0 0 0.502 RG 2 w 1 J 1 j 1100 -1200 m 1100 -1400 l S 1100 -1400 m 1220 -1400 l S 1220 -1400 m 1220 -1200 l S 1100 -1200 m 1220 -1200 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1055 -1235 10 -10 re b* 1060 -1240 m 1100 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1110 -1244 Td(a)Tj 15 0 Td(l)Tj 6 0 Td(t)Tj 7 0 Td(1)Tj 0 1 1 rg -68 10 Td[(1)]TJ 
+ET 1 0 0 rg 1055 -1355 10 -10 re b* 1060 -1360 m 1100 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1110 -1364 Td(a)Tj 15 0 Td(l)Tj 6 0 Td(t)Tj 7 0 Td(2)Tj 0 1 1 rg -68 10 Td[(3)]TJ 
+ET 1 0 0 rg 1255 -1235 10 -10 re b* 1260 -1240 m 1220 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1194 -1244 Td[(+)-6]TJ 
+0 1 1 rg 36 10 Td[(2)]TJ 
+ET 1 0 0 rg 1255 -1355 10 -10 re b* 1260 -1360 m 1220 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1201 -1364 Td[(-)]TJ 
+0 1 1 rg 29 10 Td[(4)]TJ 
+ET 0 0 0.502 RG 1800 -1280 m 1800 -1200 l S 1800 -1280 m 1960 -1280 l S 1960 -1280 m 1960 -1200 l S 1800 -1200 m 1960 -1200 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1715 -1235 10 -10 re b* 1720 -1240 m 1800 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1810 -1244 Td[(E)]TJ 
+0 1 1 rg -80 10 Td[(1)]TJ 
+ET 1 0 0 rg 2035 -1235 10 -10 re b* 2040 -1240 m 1960 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1932 -1244 Td[(S)]TJ 
+0 1 1 rg 38 10 Td[(3)]TJ 
+ET 1 0 0 rg 1875 -1355 10 -10 re b* 1880 -1360 m 1880 -1280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1855 -1254 Td(G)Tj 21 0 Td(n)Tj 15 0 Td(d)Tj 0 1 1 rg -6 -75 Td[(2)]TJ 
+ET 0 0 0.502 RG 928 -1388 m 943 -1373 943 -1347 928 -1332 c 913 -1317 887 -1317 872 -1332 c 857 -1347 857 -1373 872 -1388 c S 1 1 1 rg 909.501 -1359.999 m 909.501 -1354.752 905.2477 -1350.499 900.001 -1350.499 c 894.7543 -1350.499 890.501 -1354.752 890.501 -1359.999 c 890.501 -1365.246 894.7543 -1369.499 900.001 -1369.499 c 905.2477 -1369.499 909.501 -1365.246 909.501 -1359.999 c h S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 975 -1355 10 -10 re b* 980 -1360 m 940 -1360 l S 1 0 0 rg 895 -1275 10 -10 re b* 900 -1280 m 900 -1360 l S 0 0 0.502 RG 2 w 1 J 1 j 1540 -1320 m 1540 -1310 l S 1540 -1290 m 1540 -1280 l S 1500 -1290 m 1580 -1290 l S 1500 -1310 m 1580 -1310 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1535 -1235 10 -10 re b* 1540 -1240 m 1540 -1280 l S 1 0 0 rg 1535 -1355 10 -10 re b* 1540 -1360 m 1540 -1320 l S 0 0 0.502 rg 0 0 0.502 RG 2 w 1 J 1 j 1860 -1438 m 1900 -1438 l 1900 -1441 l 1860 -1441 l 1860 -1438 l  h 0 0 0.502 rg b* 1860 -1441 m 1900 -1441 l S 1865 -1446 m 1895 -1446 l S 1870 -1451 m 1890 -1451 l S 1875 -1456 m 1885 -1456 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1875 -1395 10 -10 re b* 1880 -1400 m 1880 -1440 l S 0 0 0.502 RG 2 w 1 J 1 j 2120 -1320 m 2120 -1310 l S 2120 -1290 m 2120 -1280 l S 2080 -1290 m 2160 -1290 l S 2080 -1310 m 2160 -1310 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2115 -1235 10 -10 re b* 2120 -1240 m 2120 -1280 l S 1 0 0 rg 2115 -1355 10 -10 re b* 2120 -1360 m 2120 -1320 l S  0 G 2 w 1 J 1 j 2340 -580 m 2340 -660 l S 2340 -660 m 2380 -660 l S 2340 -580 m 2380 -580 l S 2380 -580 m 2380 -660 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2355 -695 10 -10 re b* 2360 -700 m 2360 -660 l S 1 0 0 rg 2355 -535 10 -10 re b* 2360 -540 m 2360 -580 l S  0 G 2 w 1 J 1 j 2500 -580 m 2500 -660 l S 2500 -660 m 2540 -660 l S 2500 -580 m 2540 -580 l S 2540 -580 m 2540 -660 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2515 -695 10 -10 re b* 2520 -700 m 2520 -660 l S 1 0 0 rg 2515 -535 10 -10 re b* 2520 -540 m 2520 -580 l S  0 G 2 w 1 J 1 j 1280 -540 m 1040 -540 l S 1040 -540 m 1040 -700 l S 1280 -700 m 1040 -700 l S 1280 -540 m 1280 -700 l S 1170 -540 m 1170 -550 l S 1150 -550 m 1170 -550 l S 1150 -550 m 1150 -540 l S 1250 -540 m 1240 -560 l S 1240 -560 m 1230 -540 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1235 -475 10 -10 re b* 1240 -480 m 1240 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1220 -524 Td[(1)]TJ 
+ET 1 0 0 rg 1235 -755 10 -10 re b* 1240 -760 m 1240 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1220 -734 Td[(2)]TJ 
+ET 1 0 0 rg 1195 -475 10 -10 re b* 1200 -480 m 1200 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1180 -524 Td[(3)]TJ 
+ET 1 0 0 rg 1195 -755 10 -10 re b* 1200 -760 m 1200 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1180 -734 Td[(4)]TJ 
+ET 1 0 0 rg 1155 -475 10 -10 re b* 1160 -480 m 1160 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1140 -524 Td[(5)]TJ 
+ET 1 0 0 rg 1155 -755 10 -10 re b* 1160 -760 m 1160 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1140 -734 Td[(6)]TJ 
+ET 1 0 0 rg 1115 -475 10 -10 re b* 1120 -480 m 1120 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1100 -524 Td[(7)]TJ 
+ET 1 0 0 rg 1115 -755 10 -10 re b* 1120 -760 m 1120 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1100 -734 Td[(8)]TJ 
+ET 1 0 0 rg 1075 -475 10 -10 re b* 1080 -480 m 1080 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1060 -524 Td[(9)]TJ 
+ET 1 0 0 rg 1075 -755 10 -10 re b* 1080 -760 m 1080 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1045 -734 Td(1)Tj 15 0 Td(0)Tj ET  0 G 2000 -540 m 1760 -540 l S 1760 -540 m 1760 -700 l S 2000 -700 m 1760 -700 l S 2000 -540 m 2000 -700 l S 1890 -540 m 1890 -550 l S 1870 -550 m 1890 -550 l S 1870 -550 m 1870 -540 l S 1970 -540 m 1960 -560 l S 1960 -560 m 1950 -540 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1955 -475 10 -10 re b* 1960 -480 m 1960 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1940 -524 Td[(1)]TJ 
+ET 1 0 0 rg 1955 -755 10 -10 re b* 1960 -760 m 1960 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1940 -734 Td[(2)]TJ 
+ET 1 0 0 rg 1915 -475 10 -10 re b* 1920 -480 m 1920 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1900 -524 Td[(3)]TJ 
+ET 1 0 0 rg 1915 -755 10 -10 re b* 1920 -760 m 1920 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1900 -734 Td[(4)]TJ 
+ET 1 0 0 rg 1875 -475 10 -10 re b* 1880 -480 m 1880 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1860 -524 Td[(5)]TJ 
+ET 1 0 0 rg 1875 -755 10 -10 re b* 1880 -760 m 1880 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1860 -734 Td[(6)]TJ 
+ET 1 0 0 rg 1835 -475 10 -10 re b* 1840 -480 m 1840 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1820 -524 Td[(7)]TJ 
+ET 1 0 0 rg 1835 -755 10 -10 re b* 1840 -760 m 1840 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1820 -734 Td[(8)]TJ 
+ET 1 0 0 rg 1795 -475 10 -10 re b* 1800 -480 m 1800 -540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1780 -524 Td[(9)]TJ 
+ET 1 0 0 rg 1795 -755 10 -10 re b* 1800 -760 m 1800 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1765 -734 Td(1)Tj 15 0 Td(0)Tj ET 0.02 0 0 rg 0.02 0 0 RG 460 -1110 m 500 -1110 l 480 -1130 l 460 -1110 l  h 0.02 0 0 rg b*  0 G 2 w 1 J 1 j 460 -1130 m 500 -1130 l S 480 -1100 m 480 -1110 l S 480 -1140 m 480 -1130 l S 1 1 1 rg 509.501 -1119.999 m 509.501 -1103.707 496.2934 -1090.499 480.001 -1090.499 c 463.7086 -1090.499 450.501 -1103.707 450.501 -1119.999 c 450.501 -1136.291 463.7086 -1149.499 480.001 -1149.499 c 496.2934 -1149.499 509.501 -1136.291 509.501 -1119.999 c h S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 475 -1055 10 -10 re b* 480 -1060 m 480 -1100 l S 1 0 0 rg 475 -1175 10 -10 re b* 480 -1180 m 480 -1140 l S  0 G 2 w 1 J 1 j 460 -1260 m 460 -1340 l S 460 -1340 m 500 -1340 l S 460 -1260 m 500 -1260 l S 500 -1260 m 500 -1340 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 475 -1375 10 -10 re b* 480 -1380 m 480 -1340 l S 1 0 0 rg 475 -1215 10 -10 re b* 480 -1220 m 480 -1260 l S 0 0 0.502 rg 0 0 0.502 RG 2 w 1 J 1 j 460 -1458 m 500 -1458 l 500 -1461 l 460 -1461 l 460 -1458 l  h 0 0 0.502 rg b* 460 -1461 m 500 -1461 l S 465 -1466 m 495 -1466 l S 470 -1471 m 490 -1471 l S 475 -1476 m 485 -1476 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 475 -1415 10 -10 re b* 480 -1420 m 480 -1460 l S 0.502 0 0.502 RG 2 w 1 J 1 j 980 -1360 m 1060 -1360 l S 900 -1280 m 900 -1240 l S 1060 -1240 m 900 -1240 l S 1260 -1360 m 1380 -1360 l S 1260 -1240 m 1380 -1240 l S 1380 -1240 m 1540 -1240 l S 1380 -1360 m 1540 -1360 l S 1540 -1240 m 1710 -1240 l S 1710 -1240 m 1720 -1240 l S 1540 -1360 m 1880 -1360 l S 1880 -1360 m 1880 -1400 l S 1880 -1360 m 2120 -1360 l S 420 -560 m 420 -460 l S 420 -460 m 370 -460 l S 630 -560 m 630 -400 l S 370 -400 m 630 -400 l S 1030 -400 m 1120 -400 l S 1030 -360 m 1160 -360 l S 1310 -440 m 1240 -440 l S 1310 -360 m 1200 -360 l S 1120 -480 m 1120 -400 l S 1160 -480 m 1160 -360 l S 1240 -480 m 1240 -440 l S 1200 -480 m 1200 -360 l S 2360 -540 m 2360 -440 l S 2360 -440 m 2520 -440 l S 2520 -440 m 2520 -540 l S 2520 -700 m 2520 -760 l S 2520 -760 m 2640 -760 l S 2360 -700 m 2360 -820 l S 2360 -820 m 2640 -820 l S 1310 -800 m 1240 -800 l S 1240 -760 m 1240 -800 l S 1750 -400 m 1840 -400 l S 1750 -360 m 1880 -360 l S 2030 -440 m 1960 -440 l S 2030 -360 m 1920 -360 l S 1840 -480 m 1840 -400 l S 1880 -480 m 1880 -360 l S 1960 -480 m 1960 -440 l S 1920 -480 m 1920 -360 l S 1800 -480 m 1680 -480 l S 1680 -480 m 1680 -760 l S 1680 -760 m 1800 -760 l S 2030 -800 m 1960 -800 l S 1960 -760 m 1960 -800 l S 480 -1180 m 480 -1220 l S 480 -1380 m 480 -1420 l S 2040 -1240 m 2240 -1240 l S 1080 -760 m 1080 -800 l S 1080 -800 m 480 -800 l S 480 -800 m 480 -1060 l S 0 0 1 rg 0 0 1 RG 0.5 w 1 J 1 j 2524.501 -439.999 m 2524.501 -437.5137 2522.486 -435.499 2520.001 -435.499 c 2517.516 -435.499 2515.501 -437.5137 2515.501 -439.999 c 2515.501 -442.4843 2517.516 -444.499 2520.001 -444.499 c 2522.486 -444.499 2524.501 -442.4843 2524.501 -439.999 c h 0 0 1 rg b* 1 1 1 rg  0 G 2 w 1 J 1 j 90 -90 2790 -1920 re S 130 -90 m 90 -130 l S 90 -90 m 130 -130 l S 90 -130 m 2880 -130 l S 130 -90 m 130 -2010 l S 130 -500 m 90 -500 l S 130 -880 m 90 -880 l S 130 -1260 m 90 -1260 l S 130 -1640 m 90 -1640 l S 1810 -1940 m 2880 -1940 l S 2400 -2010 m 2400 -1870 l S 2160 -2010 m 2160 -1940 l S 1810 -1940 m 130 -1940 l S 580 -130 m 580 -90 l S 1040 -90 m 1040 -130 l S 1500 -90 m 1500 -130 l S 1950 -90 m 1950 -130 l S 2420 -90 m 2420 -130 l S 2400 -1870 m 2880 -1870 l S 1790 -1940 m 1790 -2010 l S 2400 -1870 m 1790 -1870 l S 1790 -1870 m 130 -1870 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 45 Tf 0 Ts  0 g 160 -1991 Td(T)Tj 27 0 Td(I)Tj 12 0 Td(T)Tj 27 0 Td(R)Tj 33 0 Td(E)Tj 29 0 Td( )Tj 13 0 Td(:)Tj 12 0 Td( )Tj 12 0 Td(M)Tj 37 0 Td(o)Tj 24 0 Td(d)Tj 25 0 Td(u)Tj 25 0 Td(l)Tj 9 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(3)Tj 25 0 Td(2)Tj 24 0 Td( )Tj 13 0 Td(s)Tj 22 0 Td(o)Tj 25 0 Td(r)Tj 14 0 Td(t)Tj 13 0 Td(i)Tj 9 0 Td(e)Tj 25 0 Td(s)Tj 22 0 Td( )Tj 13 0 Td(I)Tj 12 0 Td(2)Tj 24 0 Td(C)Tj 33 0 Td( )Tj 12 0 Td(-)Tj 15 0 Td( )Tj 12 0 Td(E)Tj 30 0 Td(t)Tj 12 0 Td(a)Tj 24 0 Td(g)Tj 25 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(c)Tj 22 0 Td(o)Tj 25 0 Td(m)Tj 37 0 Td(m)Tj 36 0 Td(a)Tj 25 0 Td(n)Tj 25 0 Td(d)Tj 24 0 Td(e)Tj /F1 36 Tf -767 1868 Td[(1)1]TJ 
+450 0 Td[(2)1]TJ 
+460 0 Td[(3)1]TJ 
+-1160 -200 Td[(A)]TJ 
+0 -380 Td[(B)]TJ 
+1620 580 Td[(4)1]TJ 
+920 0 Td[(6)1]TJ 
+-470 0 Td[(5)1]TJ 
+-2070 -960 Td[(C)]TJ 
+0 -380 Td[(D)]TJ 
+0 -370 Td[(E)]TJ 
+/F1 45 Tf 2340 -158 Td(M)Tj 37 0 Td(I)Tj 12 0 Td(C)Tj 32 0 Td(R)Tj 32 0 Td(O)Tj 35 0 Td( )Tj 12 0 Td(C)Tj 33 0 Td(O)Tj 34 0 Td(C)Tj 33 0 Td(K)Tj 29 0 Td(P)Tj 30 0 Td(I)Tj 12 0 Td(T)Tj 27 0 Td(Æ)Tj -958 0 Td(F)Tj 27 0 Td(o)Tj 25 0 Td(l)Tj 9 0 Td(i)Tj 10 0 Td(o)Tj 299 0 Td(V)Tj 30 0 Td(e)Tj 24 0 Td(r)Tj 15 0 Td( )Tj 12 0 Td(2)Tj 25 0 Td(.)Tj 12 0 Td(0)Tj -2168 70 Td(P)Tj 30 0 Td(R)Tj 32 0 Td(O)Tj 35 0 Td(J)Tj 22 0 Td(E)Tj 30 0 Td(T)Tj 27 0 Td( )Tj 12 0 Td(:)Tj 12 0 Td( )Tj 13 0 Td(M)Tj 36 0 Td(o)Tj 25 0 Td(d)Tj 24 0 Td(u)Tj 25 0 Td(l)Tj 10 0 Td(e)Tj 24 0 Td( )Tj 13 0 Td(3)Tj 24 0 Td(2)Tj 25 0 Td( )Tj 12 0 Td(s)Tj 22 0 Td(o)Tj 25 0 Td(r)Tj 15 0 Td(t)Tj 12 0 Td(i)Tj 10 0 Td(e)Tj 24 0 Td(s)Tj 23 0 Td( )Tj 12 0 Td(I)Tj 12 0 Td(2)Tj 25 0 Td(C)Tj 32 0 Td( )Tj 12 0 Td(p)Tj 25 0 Td(o)Tj 24 0 Td(u)Tj 25 0 Td(r)Tj 15 0 Td( )Tj 12 0 Td(R)Tj 32 0 Td(a)Tj 25 0 Td(c)Tj 22 0 Td(k)Tj 23 0 Td( )Tj 12 0 Td(E)Tj 30 0 Td(P)Tj 29 0 Td(I)Tj 12 0 Td(C)Tj 33 0 Td( )Tj 12 0 Td(A)Tj 30 0 Td(R)Tj 32 0 Td(D)Tj 1362 0 Td(1)Tj 25 0 Td(2)Tj 24 0 Td(/)Tj 12 0 Td(0)Tj 25 0 Td(5)Tj 24 0 Td(/)Tj 13 0 Td(2)Tj 24 0 Td(0)Tj 25 0 Td(2)Tj 24 0 Td(1)Tj -796 -70 Td(0)Tj 25 0 Td(1)Tj 45 0 Td[(/)15]TJ 
+30 0 Td(0)Tj 25 0 Td(2)Tj 345 70 Td(D)Tj 32 0 Td(a)Tj 25 0 Td(t)Tj 12 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(:)Tj ET Q 
+endstream
+endobj
+5 0 obj <</Length 51650 >>
+stream
+q 0.2835 0 0 0.2835 0 595 cm 1 1 1 rg  0 G 2 w 1 J 1 j 920 -840 m 925 -840 l S 925 -840 m 936 -851 l S 936 -851 m 1041 -851 l S 1041 -851 m 1041 -829 l S 1041 -829 m 1030 -829 l S 1030 -829 m 936 -829 l S 936 -829 m 925 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -847 Td(A)Tj 13 0 Td(1)Tj ET 920 -1640 m 925 -1640 l S 925 -1640 m 936 -1651 l S 936 -1651 m 1041 -1651 l S 1041 -1651 m 1041 -1629 l S 1041 -1629 m 1030 -1629 l S 1030 -1629 m 936 -1629 l S 936 -1629 m 925 -1640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -1647 Td(A)Tj 13 0 Td(1)Tj ET 920 -1600 m 925 -1600 l S 925 -1600 m 936 -1611 l S 936 -1611 m 1041 -1611 l S 1041 -1611 m 1041 -1589 l S 1041 -1589 m 1030 -1589 l S 1030 -1589 m 936 -1589 l S 936 -1589 m 925 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -1607 Td(A)Tj 13 0 Td(2)Tj ET 920 -800 m 925 -800 l S 925 -800 m 936 -811 l S 936 -811 m 1041 -811 l S 1041 -811 m 1041 -789 l S 1041 -789 m 1030 -789 l S 1030 -789 m 936 -789 l S 936 -789 m 925 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -807 Td(A)Tj 13 0 Td(2)Tj ET 920 -720 m 925 -720 l S 925 -720 m 936 -731 l S 936 -731 m 1041 -731 l S 1041 -731 m 1041 -709 l S 1041 -709 m 1030 -709 l S 1030 -709 m 936 -709 l S 936 -709 m 925 -720 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -727 Td(R)Tj 14 0 Td(S)Tj 13 0 Td(T)Tj ET 920 -1520 m 925 -1520 l S 925 -1520 m 936 -1531 l S 936 -1531 m 1041 -1531 l S 1041 -1531 m 1041 -1509 l S 1041 -1509 m 1030 -1509 l S 1030 -1509 m 936 -1509 l S 936 -1509 m 925 -1520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 936 -1527 Td(R)Tj 14 0 Td(S)Tj 13 0 Td(T)Tj ET 440 -1600 m 435 -1600 l S 435 -1600 m 424 -1611 l S 424 -1611 m 319 -1611 l S 319 -1611 m 319 -1589 l S 319 -1589 m 424 -1589 l S 424 -1589 m 435 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 330 -1607 Td(S)Tj 13 0 Td(C)Tj 14 0 Td(L)Tj ET 440 -800 m 435 -800 l S 435 -800 m 424 -811 l S 424 -811 m 319 -811 l S 319 -811 m 319 -789 l S 319 -789 m 424 -789 l S 424 -789 m 435 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 330 -807 Td(S)Tj 13 0 Td(C)Tj 14 0 Td(L)Tj ET 440 -1640 m 435 -1640 l S 435 -1640 m 424 -1651 l S 424 -1651 m 319 -1651 l S 319 -1651 m 319 -1629 l S 319 -1629 m 424 -1629 l S 424 -1629 m 435 -1640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 330 -1647 Td(S)Tj 13 0 Td(D)Tj 14 0 Td(A)Tj ET 440 -840 m 435 -840 l S 435 -840 m 424 -851 l S 424 -851 m 319 -851 l S 319 -851 m 319 -829 l S 319 -829 m 424 -829 l S 424 -829 m 435 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 20 Tf 0 Ts  0 g 330 -847 Td(S)Tj 13 0 Td(D)Tj 14 0 Td(A)Tj /F1 27 Tf 1313 653 Td(C)Tj 19 0 Td(I)Tj 8 0 Td(1)Tj /F1 18 Tf -117 -362 Td(U)Tj 13 0 Td(L)Tj 9 0 Td(N)Tj 13 0 Td( )Tj 5 0 Td(2)Tj 10 0 Td(8)Tj 9 0 Td(0)Tj 10 0 Td(3)Tj 10 0 Td(A)Tj /F1 36 Tf 761 13 Td(J)Tj 18 0 Td(7)Tj /F1 27 Tf -48 -781 Td(H)Tj 19 0 Td(E)Tj 18 0 Td(1)Tj 15 0 Td(0)Tj 14 0 Td( )Tj 8 0 Td(/)Tj 8 0 Td( )Tj 7 0 Td(3)Tj 15 0 Td(4)Tj -824 710 Td(C)Tj 19 0 Td(I)Tj 8 0 Td(2)Tj /F1 18 Tf -117 -362 Td(U)Tj 13 0 Td(L)Tj 9 0 Td(N)Tj 13 0 Td( )Tj 5 0 Td(2)Tj 10 0 Td(8)Tj 9 0 Td(0)Tj 10 0 Td(3)Tj 10 0 Td(A)Tj /F1 27 Tf 11 -58 Td(C)Tj 19 0 Td(I)Tj 8 0 Td(3)Tj /F1 18 Tf -117 -362 Td(U)Tj 13 0 Td(L)Tj 9 0 Td(N)Tj 13 0 Td( )Tj 5 0 Td(2)Tj 10 0 Td(8)Tj 9 0 Td(0)Tj 10 0 Td(3)Tj 10 0 Td(A)Tj /F1 27 Tf 11 -58 Td(C)Tj 19 0 Td(I)Tj 8 0 Td(4)Tj /F1 18 Tf -117 -362 Td(U)Tj 13 0 Td(L)Tj 9 0 Td(N)Tj 13 0 Td( )Tj 5 0 Td(2)Tj 10 0 Td(8)Tj 9 0 Td(0)Tj 10 0 Td(3)Tj 10 0 Td(A)Tj /F1 36 Tf -999 1583 Td(C)Tj 26 0 Td(I)Tj 10 0 Td(5)Tj /F1 27 Tf -76 -721 Td(M)Tj 22 0 Td(C)Tj 19 0 Td(P)Tj 18 0 Td(2)Tj 15 0 Td(3)Tj 15 0 Td(0)Tj 15 0 Td(1)Tj 15 0 Td(7)Tj /F1 36 Tf -79 -79 Td(C)Tj 26 0 Td(I)Tj 10 0 Td(6)Tj /F1 27 Tf -76 -721 Td(M)Tj 22 0 Td(C)Tj 19 0 Td(P)Tj 18 0 Td(2)Tj 15 0 Td(3)Tj 15 0 Td(0)Tj 15 0 Td(1)Tj 15 0 Td(7)Tj 1671 1340 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj /F1 36 Tf 100 -1259 Td(J)Tj 18 0 Td(6)Tj /F1 27 Tf -228 -101 Td(C)Tj 19 0 Td(l)Tj 6 0 Td(a)Tj 15 0 Td(m)Tj 22 0 Td(p)Tj 15 0 Td( )Tj 8 0 Td(U)Tj 19 0 Td(L)Tj 15 0 Td(N)Tj 19 0 Td(2)Tj 14 0 Td(8)Tj 15 0 Td(0)Tj 15 0 Td(3)Tj 15 0 Td(A)Tj ET 2400 -1560 m 2400 -1480 l S  0 g 2400 -1480 m 2390 -1500 l 2410 -1500 l  h  0 g b* 2480 -1560 m 2480 -1480 l S  0 g 2480 -1480 m 2470 -1500 l 2490 -1500 l  h  0 g b* 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1411 -489 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(0)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(4)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(5)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(6)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(7)Tj 754 -440 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(0)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(4)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(6)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(8)Tj -65 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(0)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(2)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(4)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(6)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(8)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(0)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(2)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(4)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(6)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(8)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(0)Tj 354 600 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(5)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(7)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(9)Tj -51 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(1)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(3)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(5)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(7)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(9)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(1)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(3)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(5)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(7)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(9)Tj -66 -40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(1)Tj -1270 340 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(8)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(9)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(0)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(1)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(2)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(3)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(4)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(5)Tj -54 -700 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(6)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(7)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(8)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(9)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(0)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(1)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(2)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(3)Tj -54 -700 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(4)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(5)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(6)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(7)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(8)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(9)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(0)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(1)Tj 335 -280 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(4)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(5)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(6)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(7)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(8)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(9)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(0)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(1)Tj -66 140 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(6)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(7)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(8)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(9)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(0)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(1)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(2)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(3)Tj -66 140 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(8)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(9)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(0)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(1)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(2)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(3)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(4)Tj -66 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(5)Tj -66 140 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(0)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(4)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(5)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(6)Tj -51 40 Td(O)Tj 21 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(7)Tj -51 -320 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -130 -420 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -130 -420 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj 220 765 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -480 -1185 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj 700 1180 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -1393 -1180 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -115 420 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -115 420 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -115 420 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj -537 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(8)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(9)Tj -39 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(0)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(1)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(2)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(3)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(4)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(5)Tj -568 0 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(0)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(4)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(5)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(6)Tj -39 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(7)Tj 475 -800 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(4)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(5)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(6)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(7)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(8)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(9)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(0)Tj -54 40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(3)Tj 15 0 Td(1)Tj -583 0 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(6)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(7)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(8)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(1)Tj 15 0 Td(9)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(0)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(1)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(2)Tj -54 -40 Td(B)Tj 18 0 Td(i)Tj 6 0 Td(t)Tj 7 0 Td( )Tj 8 0 Td(2)Tj 15 0 Td(3)Tj -33 -80 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -41 -40 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj -19 840 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -41 -40 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 441 -1025 Td(+)Tj 16 0 Td(5)Tj 14 0 Td(V)Tj -31 800 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 1359 -540 Td(0)Tj 15 0 Td(V)Tj 18 0 Td( )Tj 7 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj 75 0 Td(1)Tj 15 0 Td(2)Tj 15 0 Td(V)Tj 17 0 Td( )Tj 8 0 Td(o)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 7 0 Td(p)Tj 15 0 Td(u)Tj 15 0 Td(t)Tj 8 0 Td(s)Tj ET 1520 -160 m 1720 -160 l S 1560 -200 m 1580 -200 l S 1580 -200 m 1580 -220 l S 1580 -220 m 1620 -200 l S 1620 -200 m 1580 -180 l S 1580 -180 m 1580 -200 l S 1620 -200 m 1640 -200 l S 1600 -240 m 1620 -240 l S 1620 -240 m 1620 -260 l S 1620 -260 m 1660 -240 l S 1660 -240 m 1620 -220 l S 1620 -220 m 1620 -240 l S 1660 -240 m 1680 -240 l S 1560 -280 m 1580 -280 l S 1580 -280 m 1580 -300 l S 1580 -300 m 1620 -280 l S 1620 -280 m 1580 -260 l S 1580 -260 m 1580 -280 l S 1620 -280 m 1640 -280 l S 1600 -320 m 1620 -320 l S 1620 -320 m 1620 -340 l S 1620 -340 m 1660 -320 l S 1660 -320 m 1620 -300 l S 1620 -300 m 1620 -320 l S 1660 -320 m 1680 -320 l S 1560 -360 m 1580 -360 l S 1580 -360 m 1580 -380 l S 1580 -380 m 1620 -360 l S 1620 -360 m 1580 -340 l S 1580 -340 m 1580 -360 l S 1620 -360 m 1640 -360 l S 1600 -400 m 1620 -400 l S 1620 -400 m 1620 -420 l S 1620 -420 m 1660 -400 l S 1660 -400 m 1620 -380 l S 1620 -380 m 1620 -400 l S 1660 -400 m 1680 -400 l S 1560 -440 m 1580 -440 l S 1580 -440 m 1580 -460 l S 1580 -460 m 1620 -440 l S 1620 -440 m 1580 -420 l S 1580 -420 m 1580 -440 l S 1620 -440 m 1640 -440 l S 1600 -480 m 1620 -480 l S 1620 -480 m 1620 -500 l S 1620 -500 m 1660 -480 l S 1660 -480 m 1620 -460 l S 1620 -460 m 1620 -480 l S 1660 -480 m 1680 -480 l S 1600 -160 m 1600 -170 l S 1600 -170 m 1640 -170 l S 1640 -170 m 1640 -160 l S 1520 -160 m 1520 -560 l S 1520 -560 m 1720 -560 l S 1720 -160 m 1720 -560 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1475 -195 10 -10 re b* 1480 -200 m 1520 -200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -194 Td[(1)]TJ 
+ET 1 0 0 rg 1475 -235 10 -10 re b* 1480 -240 m 1520 -240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -234 Td[(2)]TJ 
+ET 1 0 0 rg 1475 -275 10 -10 re b* 1480 -280 m 1520 -280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -274 Td[(3)]TJ 
+ET 1 0 0 rg 1475 -315 10 -10 re b* 1480 -320 m 1520 -320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -314 Td[(4)]TJ 
+ET 1 0 0 rg 1475 -355 10 -10 re b* 1480 -360 m 1520 -360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -354 Td[(5)]TJ 
+ET 1 0 0 rg 1475 -395 10 -10 re b* 1480 -400 m 1520 -400 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -394 Td[(6)]TJ 
+ET 1 0 0 rg 1475 -435 10 -10 re b* 1480 -440 m 1520 -440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -434 Td[(7)]TJ 
+ET 1 0 0 rg 1475 -475 10 -10 re b* 1480 -480 m 1520 -480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -474 Td[(8)]TJ 
+ET 1 0 0 rg 1475 -515 10 -10 re b* 1480 -520 m 1520 -520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1530 -529 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 0 1 1 rg -80 15 Td[(9)]TJ 
+ET 1 0 0 rg 1755 -515 10 -10 re b* 1760 -520 m 1720 -520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1633 -529 Td(C)Tj 19 0 Td(l)Tj 6 0 Td(a)Tj 15 0 Td(m)Tj 22 0 Td(p)Tj 0 1 1 rg 35 15 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 1755 -475 10 -10 re b* 1760 -480 m 1720 -480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -474 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 1755 -435 10 -10 re b* 1760 -440 m 1720 -440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -434 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 1755 -395 10 -10 re b* 1760 -400 m 1720 -400 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -394 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 1755 -355 10 -10 re b* 1760 -360 m 1720 -360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -354 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 1755 -315 10 -10 re b* 1760 -320 m 1720 -320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -314 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 1755 -275 10 -10 re b* 1760 -280 m 1720 -280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -274 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 1755 -235 10 -10 re b* 1760 -240 m 1720 -240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -234 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 1755 -195 10 -10 re b* 1760 -200 m 1720 -200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -194 Td(1)Tj 15 0 Td(8)Tj ET  0 G 2360 -560 m 2360 -1280 l S 2360 -1280 m 2520 -1280 l S 2520 -560 m 2520 -1280 l S 2360 -560 m 2520 -560 l S 2360 -890 m 2370 -890 l S 2370 -910 m 2370 -890 l S 2370 -910 m 2360 -910 l S 2360 -590 m 2380 -600 l S 2380 -600 m 2360 -610 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2295 -595 10 -10 re b* 2300 -600 m 2360 -600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -594 Td[(1)]TJ 
+ET 1 0 0 rg 2575 -595 10 -10 re b* 2580 -600 m 2520 -600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -594 Td[(2)]TJ 
+ET 1 0 0 rg 2295 -635 10 -10 re b* 2300 -640 m 2360 -640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -634 Td[(3)]TJ 
+ET 1 0 0 rg 2575 -635 10 -10 re b* 2580 -640 m 2520 -640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -634 Td[(4)]TJ 
+ET 1 0 0 rg 2295 -675 10 -10 re b* 2300 -680 m 2360 -680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -674 Td[(5)]TJ 
+ET 1 0 0 rg 2575 -675 10 -10 re b* 2580 -680 m 2520 -680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -674 Td[(6)]TJ 
+ET 1 0 0 rg 2295 -715 10 -10 re b* 2300 -720 m 2360 -720 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -714 Td[(7)]TJ 
+ET 1 0 0 rg 2575 -715 10 -10 re b* 2580 -720 m 2520 -720 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -714 Td[(8)]TJ 
+ET 1 0 0 rg 2295 -755 10 -10 re b* 2300 -760 m 2360 -760 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -754 Td[(9)]TJ 
+ET 1 0 0 rg 2575 -755 10 -10 re b* 2580 -760 m 2520 -760 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -754 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 2295 -795 10 -10 re b* 2300 -800 m 2360 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -794 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 2575 -795 10 -10 re b* 2580 -800 m 2520 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -794 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 2295 -835 10 -10 re b* 2300 -840 m 2360 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -834 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 2575 -835 10 -10 re b* 2580 -840 m 2520 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -834 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 2295 -875 10 -10 re b* 2300 -880 m 2360 -880 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -874 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 2575 -875 10 -10 re b* 2580 -880 m 2520 -880 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -874 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 2295 -915 10 -10 re b* 2300 -920 m 2360 -920 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -914 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 2575 -915 10 -10 re b* 2580 -920 m 2520 -920 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -914 Td(1)Tj 15 0 Td(8)Tj ET 1 0 0 rg 2295 -955 10 -10 re b* 2300 -960 m 2360 -960 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -954 Td(1)Tj 15 0 Td(9)Tj ET 1 0 0 rg 2575 -955 10 -10 re b* 2580 -960 m 2520 -960 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -954 Td(2)Tj 15 0 Td(0)Tj ET 1 0 0 rg 2295 -995 10 -10 re b* 2300 -1000 m 2360 -1000 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -994 Td(2)Tj 15 0 Td(1)Tj ET 1 0 0 rg 2575 -995 10 -10 re b* 2580 -1000 m 2520 -1000 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -994 Td(2)Tj 15 0 Td(2)Tj ET 1 0 0 rg 2295 -1035 10 -10 re b* 2300 -1040 m 2360 -1040 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1034 Td(2)Tj 15 0 Td(3)Tj ET 1 0 0 rg 2575 -1035 10 -10 re b* 2580 -1040 m 2520 -1040 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1034 Td(2)Tj 15 0 Td(4)Tj ET 1 0 0 rg 2295 -1075 10 -10 re b* 2300 -1080 m 2360 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1074 Td(2)Tj 15 0 Td(5)Tj ET 1 0 0 rg 2575 -1075 10 -10 re b* 2580 -1080 m 2520 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1074 Td(2)Tj 15 0 Td(6)Tj ET 1 0 0 rg 2295 -1115 10 -10 re b* 2300 -1120 m 2360 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1114 Td(2)Tj 15 0 Td(7)Tj ET 1 0 0 rg 2575 -1115 10 -10 re b* 2580 -1120 m 2520 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1114 Td(2)Tj 15 0 Td(8)Tj ET 1 0 0 rg 2295 -1155 10 -10 re b* 2300 -1160 m 2360 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1154 Td(2)Tj 15 0 Td(9)Tj ET 1 0 0 rg 2575 -1155 10 -10 re b* 2580 -1160 m 2520 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1154 Td(3)Tj 15 0 Td(0)Tj ET 1 0 0 rg 2295 -1195 10 -10 re b* 2300 -1200 m 2360 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1194 Td(3)Tj 15 0 Td(1)Tj ET 1 0 0 rg 2575 -1195 10 -10 re b* 2580 -1200 m 2520 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1194 Td(3)Tj 15 0 Td(2)Tj ET 1 0 0 rg 2295 -1235 10 -10 re b* 2300 -1240 m 2360 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2310 -1234 Td(3)Tj 15 0 Td(3)Tj ET 1 0 0 rg 2575 -1235 10 -10 re b* 2580 -1240 m 2520 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2530 -1234 Td(3)Tj 15 0 Td(4)Tj ET  0 G 1520 -580 m 1720 -580 l S 1560 -620 m 1580 -620 l S 1580 -620 m 1580 -640 l S 1580 -640 m 1620 -620 l S 1620 -620 m 1580 -600 l S 1580 -600 m 1580 -620 l S 1620 -620 m 1640 -620 l S 1600 -660 m 1620 -660 l S 1620 -660 m 1620 -680 l S 1620 -680 m 1660 -660 l S 1660 -660 m 1620 -640 l S 1620 -640 m 1620 -660 l S 1660 -660 m 1680 -660 l S 1560 -700 m 1580 -700 l S 1580 -700 m 1580 -720 l S 1580 -720 m 1620 -700 l S 1620 -700 m 1580 -680 l S 1580 -680 m 1580 -700 l S 1620 -700 m 1640 -700 l S 1600 -740 m 1620 -740 l S 1620 -740 m 1620 -760 l S 1620 -760 m 1660 -740 l S 1660 -740 m 1620 -720 l S 1620 -720 m 1620 -740 l S 1660 -740 m 1680 -740 l S 1560 -780 m 1580 -780 l S 1580 -780 m 1580 -800 l S 1580 -800 m 1620 -780 l S 1620 -780 m 1580 -760 l S 1580 -760 m 1580 -780 l S 1620 -780 m 1640 -780 l S 1600 -820 m 1620 -820 l S 1620 -820 m 1620 -840 l S 1620 -840 m 1660 -820 l S 1660 -820 m 1620 -800 l S 1620 -800 m 1620 -820 l S 1660 -820 m 1680 -820 l S 1560 -860 m 1580 -860 l S 1580 -860 m 1580 -880 l S 1580 -880 m 1620 -860 l S 1620 -860 m 1580 -840 l S 1580 -840 m 1580 -860 l S 1620 -860 m 1640 -860 l S 1600 -900 m 1620 -900 l S 1620 -900 m 1620 -920 l S 1620 -920 m 1660 -900 l S 1660 -900 m 1620 -880 l S 1620 -880 m 1620 -900 l S 1660 -900 m 1680 -900 l S 1600 -580 m 1600 -590 l S 1600 -590 m 1640 -590 l S 1640 -590 m 1640 -580 l S 1520 -580 m 1520 -980 l S 1520 -980 m 1720 -980 l S 1720 -580 m 1720 -980 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1475 -615 10 -10 re b* 1480 -620 m 1520 -620 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -614 Td[(1)]TJ 
+ET 1 0 0 rg 1475 -655 10 -10 re b* 1480 -660 m 1520 -660 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -654 Td[(2)]TJ 
+ET 1 0 0 rg 1475 -695 10 -10 re b* 1480 -700 m 1520 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -694 Td[(3)]TJ 
+ET 1 0 0 rg 1475 -735 10 -10 re b* 1480 -740 m 1520 -740 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -734 Td[(4)]TJ 
+ET 1 0 0 rg 1475 -775 10 -10 re b* 1480 -780 m 1520 -780 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -774 Td[(5)]TJ 
+ET 1 0 0 rg 1475 -815 10 -10 re b* 1480 -820 m 1520 -820 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -814 Td[(6)]TJ 
+ET 1 0 0 rg 1475 -855 10 -10 re b* 1480 -860 m 1520 -860 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -854 Td[(7)]TJ 
+ET 1 0 0 rg 1475 -895 10 -10 re b* 1480 -900 m 1520 -900 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -894 Td[(8)]TJ 
+ET 1 0 0 rg 1475 -935 10 -10 re b* 1480 -940 m 1520 -940 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1530 -949 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 0 1 1 rg -80 15 Td[(9)]TJ 
+ET 1 0 0 rg 1755 -935 10 -10 re b* 1760 -940 m 1720 -940 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1633 -949 Td(C)Tj 19 0 Td(l)Tj 6 0 Td(a)Tj 15 0 Td(m)Tj 22 0 Td(p)Tj 0 1 1 rg 35 15 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 1755 -895 10 -10 re b* 1760 -900 m 1720 -900 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -894 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 1755 -855 10 -10 re b* 1760 -860 m 1720 -860 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -854 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 1755 -815 10 -10 re b* 1760 -820 m 1720 -820 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -814 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 1755 -775 10 -10 re b* 1760 -780 m 1720 -780 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -774 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 1755 -735 10 -10 re b* 1760 -740 m 1720 -740 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -734 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 1755 -695 10 -10 re b* 1760 -700 m 1720 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -694 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 1755 -655 10 -10 re b* 1760 -660 m 1720 -660 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -654 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 1755 -615 10 -10 re b* 1760 -620 m 1720 -620 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -614 Td(1)Tj 15 0 Td(8)Tj ET  0 G 1520 -1000 m 1720 -1000 l S 1560 -1040 m 1580 -1040 l S 1580 -1040 m 1580 -1060 l S 1580 -1060 m 1620 -1040 l S 1620 -1040 m 1580 -1020 l S 1580 -1020 m 1580 -1040 l S 1620 -1040 m 1640 -1040 l S 1600 -1080 m 1620 -1080 l S 1620 -1080 m 1620 -1100 l S 1620 -1100 m 1660 -1080 l S 1660 -1080 m 1620 -1060 l S 1620 -1060 m 1620 -1080 l S 1660 -1080 m 1680 -1080 l S 1560 -1120 m 1580 -1120 l S 1580 -1120 m 1580 -1140 l S 1580 -1140 m 1620 -1120 l S 1620 -1120 m 1580 -1100 l S 1580 -1100 m 1580 -1120 l S 1620 -1120 m 1640 -1120 l S 1600 -1160 m 1620 -1160 l S 1620 -1160 m 1620 -1180 l S 1620 -1180 m 1660 -1160 l S 1660 -1160 m 1620 -1140 l S 1620 -1140 m 1620 -1160 l S 1660 -1160 m 1680 -1160 l S 1560 -1200 m 1580 -1200 l S 1580 -1200 m 1580 -1220 l S 1580 -1220 m 1620 -1200 l S 1620 -1200 m 1580 -1180 l S 1580 -1180 m 1580 -1200 l S 1620 -1200 m 1640 -1200 l S 1600 -1240 m 1620 -1240 l S 1620 -1240 m 1620 -1260 l S 1620 -1260 m 1660 -1240 l S 1660 -1240 m 1620 -1220 l S 1620 -1220 m 1620 -1240 l S 1660 -1240 m 1680 -1240 l S 1560 -1280 m 1580 -1280 l S 1580 -1280 m 1580 -1300 l S 1580 -1300 m 1620 -1280 l S 1620 -1280 m 1580 -1260 l S 1580 -1260 m 1580 -1280 l S 1620 -1280 m 1640 -1280 l S 1600 -1320 m 1620 -1320 l S 1620 -1320 m 1620 -1340 l S 1620 -1340 m 1660 -1320 l S 1660 -1320 m 1620 -1300 l S 1620 -1300 m 1620 -1320 l S 1660 -1320 m 1680 -1320 l S 1600 -1000 m 1600 -1010 l S 1600 -1010 m 1640 -1010 l S 1640 -1010 m 1640 -1000 l S 1520 -1000 m 1520 -1400 l S 1520 -1400 m 1720 -1400 l S 1720 -1000 m 1720 -1400 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1475 -1035 10 -10 re b* 1480 -1040 m 1520 -1040 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1034 Td[(1)]TJ 
+ET 1 0 0 rg 1475 -1075 10 -10 re b* 1480 -1080 m 1520 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1074 Td[(2)]TJ 
+ET 1 0 0 rg 1475 -1115 10 -10 re b* 1480 -1120 m 1520 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1114 Td[(3)]TJ 
+ET 1 0 0 rg 1475 -1155 10 -10 re b* 1480 -1160 m 1520 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1154 Td[(4)]TJ 
+ET 1 0 0 rg 1475 -1195 10 -10 re b* 1480 -1200 m 1520 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1194 Td[(5)]TJ 
+ET 1 0 0 rg 1475 -1235 10 -10 re b* 1480 -1240 m 1520 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1234 Td[(6)]TJ 
+ET 1 0 0 rg 1475 -1275 10 -10 re b* 1480 -1280 m 1520 -1280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1274 Td[(7)]TJ 
+ET 1 0 0 rg 1475 -1315 10 -10 re b* 1480 -1320 m 1520 -1320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1314 Td[(8)]TJ 
+ET 1 0 0 rg 1475 -1355 10 -10 re b* 1480 -1360 m 1520 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1530 -1369 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 0 1 1 rg -80 15 Td[(9)]TJ 
+ET 1 0 0 rg 1755 -1355 10 -10 re b* 1760 -1360 m 1720 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1633 -1369 Td(C)Tj 19 0 Td(l)Tj 6 0 Td(a)Tj 15 0 Td(m)Tj 22 0 Td(p)Tj 0 1 1 rg 35 15 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 1755 -1315 10 -10 re b* 1760 -1320 m 1720 -1320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1314 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 1755 -1275 10 -10 re b* 1760 -1280 m 1720 -1280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1274 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 1755 -1235 10 -10 re b* 1760 -1240 m 1720 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1234 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 1755 -1195 10 -10 re b* 1760 -1200 m 1720 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1194 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 1755 -1155 10 -10 re b* 1760 -1160 m 1720 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1154 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 1755 -1115 10 -10 re b* 1760 -1120 m 1720 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1114 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 1755 -1075 10 -10 re b* 1760 -1080 m 1720 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1074 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 1755 -1035 10 -10 re b* 1760 -1040 m 1720 -1040 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1034 Td(1)Tj 15 0 Td(8)Tj ET  0 G 1520 -1420 m 1720 -1420 l S 1560 -1460 m 1580 -1460 l S 1580 -1460 m 1580 -1480 l S 1580 -1480 m 1620 -1460 l S 1620 -1460 m 1580 -1440 l S 1580 -1440 m 1580 -1460 l S 1620 -1460 m 1640 -1460 l S 1600 -1500 m 1620 -1500 l S 1620 -1500 m 1620 -1520 l S 1620 -1520 m 1660 -1500 l S 1660 -1500 m 1620 -1480 l S 1620 -1480 m 1620 -1500 l S 1660 -1500 m 1680 -1500 l S 1560 -1540 m 1580 -1540 l S 1580 -1540 m 1580 -1560 l S 1580 -1560 m 1620 -1540 l S 1620 -1540 m 1580 -1520 l S 1580 -1520 m 1580 -1540 l S 1620 -1540 m 1640 -1540 l S 1600 -1580 m 1620 -1580 l S 1620 -1580 m 1620 -1600 l S 1620 -1600 m 1660 -1580 l S 1660 -1580 m 1620 -1560 l S 1620 -1560 m 1620 -1580 l S 1660 -1580 m 1680 -1580 l S 1560 -1620 m 1580 -1620 l S 1580 -1620 m 1580 -1640 l S 1580 -1640 m 1620 -1620 l S 1620 -1620 m 1580 -1600 l S 1580 -1600 m 1580 -1620 l S 1620 -1620 m 1640 -1620 l S 1600 -1660 m 1620 -1660 l S 1620 -1660 m 1620 -1680 l S 1620 -1680 m 1660 -1660 l S 1660 -1660 m 1620 -1640 l S 1620 -1640 m 1620 -1660 l S 1660 -1660 m 1680 -1660 l S 1560 -1700 m 1580 -1700 l S 1580 -1700 m 1580 -1720 l S 1580 -1720 m 1620 -1700 l S 1620 -1700 m 1580 -1680 l S 1580 -1680 m 1580 -1700 l S 1620 -1700 m 1640 -1700 l S 1600 -1740 m 1620 -1740 l S 1620 -1740 m 1620 -1760 l S 1620 -1760 m 1660 -1740 l S 1660 -1740 m 1620 -1720 l S 1620 -1720 m 1620 -1740 l S 1660 -1740 m 1680 -1740 l S 1600 -1420 m 1600 -1430 l S 1600 -1430 m 1640 -1430 l S 1640 -1430 m 1640 -1420 l S 1520 -1420 m 1520 -1820 l S 1520 -1820 m 1720 -1820 l S 1720 -1420 m 1720 -1820 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 1475 -1455 10 -10 re b* 1480 -1460 m 1520 -1460 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1454 Td[(1)]TJ 
+ET 1 0 0 rg 1475 -1495 10 -10 re b* 1480 -1500 m 1520 -1500 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1494 Td[(2)]TJ 
+ET 1 0 0 rg 1475 -1535 10 -10 re b* 1480 -1540 m 1520 -1540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1534 Td[(3)]TJ 
+ET 1 0 0 rg 1475 -1575 10 -10 re b* 1480 -1580 m 1520 -1580 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1574 Td[(4)]TJ 
+ET 1 0 0 rg 1475 -1615 10 -10 re b* 1480 -1620 m 1520 -1620 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1614 Td[(5)]TJ 
+ET 1 0 0 rg 1475 -1655 10 -10 re b* 1480 -1660 m 1520 -1660 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1654 Td[(6)]TJ 
+ET 1 0 0 rg 1475 -1695 10 -10 re b* 1480 -1700 m 1520 -1700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1694 Td[(7)]TJ 
+ET 1 0 0 rg 1475 -1735 10 -10 re b* 1480 -1740 m 1520 -1740 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1490 -1734 Td[(8)]TJ 
+ET 1 0 0 rg 1475 -1775 10 -10 re b* 1480 -1780 m 1520 -1780 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1530 -1789 Td(G)Tj 21 0 Td(N)Tj 19 0 Td(D)Tj 0 1 1 rg -80 15 Td[(9)]TJ 
+ET 1 0 0 rg 1755 -1775 10 -10 re b* 1760 -1780 m 1720 -1780 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 1633 -1789 Td(C)Tj 19 0 Td(l)Tj 6 0 Td(a)Tj 15 0 Td(m)Tj 22 0 Td(p)Tj 0 1 1 rg 35 15 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 1755 -1735 10 -10 re b* 1760 -1740 m 1720 -1740 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1734 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 1755 -1695 10 -10 re b* 1760 -1700 m 1720 -1700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1694 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 1755 -1655 10 -10 re b* 1760 -1660 m 1720 -1660 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1654 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 1755 -1615 10 -10 re b* 1760 -1620 m 1720 -1620 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1614 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 1755 -1575 10 -10 re b* 1760 -1580 m 1720 -1580 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1574 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 1755 -1535 10 -10 re b* 1760 -1540 m 1720 -1540 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1534 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 1755 -1495 10 -10 re b* 1760 -1500 m 1720 -1500 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1494 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 1755 -1455 10 -10 re b* 1760 -1460 m 1720 -1460 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 1730 -1454 Td(1)Tj 15 0 Td(8)Tj ET 0 0 0.502 RG 840 -240 m 520 -240 l S 840 -920 m 840 -240 l S 520 -920 m 840 -920 l S 520 -920 m 520 -240 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 475 -275 10 -10 re b* 480 -280 m 520 -280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -284 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(0)Tj 0 1 1 rg -96 10 Td[(1)]TJ 
+ET 1 0 0 rg 475 -315 10 -10 re b* 480 -320 m 520 -320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -324 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(1)Tj 0 1 1 rg -96 10 Td[(2)]TJ 
+ET 1 0 0 rg 475 -355 10 -10 re b* 480 -360 m 520 -360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -364 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(2)Tj 0 1 1 rg -96 10 Td[(3)]TJ 
+ET 1 0 0 rg 475 -395 10 -10 re b* 480 -400 m 520 -400 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -404 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(3)Tj 0 1 1 rg -96 10 Td[(4)]TJ 
+ET 1 0 0 rg 475 -435 10 -10 re b* 480 -440 m 520 -440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -444 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(4)Tj 0 1 1 rg -96 10 Td[(5)]TJ 
+ET 1 0 0 rg 475 -475 10 -10 re b* 480 -480 m 520 -480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -484 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(5)Tj 0 1 1 rg -96 10 Td[(6)]TJ 
+ET 1 0 0 rg 475 -515 10 -10 re b* 480 -520 m 520 -520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -524 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(6)Tj 0 1 1 rg -96 10 Td[(7)]TJ 
+ET 1 0 0 rg 475 -555 10 -10 re b* 480 -560 m 520 -560 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -564 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(7)Tj 0 1 1 rg -96 10 Td[(8)]TJ 
+ET 1 0 0 rg 475 -635 10 -10 re b* 480 -640 m 520 -640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -644 Td(V)Tj 18 0 Td(D)Tj 19 0 Td(D)Tj 0 1 1 rg -77 10 Td[(9)]TJ 
+ET 1 0 0 rg 475 -675 10 -10 re b* 480 -680 m 520 -680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -684 Td(V)Tj 18 0 Td(S)Tj 18 0 Td(S)Tj 0 1 1 rg -76 10 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 475 -715 10 -10 re b* 480 -720 m 520 -720 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -724 Td(n)Tj 15 0 Td(c)Tj 0 1 1 rg -55 10 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 475 -795 10 -10 re b* 480 -800 m 520 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -804 Td(S)Tj 18 0 Td(C)Tj 19 0 Td(L)Tj 0 1 1 rg -77 10 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 475 -835 10 -10 re b* 480 -840 m 520 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -844 Td(S)Tj 18 0 Td(D)Tj 19 0 Td(A)Tj 0 1 1 rg -77 10 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 475 -875 10 -10 re b* 480 -880 m 520 -880 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -884 Td(n)Tj 15 0 Td(c)Tj 0 1 1 rg -55 10 Td(1)Tj 15 0 Td(4)Tj ET 1 0 0 rg 875 -875 10 -10 re b* 880 -880 m 840 -880 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -884 Td(A)Tj 18 0 Td(0)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 875 -835 10 -10 re b* 880 -840 m 840 -840 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -844 Td(A)Tj 18 0 Td(1)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 875 -795 10 -10 re b* 880 -800 m 840 -800 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -804 Td(A)Tj 18 0 Td(2)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 875 -715 10 -10 re b* 880 -720 m 840 -720 l S 860 -720 m 860 -700 l S 860 -700 m 840 -720 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 777 -724 Td(R)Tj 19 0 Td(S)Tj 18 0 Td(T)Tj ET  0 G 830 -700 m 777 -700 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 850 -714 Td(1)Tj 15 0 Td(8)Tj ET 1 0 0 rg 1 0 0 RG 875 -675 10 -10 re b* 880 -680 m 840 -680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 769 -684 Td(I)Tj 8 0 Td(N)Tj 19 0 Td(T)Tj 16 0 Td(B)Tj 0 1 1 rg 38 10 Td(1)Tj 15 0 Td(9)Tj ET 1 0 0 rg 875 -635 10 -10 re b* 880 -640 m 840 -640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 769 -644 Td(I)Tj 8 0 Td(N)Tj 19 0 Td(T)Tj 16 0 Td(A)Tj 0 1 1 rg 38 10 Td(2)Tj 15 0 Td(0)Tj ET 1 0 0 rg 875 -555 10 -10 re b* 880 -560 m 840 -560 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -564 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(0)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(1)Tj ET 1 0 0 rg 875 -515 10 -10 re b* 880 -520 m 840 -520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -524 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(1)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(2)Tj ET 1 0 0 rg 875 -475 10 -10 re b* 880 -480 m 840 -480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -484 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(2)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(3)Tj ET 1 0 0 rg 875 -435 10 -10 re b* 880 -440 m 840 -440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -444 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(3)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(4)Tj ET 1 0 0 rg 875 -395 10 -10 re b* 880 -400 m 840 -400 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -404 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(4)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(5)Tj ET 1 0 0 rg 875 -355 10 -10 re b* 880 -360 m 840 -360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -364 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(5)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(6)Tj ET 1 0 0 rg 875 -315 10 -10 re b* 880 -320 m 840 -320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -324 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(6)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(7)Tj ET 1 0 0 rg 875 -275 10 -10 re b* 880 -280 m 840 -280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -284 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(7)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(8)Tj ET 0 0 0.502 RG 840 -1040 m 520 -1040 l S 840 -1720 m 840 -1040 l S 520 -1720 m 840 -1720 l S 520 -1720 m 520 -1040 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 875 -1675 10 -10 re b* 880 -1680 m 840 -1680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -1684 Td(A)Tj 18 0 Td(0)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(5)Tj ET 1 0 0 rg 875 -1635 10 -10 re b* 880 -1640 m 840 -1640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -1644 Td(A)Tj 18 0 Td(1)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(6)Tj ET 1 0 0 rg 875 -1595 10 -10 re b* 880 -1600 m 840 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 797 -1604 Td(A)Tj 18 0 Td(2)Tj 0 1 1 rg 35 10 Td(1)Tj 15 0 Td(7)Tj ET 1 0 0 rg 875 -1515 10 -10 re b* 880 -1520 m 840 -1520 l S 860 -1520 m 860 -1500 l S 860 -1500 m 840 -1520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 777 -1524 Td(R)Tj 19 0 Td(S)Tj 18 0 Td(T)Tj ET  0 G 830 -1500 m 777 -1500 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 850 -1514 Td(1)Tj 15 0 Td(8)Tj ET 1 0 0 rg 1 0 0 RG 875 -1475 10 -10 re b* 880 -1480 m 840 -1480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 769 -1484 Td(I)Tj 8 0 Td(N)Tj 19 0 Td(T)Tj 16 0 Td(B)Tj 0 1 1 rg 38 10 Td(1)Tj 15 0 Td(9)Tj ET 1 0 0 rg 875 -1435 10 -10 re b* 880 -1440 m 840 -1440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 769 -1444 Td(I)Tj 8 0 Td(N)Tj 19 0 Td(T)Tj 16 0 Td(A)Tj 0 1 1 rg 38 10 Td(2)Tj 15 0 Td(0)Tj ET 1 0 0 rg 875 -1355 10 -10 re b* 880 -1360 m 840 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1364 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(0)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(1)Tj ET 1 0 0 rg 875 -1315 10 -10 re b* 880 -1320 m 840 -1320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1324 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(1)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(2)Tj ET 1 0 0 rg 875 -1275 10 -10 re b* 880 -1280 m 840 -1280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1284 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(2)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(3)Tj ET 1 0 0 rg 875 -1235 10 -10 re b* 880 -1240 m 840 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1244 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(3)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(4)Tj ET 1 0 0 rg 875 -1195 10 -10 re b* 880 -1200 m 840 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1204 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(4)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(5)Tj ET 1 0 0 rg 875 -1155 10 -10 re b* 880 -1160 m 840 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1164 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(5)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(6)Tj ET 1 0 0 rg 875 -1115 10 -10 re b* 880 -1120 m 840 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1124 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(6)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(7)Tj ET 1 0 0 rg 875 -1075 10 -10 re b* 880 -1080 m 840 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 759 -1084 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(A)Tj 17 0 Td(7)Tj 0 1 1 rg 35 10 Td(2)Tj 15 0 Td(8)Tj ET 1 0 0 rg 475 -1075 10 -10 re b* 480 -1080 m 520 -1080 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1084 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(0)Tj 0 1 1 rg -96 10 Td[(1)]TJ 
+ET 1 0 0 rg 475 -1115 10 -10 re b* 480 -1120 m 520 -1120 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1124 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(1)Tj 0 1 1 rg -96 10 Td[(2)]TJ 
+ET 1 0 0 rg 475 -1155 10 -10 re b* 480 -1160 m 520 -1160 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1164 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(2)Tj 0 1 1 rg -96 10 Td[(3)]TJ 
+ET 1 0 0 rg 475 -1195 10 -10 re b* 480 -1200 m 520 -1200 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1204 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(3)Tj 0 1 1 rg -96 10 Td[(4)]TJ 
+ET 1 0 0 rg 475 -1235 10 -10 re b* 480 -1240 m 520 -1240 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1244 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(4)Tj 0 1 1 rg -96 10 Td[(5)]TJ 
+ET 1 0 0 rg 475 -1275 10 -10 re b* 480 -1280 m 520 -1280 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1284 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(5)Tj 0 1 1 rg -96 10 Td[(6)]TJ 
+ET 1 0 0 rg 475 -1315 10 -10 re b* 480 -1320 m 520 -1320 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1324 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(6)Tj 0 1 1 rg -96 10 Td[(7)]TJ 
+ET 1 0 0 rg 475 -1355 10 -10 re b* 480 -1360 m 520 -1360 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1364 Td(G)Tj 21 0 Td(P)Tj 18 0 Td(B)Tj 17 0 Td(7)Tj 0 1 1 rg -96 10 Td[(8)]TJ 
+ET 1 0 0 rg 475 -1435 10 -10 re b* 480 -1440 m 520 -1440 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1444 Td(V)Tj 18 0 Td(D)Tj 19 0 Td(D)Tj 0 1 1 rg -77 10 Td[(9)]TJ 
+ET 1 0 0 rg 475 -1475 10 -10 re b* 480 -1480 m 520 -1480 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1484 Td(V)Tj 18 0 Td(S)Tj 18 0 Td(S)Tj 0 1 1 rg -76 10 Td(1)Tj 15 0 Td(0)Tj ET 1 0 0 rg 475 -1515 10 -10 re b* 480 -1520 m 520 -1520 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1524 Td(n)Tj 15 0 Td(c)Tj 0 1 1 rg -55 10 Td(1)Tj 15 0 Td(1)Tj ET 1 0 0 rg 475 -1595 10 -10 re b* 480 -1600 m 520 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1604 Td(S)Tj 18 0 Td(C)Tj 19 0 Td(L)Tj 0 1 1 rg -77 10 Td(1)Tj 15 0 Td(2)Tj ET 1 0 0 rg 475 -1635 10 -10 re b* 480 -1640 m 520 -1640 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1644 Td(S)Tj 18 0 Td(D)Tj 19 0 Td(A)Tj 0 1 1 rg -77 10 Td(1)Tj 15 0 Td(3)Tj ET 1 0 0 rg 475 -1675 10 -10 re b* 480 -1680 m 520 -1680 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts  0 g 530 -1684 Td(n)Tj 15 0 Td(c)Tj 0 1 1 rg -55 10 Td(1)Tj 15 0 Td(4)Tj ET 0 0 0.502 rg 0 0 0.502 RG 2420 -358 m 2460 -358 l 2460 -361 l 2420 -361 l 2420 -358 l  h 0 0 0.502 rg b* 2420 -361 m 2460 -361 l S 2425 -366 m 2455 -366 l S 2430 -371 m 2450 -371 l S 2435 -376 m 2445 -376 l S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2435 -315 10 -10 re b* 2440 -320 m 2440 -360 l S  0 G 2 w 1 J 1 j 2360 -1600 m 2520 -1600 l S 2360 -1720 m 2360 -1600 l S 2360 -1720 m 2520 -1720 l S 2520 -1720 m 2520 -1600 l S 2440 -1600 m 2440 -1720 l S 2465 -1655 m 2465 -1665 l S 2465 -1665 m 2495 -1665 l S 2495 -1665 m 2495 -1655 l S 2495 -1655 m 2465 -1655 l S 2415 -1655 m 2415 -1665 l S 2415 -1665 m 2385 -1665 l S 2385 -1665 m 2385 -1655 l S 2385 -1655 m 2415 -1655 l S 1 1 1 rg 2499.501 -1659.999 m 2499.501 -1649.229 2490.771 -1640.499 2480.001 -1640.499 c 2469.231 -1640.499 2460.501 -1649.229 2460.501 -1659.999 c 2460.501 -1670.769 2469.231 -1679.499 2480.001 -1679.499 c 2490.771 -1679.499 2499.501 -1670.769 2499.501 -1659.999 c h S 1 1 1 rg 2419.501 -1659.999 m 2419.501 -1649.229 2410.771 -1640.499 2400.001 -1640.499 c 2389.231 -1640.499 2380.501 -1649.229 2380.501 -1659.999 c 2380.501 -1670.769 2389.231 -1679.499 2400.001 -1679.499 c 2410.771 -1679.499 2419.501 -1670.769 2419.501 -1659.999 c h S 1 0 0 rg 1 0 0 RG 2 w 1 J 1 j 2475 -1555 10 -10 re b* 2480 -1560 m 2480 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2510 -1604 Td[(1)]TJ 
+ET 1 0 0 rg 2395 -1555 10 -10 re b* 2400 -1560 m 2400 -1600 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 27 Tf 0 Ts 0 1 1 rg 2430 -1604 Td[(2)]TJ 
+ET 0.502 0 0.502 RG 440 -1640 m 480 -1640 l S 480 -1600 m 440 -1600 l S 440 -800 m 480 -800 l S 440 -840 m 480 -840 l S 880 -720 m 920 -720 l S 880 -1520 m 920 -1520 l S 880 -840 m 920 -840 l S 880 -800 m 920 -800 l S 880 -1600 m 920 -1600 l S 880 -1640 m 920 -1640 l S 2440 -320 m 2580 -320 l S 2580 -320 m 2580 -600 l S 1 1 1 rg  0 G 2 w 1 J 1 j 90 -90 2790 -1920 re S 130 -90 m 90 -130 l S 90 -90 m 130 -130 l S 90 -130 m 2880 -130 l S 130 -90 m 130 -2010 l S 130 -500 m 90 -500 l S 130 -880 m 90 -880 l S 130 -1260 m 90 -1260 l S 130 -1640 m 90 -1640 l S 1810 -1940 m 2880 -1940 l S 2400 -2010 m 2400 -1870 l S 2160 -2010 m 2160 -1940 l S 1810 -1940 m 130 -1940 l S 580 -130 m 580 -90 l S 1040 -90 m 1040 -130 l S 1500 -90 m 1500 -130 l S 1950 -90 m 1950 -130 l S 2420 -90 m 2420 -130 l S 2400 -1870 m 2880 -1870 l S 1790 -1940 m 1790 -2010 l S 2400 -1870 m 1790 -1870 l S 1790 -1870 m 130 -1870 l S 
+BT 1 0 0 1 0 0 Tm
+/F1 45 Tf 0 Ts  0 g 160 -1991 Td(T)Tj 27 0 Td(I)Tj 12 0 Td(T)Tj 27 0 Td(R)Tj 33 0 Td(E)Tj 29 0 Td( )Tj 13 0 Td(:)Tj 12 0 Td( )Tj 12 0 Td(M)Tj 37 0 Td(o)Tj 24 0 Td(d)Tj 25 0 Td(u)Tj 25 0 Td(l)Tj 9 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(3)Tj 25 0 Td(2)Tj 24 0 Td( )Tj 13 0 Td(s)Tj 22 0 Td(o)Tj 25 0 Td(r)Tj 14 0 Td(t)Tj 13 0 Td(i)Tj 9 0 Td(e)Tj 25 0 Td(s)Tj 22 0 Td( )Tj 13 0 Td(I)Tj 12 0 Td(2)Tj 24 0 Td(C)Tj 33 0 Td( )Tj 12 0 Td(-)Tj 15 0 Td( )Tj 12 0 Td(E)Tj 30 0 Td(t)Tj 12 0 Td(a)Tj 24 0 Td(g)Tj 25 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(S)Tj 29 0 Td(o)Tj 25 0 Td(r)Tj 15 0 Td(t)Tj 12 0 Td(i)Tj 10 0 Td(e)Tj 24 0 Td(s)Tj /F1 36 Tf -688 1868 Td[(1)1]TJ 
+450 0 Td[(2)1]TJ 
+460 0 Td[(3)1]TJ 
+-1160 -200 Td[(A)]TJ 
+0 -380 Td[(B)]TJ 
+1620 580 Td[(4)1]TJ 
+920 0 Td[(6)1]TJ 
+-470 0 Td[(5)1]TJ 
+-2070 -960 Td[(C)]TJ 
+0 -380 Td[(D)]TJ 
+0 -370 Td[(E)]TJ 
+/F1 45 Tf 2340 -158 Td(M)Tj 37 0 Td(I)Tj 12 0 Td(C)Tj 32 0 Td(R)Tj 32 0 Td(O)Tj 35 0 Td( )Tj 12 0 Td(C)Tj 33 0 Td(O)Tj 34 0 Td(C)Tj 33 0 Td(K)Tj 29 0 Td(P)Tj 30 0 Td(I)Tj 12 0 Td(T)Tj 27 0 Td(Æ)Tj -958 0 Td(F)Tj 27 0 Td(o)Tj 25 0 Td(l)Tj 9 0 Td(i)Tj 10 0 Td(o)Tj 299 0 Td(V)Tj 30 0 Td(e)Tj 24 0 Td(r)Tj 15 0 Td( )Tj 12 0 Td(2)Tj 25 0 Td(.)Tj 12 0 Td(0)Tj -2168 70 Td(P)Tj 30 0 Td(R)Tj 32 0 Td(O)Tj 35 0 Td(J)Tj 22 0 Td(E)Tj 30 0 Td(T)Tj 27 0 Td( )Tj 12 0 Td(:)Tj 12 0 Td( )Tj 13 0 Td(M)Tj 36 0 Td(o)Tj 25 0 Td(d)Tj 24 0 Td(u)Tj 25 0 Td(l)Tj 10 0 Td(e)Tj 24 0 Td( )Tj 13 0 Td(3)Tj 24 0 Td(2)Tj 25 0 Td( )Tj 12 0 Td(s)Tj 22 0 Td(o)Tj 25 0 Td(r)Tj 15 0 Td(t)Tj 12 0 Td(i)Tj 10 0 Td(e)Tj 24 0 Td(s)Tj 23 0 Td( )Tj 12 0 Td(I)Tj 12 0 Td(2)Tj 25 0 Td(C)Tj 32 0 Td( )Tj 12 0 Td(p)Tj 25 0 Td(o)Tj 24 0 Td(u)Tj 25 0 Td(r)Tj 15 0 Td( )Tj 12 0 Td(R)Tj 32 0 Td(a)Tj 25 0 Td(c)Tj 22 0 Td(k)Tj 23 0 Td( )Tj 12 0 Td(E)Tj 30 0 Td(P)Tj 29 0 Td(I)Tj 12 0 Td(C)Tj 33 0 Td( )Tj 12 0 Td(A)Tj 30 0 Td(R)Tj 32 0 Td(D)Tj 1362 0 Td(1)Tj 25 0 Td(2)Tj 24 0 Td(/)Tj 12 0 Td(0)Tj 25 0 Td(5)Tj 24 0 Td(/)Tj 13 0 Td(2)Tj 24 0 Td(0)Tj 25 0 Td(2)Tj 24 0 Td(1)Tj -796 -70 Td(0)Tj 25 0 Td(2)Tj 45 0 Td[(/)15]TJ 
+30 0 Td(0)Tj 25 0 Td(2)Tj 345 70 Td(D)Tj 32 0 Td(a)Tj 25 0 Td(t)Tj 12 0 Td(e)Tj 25 0 Td( )Tj 12 0 Td(:)Tj ET Q 
+endstream
+endobj
+3 0 obj <<
+/Type/Encoding/Differences
+[128 /Euro]/BaseEncoding/WinAnsiEncoding
+>> endobj
+6 0 obj
+[ 750 750 278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556
+556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722
+722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667
+944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222
+222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260
+334 584 750 556 750 222 556 333 1000 556 556 333 1000 667 333 1000 750 611 750
+750 222 222 333 333 350 556 1000 333 1000 500 333 944 750 500 667 278 333 556
+556 556 556 260 556 333 737 370 556 584 333 737 552 400 549 333 333 333 576
+537 333 333 333 365 556 834 834 834 611 667 667 667 667 667 667 1000 722 667
+667 667 667 278 278 278 278 722 722 778 778 778 778 778 584 778 722 722 722
+722 667 667 611 556 556 556 556 556 556 889 500 556 556 556 556 278 278 278
+278 556 556 556 556 556 556 556 549 611 556 556 556 556 500 556 500 ]
+endobj
+7 0 obj <<
+/Type/FontDescriptor
+/FontName/Arial
+/Ascent 728
+/CapHeight 500
+/Descent -210
+/Flags 32
+/FontMatrix [0.001 0 0 0.001 0 0]
+/FontBBox [-665 -325 2000 1040]
+/ItalicAngle 0
+/StemV 0
+/AvgWidth 441
+/Leading 150
+/MaxWidth 0
+/XHeight 250
+>> endobj
+8 0 obj <<
+/Type/Font
+/Subtype/TrueType
+/BaseFont/Arial
+/Encoding 3 0 R
+/FirstChar 30
+/LastChar 255
+/Widths 6 0 R
+/FontDescriptor 7 0 R
+>> endobj
+9 0 obj <<
+/ProcSet [/PDF/Text/ImageC]
+/Font << /F1 8 0 R >>
+>> endobj
+10 0 obj <<
+/Type/Page
+/Parent 11 0 R
+/Resources 9 0 R
+/MediaBox [0 0 841.890 595.276]
+/Contents 4 0 R
+>> endobj
+12 0 obj <<
+/Type/Page
+/Parent 11 0 R
+/Resources 9 0 R
+/MediaBox [0 0 841.890 595.276]
+/Contents 5 0 R
+>> endobj
+11 0 obj <<
+/Type/Pages
+/Kids [ 10 0 R
+12 0 R ]
+/Count 2
+>> endobj
+13 0 obj <<
+/Type/Catalog
+/Pages 11 0 R
+/Metadata 1 0 R
+/PageMode/UseNone
+>> endobj
+xref
+0 14
+0000000000 65535 f
+0000000059 00000 n
+0000001631 00000 n
+0000074493 00000 n
+0000001898 00000 n
+0000022788 00000 n
+0000074587 00000 n
+0000075520 00000 n
+0000075776 00000 n
+0000075930 00000 n
+0000076007 00000 n
+0000076251 00000 n
+0000076129 00000 n
+0000076326 00000 n
+trailer
+<<
+/Size 14
+/Root 13 0 R
+/ID[<8f62d839ca5d2141b99210a2494dbcd5><8f62d839ca5d2141b99210a2494dbcd5>]
+/Info 2 0 R
+>>
+startxref
+76418
+%%EOF

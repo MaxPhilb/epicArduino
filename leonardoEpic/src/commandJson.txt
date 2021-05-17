@@ -1,0 +1,5 @@
+{"cmd" : "digOutput", "data" : [ {"channel" : 0, "state" : false}, {"channel" : 3, "state" : true} ]}!
+
+{"cmd" : "setEcho", "data" : false}!
+
+{"cmd" : "setEcho", "data" : true}!
