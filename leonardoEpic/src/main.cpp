@@ -3,12 +3,17 @@
 #include <ArduinoJson.h>
 #include <EEPROM.h>
 
-int addr = 0;
-bool echoMode = false;
-
+//constante
 #define nbDigOutput 32
 #define nbDigInput 192
 #define nbAnaInput 16
+
+#define addressMCP1 0x0
+#define addressMCP2 0x1
+
+//var global
+int addr = 0;
+bool echoMode = false;
 
 Adafruit_MCP23017 digOutput1;
 Adafruit_MCP23017 digOutput2;
@@ -22,6 +27,14 @@ struct STRUCT
   int anaInput[nbAnaInput];  //int
 } messageFromMega;
 
+/**
+ * 
+ *          PrintL
+ * 
+ *  afficher sur le port serie USB l'etat des entrees au format Json
+ * 
+ * 
+ **/
 void printL()
 {
 
@@ -57,6 +70,17 @@ void printL()
   Serial.print("]");
   Serial.println("}!");
 }
+
+/**
+ * 
+ * 
+ *    initDigOutput
+ * 
+ * 
+ *  initialiser les ports des composants MCP23017 en sortie
+ * 
+ * 
+ **/
 void initDigOutput()
 {
   for (int i = 0; i < 16; i++)
@@ -66,19 +90,16 @@ void initDigOutput()
   }
 }
 
-void setup()
-{
-  Serial.begin(115200);
-  Serial1.begin(115200);
-  myTransfer.begin(Serial1);
-
-  EEPROM.get(addr, echoMode);
-
-  digOutput1.begin(); // use default address 0
-  digOutput2.begin(); // use default address 0
-  initDigOutput();
-}
-
+/**
+ * 
+ * 
+ *    setOutput
+ * 
+ * 
+ *  changer l'etat d'un port des MCP23017
+ * 
+ * 
+ **/
 void setOutput(int channel, bool state)
 {
   if (channel >= 0 && channel <= 15)
@@ -101,6 +122,16 @@ void setOutput(int channel, bool state)
   */
 }
 
+/**
+ * 
+ * 
+ *    returnCorrectCommand
+ * 
+ * 
+ *  retourne un message sur le port serie USB pour signaler que le message a bien ete compris
+ * 
+ * 
+ **/
 void returnCorrectCommand()
 {
   doc.clear();
@@ -109,6 +140,16 @@ void returnCorrectCommand()
   serializeJsonPretty(doc, Serial);
 }
 
+/**
+ * 
+ * 
+ *    returnIncorretCommand
+ * 
+ * 
+ *  retourne un message sur le port serie USB pour signaler un probleme avec le message recu
+ * 
+ * 
+ **/
 void returnIncorretCommand(String desc)
 {
   doc.clear();
@@ -118,12 +159,32 @@ void returnIncorretCommand(String desc)
   serializeJsonPretty(doc, Serial);
 }
 
+/**
+ * 
+ * 
+ *    setEchoMode
+ * 
+ * 
+ *  Permet de changer l'etat de l'eeprom pour activer ou desactiver le retour des entrees sur le port serie
+ * 
+ * 
+ **/
 void setEchoMode(bool state)
 {
   EEPROM.put(addr, state);
   echoMode = state;
 }
 
+/**
+ * 
+ * 
+ *    interprete
+ * 
+ * 
+ *  decode le message recu sur le port serie USB
+ * 
+ * 
+ **/
 void interprete()
 {
   JsonObject object = doc.as<JsonObject>();
@@ -189,19 +250,32 @@ void interprete()
   }
 }
 
+void setup()
+{
+  Serial.begin(115200);
+  Serial1.begin(115200);
+  myTransfer.begin(Serial1);
+
+  EEPROM.get(addr, echoMode); //lit dans leeprom si le mode echo est activé
+
+  digOutput1.begin(addressMCP1);
+  digOutput2.begin(addressMCP2);
+  initDigOutput();
+}
+
 void loop()
 {
   if (myTransfer.available())
   {
 
-    myTransfer.rxObj(messageFromMega);
+    myTransfer.rxObj(messageFromMega); //lit le retour en provenance de larduino Mega
     if (echoMode)
     {
       printL();
     }
   }
 
-  if (Serial.available())
+  if (Serial.available()) //lit les informations sur le port serie USB
   {
     String messageFromUSB = Serial.readStringUntil('!');
     //Serial.println(messageFromUSB);
