@@ -12,8 +12,20 @@
 #define addressMCP1 0x0
 #define addressMCP2 0x1
 
+#define JOYSTICK_COUNT 6
+
+Joystick_ Joystick[JOYSTICK_COUNT] = {
+    Joystick_(0x03, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x04, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x05, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x06, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x07, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false),
+    Joystick_(0x08, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
+
+};
+
 //var global
-int addr = 0;
+int addrEEPROM = 0; //pour variable echo sur EEPROM
 bool echoMode = false;
 
 Adafruit_MCP23017 digOutput1;
@@ -172,7 +184,7 @@ void returnIncorretCommand(String desc)
  **/
 void setEchoMode(bool state)
 {
-  EEPROM.put(addr, state);
+  EEPROM.put(addrEEPROM, state);
   echoMode = state;
 }
 
@@ -257,7 +269,7 @@ void setup()
   Serial1.begin(115200);
   myTransfer.begin(Serial1);
 
-  EEPROM.get(addr, echoMode); //lit dans leeprom si le mode echo est activé
+  EEPROM.get(addrEEPROM, echoMode); //lit dans leeprom si le mode echo est activé
 
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
