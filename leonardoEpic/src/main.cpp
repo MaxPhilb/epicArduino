@@ -9,9 +9,6 @@
 #define nbDigInput 192
 #define nbAnaInput 16
 
-#define addressMCP1 0x0
-#define addressMCP2 0x1
-
 #define JOYSTICK_COUNT 6
 
 Joystick_ Joystick[JOYSTICK_COUNT] = {
@@ -31,7 +28,11 @@ bool echoMode = false;
 Adafruit_MCP23017 digOutput1;
 Adafruit_MCP23017 digOutput2;
 
-StaticJsonDocument<256> doc;
+uint8_t addressMCP1 = 0x00;
+uint8_t addressMCP2 = 0x01;
+
+StaticJsonDocument<256>
+    doc;
 SerialTransfer myTransfer;
 
 struct STRUCT
@@ -269,7 +270,7 @@ void setup()
   Serial1.begin(115200);
   myTransfer.begin(Serial1);
 
-  EEPROM.get(addrEEPROM, echoMode); //lit dans leeprom si le mode echo est activé
+  EEPROM.get(addrEEPROM, echoMode); //lit dans leeprom si le mode echo est active
 
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
