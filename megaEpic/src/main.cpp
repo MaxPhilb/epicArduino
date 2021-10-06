@@ -3,7 +3,7 @@
 #include "SerialTransfer.h"
 
 #define NB_CHIP 24
-#define nbDigInput 192
+#define nbDigInput NB_CHIP * 8
 #define nbAnaInput 16
 
 SerialTransfer myTransfer;
@@ -35,10 +35,38 @@ void analogReadInput()
   Serial.println();
 }
 
+//reset chip select
+void resetchipselect()
+{
+  for (int i = 0; i < NB_CHIP; i++)
+  {
+    digitalWrite(chipsSelect[i], HIGH);
+  }
+}
+
+// chip select
+void initchipselect()
+{
+  for (int i = 0; i < NB_CHIP; i++)
+  {
+    pinMode(chipsSelect[i], OUTPUT);
+  }
+  resetchipselect();
+}
+
 void digitalReadInput()
 {
-  for (int i = 0; i <= nbDigInput; i++)
+  resetchipselect();
+
+  for (int i = 0; i < NB_CHIP; i++)
   {
+    digitalWrite(chipsSelect[i], LOW);
+    delay(0.5);
+    for (int j = 0; j < 8; j++)
+    {
+      int selectedInput = i * 8 + j;
+      message.digInput[selectedInput] = digitalRead(dataPin[j]);
+    }
   }
 }
 
@@ -57,25 +85,6 @@ void initMsg()
   {
     message.anaInput[i] = -1;
   }
-}
-
-//reset chip select
-void resetchipselect()
-{
-  for (int i = 0; i < NB_CHIP; i++)
-  {
-    digitalWrite(chipsSelect[i], HIGH);
-  }
-}
-
-// chip select
-void initchipselect()
-{
-  for (int i = 0; i < NB_CHIP; i++)
-  {
-    pinMode(chipsSelect[i], OUTPUT);
-  }
-  resetchipselect();
 }
 
 void setup()
