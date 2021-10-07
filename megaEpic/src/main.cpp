@@ -56,18 +56,23 @@ void initchipselect()
 
 void digitalReadInput()
 {
+  Serial.print("Read Input start at ");
+  Serial.println(millis());
   resetchipselect();
-
+  delayMicroseconds(2);
   for (int i = 0; i < NB_CHIP; i++)
   {
     digitalWrite(chipsSelect[i], LOW);
-    delay(0.5);
+    delayMicroseconds(5);
     for (int j = 0; j < 8; j++)
     {
-      int selectedInput = i * 8 + j;
+      int selectedInput = (i * 8) + j;
       message.digInput[selectedInput] = digitalRead(dataPin[j]);
     }
   }
+
+  Serial.print("Read Input end at ");
+  Serial.println(millis());
 }
 
 //chipselect->bas
@@ -102,8 +107,11 @@ void loop()
   digitalReadInput();
 
   //pour test
+
+  /*
   lastValue = !lastValue;
   message.digInput[0] = lastValue;
+  */
   // f
 
   analogReadInput();
