@@ -62,6 +62,10 @@ void digitalReadInput()
   delayMicroseconds(2);
   for (int i = 0; i < NB_CHIP; i++)
   {
+    if (i > 0)
+    {
+      digitalWrite(chipsSelect[i - 1], HIGH);
+    }
     digitalWrite(chipsSelect[i], LOW);
     delayMicroseconds(5);
     for (int j = 0; j < 8; j++)
@@ -70,6 +74,7 @@ void digitalReadInput()
       message.digInput[selectedInput] = digitalRead(dataPin[j]);
     }
   }
+  digitalWrite(chipsSelect[NB_CHIP - 1], LOW);
 
   Serial.print("Read Input end at ");
   Serial.println(millis());
