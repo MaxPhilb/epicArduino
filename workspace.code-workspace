@@ -10,6 +10,12 @@
 		},
 		{
 			"path": "docs"
+		},
+		{
+			"path": "OutilsTest"
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python"
+	}
 }

@@ -7,8 +7,8 @@
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
-#define DEBUG false
-#define DEBUG_EXECUTION_TIME true
+//#define DEBUG f
+//#define DEBUG_EXECUTION_TIME
 
 SerialTransfer myTransfer;
 
@@ -107,26 +107,24 @@ void digitalReadInput()
     {
       int selectedInput = (i * 8) + j;
       message.digInput[selectedInput] = digitalRead(dataPin[j]);
-      if (DEBUG)
-      {
-        Serial.print(" ");
-        Serial.print(message.digInput[selectedInput]);
-      }
+#ifdef DEBUG
+      Serial.print(" ");
+      Serial.print(message.digInput[selectedInput]);
+#endif
     }
-    if (DEBUG)
-    {
-      Serial.println();
-      //delay(1000);
-    }
+#ifdef DEBUG
+    Serial.println();
+    //delay(1000);
+#endif
   }
   digitalWrite(chipsSelect[NB_CHIP - 1], LOW);
 
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("\tRead digital Input end at ");
-    Serial.println(millis());
-    Serial.println();
-  }
+#ifdef DEBUG_EXECUTION_TIME
+
+  Serial.print("\tRead digital Input end at ");
+  Serial.println(millis());
+  Serial.println();
+#endif
 }
 
 //chipselect->bas
@@ -160,24 +158,24 @@ bool lastValue = false;
 
 void loop()
 {
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("loop start at ");
-    Serial.println(millis());
-  }
+#ifdef DEBUG_EXECUTION_TIME
+
+  Serial.print("loop start at ");
+  Serial.println(millis());
+
+#endif
+
   digitalReadInput();
   analogReadInput();
   myTransfer.sendDatum(message);
 
-  if (DEBUG)
-  {
-    delay(1000);
-  }
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("loop end at ");
-    Serial.println(millis());
-    Serial.println();
-    delay(1000);
-  }
+#ifdef DEBUG
+  delay(1000);
+#endif
+#ifdef DEBUG_EXECUTION_TIME
+  Serial.print("loop end at ");
+  Serial.println(millis());
+  Serial.println();
+  delay(1000);
+#endif
 }
