@@ -17,21 +17,24 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(400, 300)
+        Dialog.resize(423, 300)
         self.buttonBox = QDialogButtonBox(Dialog)
         self.buttonBox.setObjectName(u"buttonBox")
-        self.buttonBox.setGeometry(QRect(250, 10, 81, 241))
+        self.buttonBox.setGeometry(QRect(10, 50, 400, 241))
         self.buttonBox.setOrientation(Qt.Vertical)
         self.buttonBox.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
+        self.loadSelectedButton = QPushButton(Dialog)
+        self.loadSelectedButton.setObjectName(u"loadSelectedButton")
+        self.loadSelectedButton.setGeometry(QRect(10, 20, 113, 32))
 
         self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
+        self.buttonBox.rejected.connect(self.buttonBox.update)
 
         QMetaObject.connectSlotsByName(Dialog)
     # setupUi
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.loadSelectedButton.setText(QCoreApplication.translate("Dialog", u"PushButton", None))
     # retranslateUi
 
