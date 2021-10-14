@@ -1,11 +1,32 @@
+import serial
+import glob
 import sys
+import pygame
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QFile, QIODevice
+import serial.tools.list_ports
 
 
 def connectSerial():
     print("serial")
+
+
+def listJoystick():
+    pygame.joystick.init()
+    joysticks = []
+    for x in range(pygame.joystick.get_count()):
+        joysticks.append(pygame.joystick.Joystick(x))
+    return joysticks
+
+
+def listSerialPort():
+    ports = serial.tools.list_ports.comports()
+    listPorts = []
+    for port, desc, hwid in sorted(ports):
+        print("{}: {} [{}]".format(port, desc, hwid))
+        listPorts.append(port)
+    return listPorts
 
 
 def connectJoystick():
@@ -23,6 +44,16 @@ if __name__ == "__main__":
     loader = QUiLoader()
     window = loader.load(ui_file)
 
+    joysticks = listJoystick()
+    for joystick in joysticks:
+        print("joystick ")
+        print(str(joystick.get_instance_id()) + "_" +
+              joystick.get_name()+"_" + str(joystick.get_guid()))
+        window.comboJoystick.addItem(str(joystick.get_instance_id()) + "_" +
+                                     joystick.get_name())
+    listSerial = listSerialPort()
+    for port in listSerial:
+        window.comboSerial.addItem(port)
     window.btnSerial.clicked.connect(connectSerial)
     window.btnJoystick.clicked.connect(connectJoystick)
 

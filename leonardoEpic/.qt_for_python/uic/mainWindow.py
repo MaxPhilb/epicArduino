@@ -34,40 +34,48 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.verticalLayout_5 = QVBoxLayout()
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.textEdit = QTextEdit(self.centralwidget)
-        self.textEdit.setObjectName(u"textEdit")
+        self.label = QLabel(self.centralwidget)
+        self.label.setObjectName(u"label")
 
-        self.verticalLayout_5.addWidget(self.textEdit)
+        self.verticalLayout_5.addWidget(self.label)
 
-        self.comboBox = QComboBox(self.centralwidget)
-        self.comboBox.setObjectName(u"comboBox")
+        self.comboSerial = QComboBox(self.centralwidget)
+        self.comboSerial.setObjectName(u"comboSerial")
 
-        self.verticalLayout_5.addWidget(self.comboBox)
+        self.verticalLayout_5.addWidget(self.comboSerial)
 
         self.btnSerial = QPushButton(self.centralwidget)
         self.btnSerial.setObjectName(u"btnSerial")
 
         self.verticalLayout_5.addWidget(self.btnSerial)
 
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_5.addItem(self.verticalSpacer_2)
+
 
         self.horizontalLayout.addLayout(self.verticalLayout_5)
 
         self.verticalLayout_4 = QVBoxLayout()
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.textEdit_2 = QTextEdit(self.centralwidget)
-        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
 
-        self.verticalLayout_4.addWidget(self.textEdit_2)
+        self.verticalLayout_4.addWidget(self.label_2)
 
-        self.comboBox_2 = QComboBox(self.centralwidget)
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboJoystick = QComboBox(self.centralwidget)
+        self.comboJoystick.setObjectName(u"comboJoystick")
 
-        self.verticalLayout_4.addWidget(self.comboBox_2)
+        self.verticalLayout_4.addWidget(self.comboJoystick)
 
         self.btnJoystick = QPushButton(self.centralwidget)
         self.btnJoystick.setObjectName(u"btnJoystick")
 
         self.verticalLayout_4.addWidget(self.btnJoystick)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer_4)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_4)
@@ -75,10 +83,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addLayout(self.horizontalLayout)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(2)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_3)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_3.addItem(self.verticalSpacer_5)
 
 
         self.verticalLayout.addLayout(self.verticalLayout_3)
@@ -105,8 +118,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionQuitter.setText(QCoreApplication.translate("MainWindow", u"Quitter", None))
-        self.btnSerial.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.btnJoystick.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Choisir un port serie", None))
+        self.btnSerial.setText(QCoreApplication.translate("MainWindow", u"Connecter", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Choisir  un joystick", None))
+        self.btnJoystick.setText(QCoreApplication.translate("MainWindow", u"Ouvrir", None))
         self.menuFichier.setTitle(QCoreApplication.translate("MainWindow", u"Fichier", None))
     # retranslateUi
 
