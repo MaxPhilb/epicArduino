@@ -3,8 +3,9 @@ import glob
 import sys
 import pygame
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import *
 from PySide6.QtCore import QFile, QIODevice
+from PySide6.QtGui import *
 import serial.tools.list_ports
 
 
@@ -33,6 +34,11 @@ def connectJoystick():
     print("joysticl")
 
 
+listCheckBox = []
+# contenuGrid=QVBoxLayout()
+gridLayout = QGridLayout()
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
@@ -56,6 +62,13 @@ if __name__ == "__main__":
         window.comboSerial.addItem(port)
     window.btnSerial.clicked.connect(connectSerial)
     window.btnJoystick.clicked.connect(connectJoystick)
+
+    for index in range(32):
+        ck = QCheckBox(str(index))
+        listCheckBox.append(ck)
+        gridLayout.addWidget(ck, index-(index % 4), index % 4)
+
+    window.contenuGrid.addLayout(gridLayout)
 
     ui_file.close()
     if not window:
