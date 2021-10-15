@@ -4,7 +4,7 @@
 #include <EEPROM.h>
 #include <Joystick.h>
 
-//constante
+// constante
 #define nbDigOutput 32
 #define nbDigInput 192
 #define nbAnaInput 16
@@ -21,8 +21,8 @@ Joystick_ Joystick[JOYSTICK_COUNT] = {
 
 };
 
-//var global
-int addrEEPROM = 0; //pour variable echo sur EEPROM
+// var global
+int addrEEPROM = 0; // pour variable echo sur EEPROM
 bool echoMode = false;
 
 Adafruit_MCP23017 digOutput1;
@@ -37,23 +37,65 @@ SerialTransfer myTransfer;
 
 struct STRUCT
 {
-  bool digInput[nbDigInput]; //bool
-  int anaInput[nbAnaInput];  //int
+  bool digInput[nbDigInput]; // bool
+  int anaInput[nbAnaInput];  // int
 } messageFromMega;
 
 /**
- * 
+ *
+ *          ConfJoy
+ *
+ *  transformer le message en provenance du mega vers les joysticks
+ *
+ *
+ **/
+void confJoy()
+{
+
+  // analogique 0 à 7
+  Joystick[4].setXAxis(messageFromMega.anaInput[0]);
+  Joystick[4].setYAxis(messageFromMega.anaInput[1]);
+  Joystick[4].setZAxis(messageFromMega.anaInput[2]);
+  Joystick[4].setRxAxis(messageFromMega.anaInput[3]);
+  Joystick[4].setRyAxis(messageFromMega.anaInput[4]);
+  Joystick[4].setRzAxis(messageFromMega.anaInput[5]);
+  Joystick[4].setRudder(messageFromMega.anaInput[6]);
+  Joystick[4].setThrottle(messageFromMega.anaInput[7]);
+
+  // analogique 8 à 15
+  Joystick[5].setXAxis(messageFromMega.anaInput[8]);
+  Joystick[5].setYAxis(messageFromMega.anaInput[9]);
+  Joystick[5].setZAxis(messageFromMega.anaInput[10]);
+  Joystick[5].setRxAxis(messageFromMega.anaInput[11]);
+  Joystick[5].setRyAxis(messageFromMega.anaInput[12]);
+  Joystick[5].setRzAxis(messageFromMega.anaInput[13]);
+  Joystick[5].setRudder(messageFromMega.anaInput[14]);
+  Joystick[5].setThrottle(messageFromMega.anaInput[15]);
+
+  for (int i = 0; i < nbDigInput; i++)
+  {
+    if (messageFromMega.digInput[i])
+    {
+      Joystick[i % 32].pressButton(i - ((i % 32) * 32));
+    }
+    else
+    {
+      Joystick[i % 32].releaseButton(i - ((i % 32) * 32));
+    }
+  }
+}
+
+/**
+ *
  *          PrintL
- * 
+ *
  *  afficher sur le port serie USB l'etat des entrees au format Json
- * 
- * 
+ *
+ *
  **/
 void printL()
 {
 
-  Serial.print("{\"cmd\": \"stateAnaInput\",\"data\":");
-  Serial.print("[");
   for (int i = 0; i < nbAnaInput; i++)
   {
     Serial.print("{\"channel\"");
@@ -65,8 +107,6 @@ void printL()
     Serial.print(messageFromMega.anaInput[i]);
     Serial.print("}");
   }
-  Serial.println("]");
-  Serial.println("}!");
 
   Serial.print("{\"cmd\": \"stateDigInput\",\"data\":");
   Serial.print("[");
@@ -86,14 +126,14 @@ void printL()
 }
 
 /**
- * 
- * 
+ *
+ *
  *    initDigOutput
- * 
- * 
+ *
+ *
  *  initialiser les ports des composants MCP23017 en sortie
- * 
- * 
+ *
+ *
  **/
 void initDigOutput()
 {
@@ -105,14 +145,14 @@ void initDigOutput()
 }
 
 /**
- * 
- * 
+ *
+ *
  *    setOutput
- * 
- * 
+ *
+ *
  *  changer l'etat d'un port des MCP23017
- * 
- * 
+ *
+ *
  **/
 void setOutput(int channel, bool state)
 {
@@ -137,14 +177,14 @@ void setOutput(int channel, bool state)
 }
 
 /**
- * 
- * 
+ *
+ *
  *    returnCorrectCommand
- * 
- * 
+ *
+ *
  *  retourne un message sur le port serie USB pour signaler que le message a bien ete compris
- * 
- * 
+ *
+ *
  **/
 void returnCorrectCommand()
 {
@@ -155,14 +195,14 @@ void returnCorrectCommand()
 }
 
 /**
- * 
- * 
+ *
+ *
  *    returnIncorretCommand
- * 
- * 
+ *
+ *
  *  retourne un message sur le port serie USB pour signaler un probleme avec le message recu
- * 
- * 
+ *
+ *
  **/
 void returnIncorretCommand(String desc)
 {
@@ -174,14 +214,14 @@ void returnIncorretCommand(String desc)
 }
 
 /**
- * 
- * 
+ *
+ *
  *    setEchoMode
- * 
- * 
+ *
+ *
  *  Permet de changer l'etat de l'eeprom pour activer ou desactiver le retour des entrees sur le port serie
- * 
- * 
+ *
+ *
  **/
 void setEchoMode(bool state)
 {
@@ -190,14 +230,14 @@ void setEchoMode(bool state)
 }
 
 /**
- * 
- * 
+ *
+ *
  *    interprete
- * 
- * 
+ *
+ *
  *  decode le message recu sur le port serie USB
- * 
- * 
+ *
+ *
  **/
 void interprete()
 {
@@ -270,7 +310,7 @@ void setup()
   Serial1.begin(115200);
   myTransfer.begin(Serial1);
 
-  EEPROM.get(addrEEPROM, echoMode); //lit dans leeprom si le mode echo est active
+  EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
 
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
@@ -282,17 +322,18 @@ void loop()
   if (myTransfer.available())
   {
 
-    myTransfer.rxObj(messageFromMega); //lit le retour en provenance de larduino Mega
+    myTransfer.rxObj(messageFromMega); // lit le retour en provenance de larduino Mega
     if (echoMode)
     {
       printL();
     }
+    confJoy();
   }
 
-  if (Serial.available()) //lit les informations sur le port serie USB
+  if (Serial.available()) // lit les informations sur le port serie USB
   {
     String messageFromUSB = Serial.readStringUntil('!');
-    //Serial.println(messageFromUSB);
+    // Serial.println(messageFromUSB);
     deserializeJson(doc, messageFromUSB);
     interprete();
   }

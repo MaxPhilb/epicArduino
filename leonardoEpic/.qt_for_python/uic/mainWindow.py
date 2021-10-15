@@ -49,10 +49,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.btnSerial)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_5.addItem(self.verticalSpacer_2)
-
 
         self.horizontalLayout.addLayout(self.verticalLayout_5)
 
@@ -72,10 +68,6 @@ class Ui_MainWindow(object):
         self.btnJoystick.setObjectName(u"btnJoystick")
 
         self.verticalLayout_4.addWidget(self.btnJoystick)
-
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_4.addItem(self.verticalSpacer_4)
 
 
         self.horizontalLayout.addLayout(self.verticalLayout_4)
@@ -114,24 +106,25 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addLayout(self.verticalLayout_7)
 
-        self.verticalLayout_6 = QVBoxLayout()
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.contenuAna = QVBoxLayout()
+        self.contenuAna.setObjectName(u"contenuAna")
         self.contenuGrid = QVBoxLayout()
         self.contenuGrid.setObjectName(u"contenuGrid")
+        self.BoolIN = QLabel(self.centralwidget)
+        self.BoolIN.setObjectName(u"BoolIN")
+
+        self.contenuGrid.addWidget(self.BoolIN)
+
+
+        self.contenuAna.addLayout(self.contenuGrid)
+
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
 
-        self.contenuGrid.addWidget(self.label_4)
+        self.contenuAna.addWidget(self.label_4)
 
 
-        self.verticalLayout_6.addLayout(self.contenuGrid)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.verticalLayout_6.addItem(self.horizontalSpacer_2)
-
-
-        self.horizontalLayout_2.addLayout(self.verticalLayout_6)
+        self.horizontalLayout_2.addLayout(self.contenuAna)
 
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_2)
@@ -169,7 +162,8 @@ class Ui_MainWindow(object):
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"D\u00e9marrer", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"R\u00e9sultat:", None))
         self.resultat.setText(QCoreApplication.translate("MainWindow", u"ms", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Bool In:", None))
+        self.BoolIN.setText(QCoreApplication.translate("MainWindow", u"Bool In:", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Analog In:", None))
         self.menuFichier.setTitle(QCoreApplication.translate("MainWindow", u"Fichier", None))
     # retranslateUi
 

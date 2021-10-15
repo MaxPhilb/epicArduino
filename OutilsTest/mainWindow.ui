@@ -53,19 +53,6 @@
             </property>
            </widget>
           </item>
-          <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
          </layout>
         </item>
         <item>
@@ -86,19 +73,6 @@
              <string>Ouvrir</string>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </item>
@@ -152,11 +126,11 @@
          </layout>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
+         <layout class="QVBoxLayout" name="contenuAna">
           <item>
            <layout class="QVBoxLayout" name="contenuGrid">
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="BoolIN">
               <property name="text">
                <string>Bool In:</string>
               </property>
@@ -165,17 +139,11 @@
            </layout>
           </item>
           <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Analog In:</string>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+           </widget>
           </item>
          </layout>
         </item>
