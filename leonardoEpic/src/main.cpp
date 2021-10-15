@@ -49,6 +49,7 @@ struct STRUCT
  *
  *
  **/
+/*
 void confJoy()
 {
 
@@ -84,6 +85,7 @@ void confJoy()
     }
   }
 }
+*/
 
 /**
  *
@@ -98,31 +100,31 @@ void printL()
 
   for (int i = 0; i < nbAnaInput; i++)
   {
-    Serial.print("{\"channel\"");
-    Serial.print(":");
+    Serial.print(F("{\"channel\""));
+    Serial.print(F(":"));
     Serial.print(i);
-    Serial.print(",");
-    Serial.print("\"state\"");
-    Serial.print(":");
+    Serial.print(F(","));
+    Serial.print(F("\"state\""));
+    Serial.print(F(":"));
     Serial.print(messageFromMega.anaInput[i]);
-    Serial.print("}");
+    Serial.print(F("}"));
   }
 
-  Serial.print("{\"cmd\": \"stateDigInput\",\"data\":");
-  Serial.print("[");
+  Serial.print(F("{\"cmd\": \"stateDigInput\",\"data\":"));
+  Serial.print(F("["));
   for (int i = 0; i < nbDigInput; i++)
   {
-    Serial.print("{\"channel\"");
-    Serial.print(":");
+    Serial.print(F("{\"channel\""));
+    Serial.print(F(":"));
     Serial.print(i);
-    Serial.print(",");
-    Serial.print("\"state\"");
-    Serial.print(":");
+    Serial.print(F(","));
+    Serial.print(F("\"state\""));
+    Serial.print(F(":"));
     Serial.print(messageFromMega.digInput[i]);
-    Serial.print("}");
+    Serial.print(F("}"));
   }
-  Serial.print("]");
-  Serial.println("}!");
+  Serial.print(F("]"));
+  Serial.println(F("}!"));
 }
 
 /**
@@ -327,7 +329,7 @@ void loop()
     {
       printL();
     }
-    confJoy();
+    //confJoy();
   }
 
   if (Serial.available()) // lit les informations sur le port serie USB
