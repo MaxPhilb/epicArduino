@@ -1,13 +1,22 @@
-#include "SerialTransfer.h"
+
 #include <Adafruit_MCP23017.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
 #include <Joystick.h>
 
 // constante
-#define nbDigOutput 32
-#define nbDigInput 192
+#define NB_INPUT 8
+#define NB_CHIP 24
+#define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
+
+struct STRUCT
+{
+  byte digInput[NB_CHIP];   // bool
+  int anaInput[nbAnaInput]; // int
+} message;
+
+const uint8_t entete = 45;
 
 #define JOYSTICK_COUNT 6
 
@@ -31,15 +40,7 @@ Adafruit_MCP23017 digOutput2;
 uint8_t addressMCP1 = 0x00;
 uint8_t addressMCP2 = 0x01;
 
-StaticJsonDocument<256>
-    doc;
-SerialTransfer myTransfer;
-
-struct STRUCT
-{
-  bool digInput[nbDigInput]; // bool
-  int anaInput[nbAnaInput];  // int
-} messageFromMega;
+StaticJsonDocument<256> doc;
 
 /**
  *
@@ -49,43 +50,59 @@ struct STRUCT
  *
  *
  **/
-/*
+
 void confJoy()
 {
 
   // analogique 0 à 7
-  Joystick[4].setXAxis(messageFromMega.anaInput[0]);
-  Joystick[4].setYAxis(messageFromMega.anaInput[1]);
-  Joystick[4].setZAxis(messageFromMega.anaInput[2]);
-  Joystick[4].setRxAxis(messageFromMega.anaInput[3]);
-  Joystick[4].setRyAxis(messageFromMega.anaInput[4]);
-  Joystick[4].setRzAxis(messageFromMega.anaInput[5]);
-  Joystick[4].setRudder(messageFromMega.anaInput[6]);
-  Joystick[4].setThrottle(messageFromMega.anaInput[7]);
+  Joystick[4].setXAxis(message.anaInput[0]);
+  Joystick[4].setYAxis(message.anaInput[1]);
+  Joystick[4].setZAxis(message.anaInput[2]);
+  Joystick[4].setRxAxis(message.anaInput[3]);
+  Joystick[4].setRyAxis(message.anaInput[4]);
+  Joystick[4].setRzAxis(message.anaInput[5]);
+  Joystick[4].setRudder(message.anaInput[6]);
+  Joystick[4].setThrottle(message.anaInput[7]);
 
   // analogique 8 à 15
-  Joystick[5].setXAxis(messageFromMega.anaInput[8]);
-  Joystick[5].setYAxis(messageFromMega.anaInput[9]);
-  Joystick[5].setZAxis(messageFromMega.anaInput[10]);
-  Joystick[5].setRxAxis(messageFromMega.anaInput[11]);
-  Joystick[5].setRyAxis(messageFromMega.anaInput[12]);
-  Joystick[5].setRzAxis(messageFromMega.anaInput[13]);
-  Joystick[5].setRudder(messageFromMega.anaInput[14]);
-  Joystick[5].setThrottle(messageFromMega.anaInput[15]);
+  Joystick[5].setXAxis(message.anaInput[8]);
+  Joystick[5].setYAxis(message.anaInput[9]);
+  Joystick[5].setZAxis(message.anaInput[10]);
+  Joystick[5].setRxAxis(message.anaInput[11]);
+  Joystick[5].setRyAxis(message.anaInput[12]);
+  Joystick[5].setRzAxis(message.anaInput[13]);
+  Joystick[5].setRudder(message.anaInput[14]);
+  Joystick[5].setThrottle(message.anaInput[15]);
 
-  for (int i = 0; i < nbDigInput; i++)
+  bool listBit[NB_CHIP * NB_INPUT];
+  for (int i = 0; i < NB_CHIP; i++)
   {
-    if (messageFromMega.digInput[i])
+    for (int j = 0; j < NB_INPUT; j++)
     {
-      Joystick[i % 32].pressButton(i - ((i % 32) * 32));
-    }
-    else
-    {
-      Joystick[i % 32].releaseButton(i - ((i % 32) * 32));
+
+      bool stateBit = bitRead(message.digInput[i], j);
+      listBit[(i * NB_INPUT) + j] = stateBit;
     }
   }
+
+  for (int i = 0; i < JOYSTICK_COUNT; i++)
+  {
+    for (int j = 0; j < 32; j++)
+    {
+      // Serial.print(" ");
+      // Serial.print(listBit[(i * 32) + j], BIN);
+      if (listBit[(i * 32) + j])
+      {
+        Joystick[i].pressButton(j);
+      }
+      else
+      {
+        Joystick[i].releaseButton(j);
+      }
+    }
+  }
+  // Serial.println();
 }
-*/
 
 /**
  *
@@ -106,7 +123,7 @@ void printL()
     Serial.print(F(","));
     Serial.print(F("\"state\""));
     Serial.print(F(":"));
-    Serial.print(messageFromMega.anaInput[i]);
+    // Serial.print(messageFromMega.anaInput[i]);
     Serial.print(F("}"));
   }
 
@@ -120,7 +137,7 @@ void printL()
     Serial.print(F(","));
     Serial.print(F("\"state\""));
     Serial.print(F(":"));
-    Serial.print(messageFromMega.digInput[i]);
+    // Serial.print(messageFromMega.digInput[i]);
     Serial.print(F("}"));
   }
   Serial.print(F("]"));
@@ -310,7 +327,6 @@ void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
-  myTransfer.begin(Serial1);
 
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
 
@@ -321,16 +337,26 @@ void setup()
 
 void loop()
 {
-  if (myTransfer.available())
+  if (Serial1.available())
   {
 
-    myTransfer.rxObj(messageFromMega); // lit le retour en provenance de larduino Mega
-    if (echoMode)
+    if (Serial1.read() == entete)
     {
-      printL();
+      Serial.println("REcu");
+      Serial1.readBytes(message.digInput, NB_CHIP);
+      Serial.println("REcu2");
+      for (int i = 0; i <= NB_CHIP; i++)
+      {
+        Serial.println(message.digInput[i], BIN);
+      }
     }
-    //confJoy();
   }
+  // myTransfer.rxObj(messageFromMega); // lit le retour en provenance de larduino Mega
+  if (echoMode)
+  {
+    printL();
+  }
+  confJoy();
 
   if (Serial.available()) // lit les informations sur le port serie USB
   {

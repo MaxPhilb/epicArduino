@@ -1,71 +1,79 @@
 #include <Arduino.h>
 #include "Wire.h"
-#include "SerialTransfer.h"
 
 #define NB_INPUT 8
 #define NB_CHIP 24
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
-//#define DEBUG f
+#define DEBUG
 //#define DEBUG_EXECUTION_TIME
 
-SerialTransfer myTransfer;
+const byte entete = 45;
 
 const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15};
 
-//port L pour les DATA
+// port L pour les DATA
 const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 
-//liste des chip select
+// liste des chip select
 const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
 struct STRUCT
 {
-  bool digInput[nbDigInput]; //bool
-  int anaInput[nbAnaInput];  //int
+  byte digInput[NB_CHIP];
+  int anaInput[nbAnaInput]; // int
 } message;
 
 void analogReadInput()
 {
-  if (DEBUG)
-  {
-    Serial.println("analogRead");
-  }
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("\tRead analog Input start at ");
-    Serial.println(millis());
-  }
+#ifdef DEBUG
+
+  Serial.println("analogRead");
+
+#endif
+
+#ifdef DEBUG_EXECUTION_TIME
+
+  Serial.print("\tRead analog Input start at ");
+  Serial.println(millis());
+
+#endif
   for (int i = 0; i < nbAnaInput; i++)
   {
     message.anaInput[i] = analogRead(anaPin[i]);
-    //message.anaInput[i]=random(nbAnaInput);
-    if (DEBUG)
-    {
-      Serial.print(message.anaInput[i]);
-      Serial.print(" ");
-    }
+    // message.anaInput[i]=random(nbAnaInput);
+#ifdef DEBUG
+
+    Serial.print(message.anaInput[i]);
+    Serial.print(" ");
+
+#endif
   }
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("\tRead analog Input end at ");
-    Serial.println(millis());
-    Serial.println();
-  }
-  if (DEBUG)
-  {
-    Serial.println();
-  }
+#ifdef DEBUG_EXECUTION_TIME
+
+  Serial.print("\tRead analog Input end at ");
+  Serial.println(millis());
+  Serial.println();
+#endif
+#ifdef DEBUG
+
+  Serial.println();
+
+#endif
 }
 
-//reset chip select
+// reset chip select
 void resetchipselect()
 {
   for (int i = 0; i < NB_CHIP; i++)
   {
     digitalWrite(chipsSelect[i], HIGH);
   }
+}
+byte readPort()
+{
+  return PINL;
 }
 
 // chip select
@@ -80,6 +88,7 @@ void initchipselect()
 
 void initInput()
 {
+  // DDRL = 0;
   for (int i = 0; i < NB_INPUT; i++)
   {
     pinMode(dataPin[i], INPUT_PULLUP);
@@ -88,11 +97,11 @@ void initInput()
 
 void digitalReadInput()
 {
-  if (DEBUG_EXECUTION_TIME)
-  {
-    Serial.print("\tRead digital Input start at ");
-    Serial.println(millis());
-  }
+#ifdef DEBUG_EXECUTION_TIME
+
+  Serial.print("\tRead digital Input start at ");
+  Serial.println(millis());
+#endif
   resetchipselect();
   delayMicroseconds(2);
   for (int i = 0; i < NB_CHIP; i++)
@@ -103,20 +112,19 @@ void digitalReadInput()
     }
     digitalWrite(chipsSelect[i], LOW);
     delayMicroseconds(5);
-    for (int j = 0; j < 8; j++)
-    {
-      int selectedInput = (i * 8) + j;
-      message.digInput[selectedInput] = digitalRead(dataPin[j]);
+
+    message.digInput[i] = readPort();
+    delayMicroseconds(5);
 #ifdef DEBUG
-      Serial.print(" ");
-      Serial.print(message.digInput[selectedInput]);
-#endif
-    }
-#ifdef DEBUG
-    Serial.println();
-    //delay(1000);
+    Serial.print(" ");
+    Serial.print(message.digInput[i], BIN);
 #endif
   }
+#ifdef DEBUG
+  Serial.println();
+  // delay(1000);
+#endif
+
   digitalWrite(chipsSelect[NB_CHIP - 1], LOW);
 
 #ifdef DEBUG_EXECUTION_TIME
@@ -127,15 +135,15 @@ void digitalReadInput()
 #endif
 }
 
-//chipselect->bas
+// chipselect->bas
 
 void initMsg()
 {
   int i = 0;
 
-  for (i = 0; i < nbDigInput; i++)
+  for (i = 0; i < NB_CHIP; i++)
   {
-    message.digInput[i] = false;
+    message.digInput[i] = 0;
   }
 
   for (i = 0; i < nbAnaInput; i++)
@@ -148,10 +156,9 @@ void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
-  myTransfer.begin(Serial1);
   initchipselect();
   initInput();
-  //initMsg();
+  initMsg();
 }
 
 bool lastValue = false;
@@ -167,7 +174,15 @@ void loop()
 
   digitalReadInput();
   analogReadInput();
-  myTransfer.sendDatum(message);
+
+  // Serial1.write(entete);
+  byte Mess[NB_CHIP + 1];
+  Mess[0] = entete;
+  for (int i = 0; i < NB_CHIP; i++)
+  {
+    Mess[i + 1] = message.digInput[i];
+  }
+  Serial1.write(Mess, NB_CHIP + 1);
 
 #ifdef DEBUG
   delay(1000);
