@@ -6,10 +6,13 @@
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
-#define DEBUG
+
+//#define DEBUG
 //#define DEBUG_EXECUTION_TIME
 
 const byte entete = 45;
+
+bool lastValue = false;
 
 const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15};
 
@@ -19,11 +22,23 @@ const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 // liste des chip select
 const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
 
+#define synchroPinFromLeo 26
+
+
 struct STRUCT
 {
   byte digInput[NB_CHIP];
   int anaInput[nbAnaInput]; // int
 } message;
+
+/**
+ *
+ *          analogReadInput
+ *
+ *  
+ *
+ *
+ **/
 
 void analogReadInput()
 {
@@ -63,7 +78,16 @@ void analogReadInput()
 #endif
 }
 
-// reset chip select
+
+/**
+ *
+ *          resetchipselect
+ *
+ *  
+ *
+ *
+ **/
+
 void resetchipselect()
 {
   for (int i = 0; i < NB_CHIP; i++)
@@ -76,7 +100,16 @@ byte readPort()
   return PINL;
 }
 
-// chip select
+
+/**
+ *
+ *          initchipselect
+
+ *
+ *  
+ *
+ *
+ **/
 void initchipselect()
 {
   for (int i = 0; i < NB_CHIP; i++)
@@ -86,6 +119,15 @@ void initchipselect()
   resetchipselect();
 }
 
+/**
+ *
+ *          initInput
+
+ *
+ *  
+ *
+ *
+ **/
 void initInput()
 {
   // DDRL = 0;
@@ -95,6 +137,15 @@ void initInput()
   }
 }
 
+/**
+ *
+ *          digitalReadInput
+
+ *
+ *  
+ *
+ *
+ **/
 void digitalReadInput()
 {
 #ifdef DEBUG_EXECUTION_TIME
@@ -135,8 +186,15 @@ void digitalReadInput()
 #endif
 }
 
-// chipselect->bas
+/**
+ *
+ *          initMsg
 
+ *
+ *  
+ *
+ *
+ **/
 void initMsg()
 {
   int i = 0;
@@ -152,6 +210,15 @@ void initMsg()
   }
 }
 
+/**
+ *
+ *          setup
+
+ *
+ *  
+ *
+ *
+ **/
 void setup()
 {
   Serial.begin(115200);
@@ -159,10 +226,23 @@ void setup()
   initchipselect();
   initInput();
   initMsg();
+  pinMode(synchroPinFromLeo,INPUT_PULLUP);
+
+  //Serial1.setTimeout(3000);
 }
 
-bool lastValue = false;
 
+
+
+/**
+ *
+ *          loop
+
+ *
+ *  
+ *
+ *
+ **/
 void loop()
 {
 #ifdef DEBUG_EXECUTION_TIME
@@ -176,13 +256,41 @@ void loop()
   analogReadInput();
 
   // Serial1.write(entete);
-  byte Mess[NB_CHIP + 1];
-  Mess[0] = entete;
+  byte Mess[NB_CHIP + 1+(nbAnaInput*2)];
+  int index=0;
+  Mess[index] = entete;
+
   for (int i = 0; i < NB_CHIP; i++)
   {
-    Mess[i + 1] = message.digInput[i];
+    index++;
+    Mess[index] = message.digInput[i];
   }
-  Serial1.write(Mess, NB_CHIP + 1);
+  Serial.print("index ");
+  Serial.println(index);
+
+  for (int i = 0; i < nbAnaInput; i++)
+  {
+    index++;
+    int ana= message.anaInput[i];
+    Mess[index]=ana;
+    index++;
+    Mess[index]=ana>>8;
+
+  }
+
+
+  Serial1.write(Mess, NB_CHIP + 1+(nbAnaInput*2));
+ while(digitalRead(synchroPinFromLeo)){
+   // #ifdef DEBUG
+  Serial.print("wait ");
+  
+
+ // #endif
+ }
+  
+  
+ 
+ 
 
 #ifdef DEBUG
   delay(1000);
@@ -191,6 +299,6 @@ void loop()
   Serial.print("loop end at ");
   Serial.println(millis());
   Serial.println();
-  delay(1000);
+  //delay(1000);
 #endif
 }

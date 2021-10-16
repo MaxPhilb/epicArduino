@@ -10,6 +10,14 @@
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
+#define synchroPinToMega 4
+
+#define resolutionAnalog 1023
+
+
+#define DEBUG
+//#define DEBUG_EXECUTION_TIME
+
 struct STRUCT
 {
   byte digInput[NB_CHIP];   // bool
@@ -21,12 +29,12 @@ const uint8_t entete = 45;
 #define JOYSTICK_COUNT 6
 
 Joystick_ Joystick[JOYSTICK_COUNT] = {
-    Joystick_(0x03, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x04, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x05, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x06, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x03, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x04, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x05, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x06, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
     Joystick_(0x07, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false),
-    Joystick_(0x08, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
+    Joystick_(0x08, JOYSTICK_TYPE_MULTI_AXIS, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
 
 };
 
@@ -55,6 +63,7 @@ void confJoy()
 {
 
   // analogique 0 à 7
+  
   Joystick[4].setXAxis(message.anaInput[0]);
   Joystick[4].setYAxis(message.anaInput[1]);
   Joystick[4].setZAxis(message.anaInput[2]);
@@ -65,6 +74,7 @@ void confJoy()
   Joystick[4].setThrottle(message.anaInput[7]);
 
   // analogique 8 à 15
+
   Joystick[5].setXAxis(message.anaInput[8]);
   Joystick[5].setYAxis(message.anaInput[9]);
   Joystick[5].setZAxis(message.anaInput[10]);
@@ -74,24 +84,29 @@ void confJoy()
   Joystick[5].setRudder(message.anaInput[14]);
   Joystick[5].setThrottle(message.anaInput[15]);
 
-  bool listBit[NB_CHIP * NB_INPUT];
-  for (int i = 0; i < NB_CHIP; i++)
-  {
-    for (int j = 0; j < NB_INPUT; j++)
-    {
-
-      bool stateBit = bitRead(message.digInput[i], j);
-      listBit[(i * NB_INPUT) + j] = stateBit;
-    }
-  }
-
+  
+  
   for (int i = 0; i < JOYSTICK_COUNT; i++)
   {
     for (int j = 0; j < 32; j++)
     {
-      // Serial.print(" ");
-      // Serial.print(listBit[(i * 32) + j], BIN);
-      if (listBit[(i * 32) + j])
+     
+       int num=(i*32)+j;
+       int numTab=num/NB_INPUT;
+       int jit= num-(numTab*8);
+       
+       bool st=bitRead(message.digInput[numTab],jit);
+       
+      Serial.print("num ");
+      Serial.print(num);
+      Serial.print(" numTab ");
+      Serial.print(numTab);
+      Serial.print(" jit ");
+      Serial.print(jit);
+      Serial.print(" state ");
+      Serial.println(st);
+      
+      if (st)
       {
         Joystick[i].pressButton(j);
       }
@@ -99,9 +114,11 @@ void confJoy()
       {
         Joystick[i].releaseButton(j);
       }
+      //Joystick[i].sendState();
+      delay(500);
     }
   }
-  // Serial.println();
+   //Serial.println();
 }
 
 /**
@@ -117,25 +134,25 @@ void printL()
 
   for (int i = 0; i < nbAnaInput; i++)
   {
-    Serial.print(F("{\"channel\""));
+    Serial.print(F("{\"chan\""));
     Serial.print(F(":"));
     Serial.print(i);
     Serial.print(F(","));
-    Serial.print(F("\"state\""));
+    Serial.print(F("\"st\""));
     Serial.print(F(":"));
     // Serial.print(messageFromMega.anaInput[i]);
     Serial.print(F("}"));
   }
 
-  Serial.print(F("{\"cmd\": \"stateDigInput\",\"data\":"));
+  Serial.print(F("{\"cmd\": \"stDigIn\",\"data\":"));
   Serial.print(F("["));
   for (int i = 0; i < nbDigInput; i++)
   {
-    Serial.print(F("{\"channel\""));
+    Serial.print(F("{\"chan\""));
     Serial.print(F(":"));
     Serial.print(i);
     Serial.print(F(","));
-    Serial.print(F("\"state\""));
+    Serial.print(F("\"st\""));
     Serial.print(F(":"));
     // Serial.print(messageFromMega.digInput[i]);
     Serial.print(F("}"));
@@ -330,28 +347,66 @@ void setup()
 
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
 
+  Joystick[4].setXAxisRange(0,resolutionAnalog);
+  Joystick[4].setYAxisRange(0,resolutionAnalog);
+  Joystick[4].setZAxisRange(0,resolutionAnalog);
+  Joystick[4].setRxAxisRange(0,resolutionAnalog);
+  Joystick[4].setRyAxisRange(0,resolutionAnalog);
+  Joystick[4].setRzAxisRange(0,resolutionAnalog);
+  Joystick[4].setRudderRange(0,resolutionAnalog);
+  Joystick[4].setThrottleRange(0,resolutionAnalog);
+
+  Joystick[5].setXAxisRange(0,resolutionAnalog);
+  Joystick[5].setYAxisRange(0,resolutionAnalog);
+  Joystick[5].setZAxisRange(0,resolutionAnalog);
+  Joystick[5].setRxAxisRange(0,resolutionAnalog);
+  Joystick[5].setRyAxisRange(0,resolutionAnalog);
+  Joystick[5].setRzAxisRange(0,resolutionAnalog);
+  Joystick[5].setRudderRange(0,resolutionAnalog);
+  Joystick[5].setThrottleRange(0,resolutionAnalog);
+
+  for(int i=0;i<JOYSTICK_COUNT;i++){
+    Joystick[i].begin();
+  }
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
+  pinMode(synchroPinToMega,OUTPUT);
   initDigOutput();
 }
 
+
+
+
+
+byte anaBrut[nbAnaInput*2];
 void loop()
 {
   if (Serial1.available())
   {
-
+    
     if (Serial1.read() == entete)
     {
-      Serial.println("REcu");
+      digitalWrite(synchroPinToMega,HIGH);
+      //Serial.println("REcu");
       Serial1.readBytes(message.digInput, NB_CHIP);
-      Serial.println("REcu2");
-      for (int i = 0; i <= NB_CHIP; i++)
-      {
-        Serial.println(message.digInput[i], BIN);
+
+       Serial1.readBytes(anaBrut, nbAnaInput*2);
+       
+        int i=0;
+        int max=nbAnaInput*2;
+        while(i<max){
+          int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
+          message.anaInput[i%2]=tempInt;
+          i=i+2;
       }
+      
+      //Serial.println();
+      digitalWrite(synchroPinToMega,LOW);
+  
     }
   }
-  // myTransfer.rxObj(messageFromMega); // lit le retour en provenance de larduino Mega
+  
+ 
   if (echoMode)
   {
     printL();
