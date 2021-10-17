@@ -1,8 +1,10 @@
-
+#include "SerialTransfer.h"
 #include <Adafruit_MCP23017.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
+/*
 #include <Joystick.h>
+*/
 
 // constante
 #define NB_INPUT 8
@@ -11,6 +13,7 @@
 #define nbAnaInput 16
 
 #define synchroPinToMega 4
+#define synchroPinFromMega 5
 
 #define resolutionAnalog 1023
 
@@ -26,6 +29,9 @@ struct STRUCT
 
 const uint8_t entete = 45;
 
+SerialTransfer myTransfer;
+
+/*
 #define JOYSTICK_COUNT 6
 
 Joystick_ Joystick[JOYSTICK_COUNT] = {
@@ -37,6 +43,7 @@ Joystick_ Joystick[JOYSTICK_COUNT] = {
     Joystick_(0x08, JOYSTICK_TYPE_MULTI_AXIS, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
 
 };
+*/
 
 // var global
 int addrEEPROM = 0; // pour variable echo sur EEPROM
@@ -58,7 +65,7 @@ StaticJsonDocument<256> doc;
  *
  *
  **/
-
+/*
 void confJoy()
 {
 
@@ -115,11 +122,13 @@ void confJoy()
         Joystick[i].releaseButton(j);
       }
       //Joystick[i].sendState();
-      delay(500);
+      //delay(500);
+      delayMicroseconds(5);
     }
   }
    //Serial.println();
 }
+*/
 
 /**
  *
@@ -344,9 +353,9 @@ void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
-
+  myTransfer.begin(Serial1);
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
-
+  /*
   Joystick[4].setXAxisRange(0,resolutionAnalog);
   Joystick[4].setYAxisRange(0,resolutionAnalog);
   Joystick[4].setZAxisRange(0,resolutionAnalog);
@@ -368,9 +377,12 @@ void setup()
   for(int i=0;i<JOYSTICK_COUNT;i++){
     Joystick[i].begin();
   }
+
+  */
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
   pinMode(synchroPinToMega,OUTPUT);
+  pinMode(synchroPinFromMega,INPUT_PULLUP);
   initDigOutput();
 }
 
@@ -381,37 +393,74 @@ void setup()
 byte anaBrut[nbAnaInput*2];
 void loop()
 {
-  if (Serial1.available())
-  {
-    
-    if (Serial1.read() == entete)
-    {
-      digitalWrite(synchroPinToMega,HIGH);
-      //Serial.println("REcu");
-      Serial1.readBytes(message.digInput, NB_CHIP);
 
-       Serial1.readBytes(anaBrut, nbAnaInput*2);
-       
-        int i=0;
-        int max=nbAnaInput*2;
-        while(i<max){
-          int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
-          message.anaInput[i%2]=tempInt;
-          i=i+2;
-      }
+  /*
+  if (!digitalRead(synchroPinFromMega))
+  {
+    //Serial.println("need read");
+    while(Serial1.available()){
+        
+        if (Serial1.read() == entete)
+        {
+          digitalWrite(synchroPinToMega,LOW);
+          Serial.println("REcu");
+          Serial1.readBytes(message.digInput, NB_CHIP);
+
+          Serial1.readBytes(anaBrut, nbAnaInput*2);
+          
+            int i=0;
+            int max=nbAnaInput*2;
+            while(i<max){
+              int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
+              message.anaInput[i%2]=tempInt;
+              i=i+2;
+          }
+          
+          //Serial.println();
+          digitalWrite(synchroPinToMega,HIGH);
       
-      //Serial.println();
-      digitalWrite(synchroPinToMega,LOW);
-  
+        }
     }
+    
   }
+  */
+ 
+ byte mess[nbAnaInput*2];
+ if(myTransfer.available())
+  {
+    // use this variable to keep track of how many
+    // bytes we've processed from the receive buffer
+    uint16_t recSize = 0;
+
+    recSize = myTransfer.rxObj(message.digInput,recSize, NB_CHIP);
+    
+    Serial.print("recsize 1:");
+    Serial.println(recSize);
+
+    recSize = myTransfer.rxObj(mess,recSize, (nbAnaInput*2));
+    Serial.print("recsize 2:");
+    Serial.println(recSize);
+
+
+    int i=0;
+    int max=nbAnaInput*2;
+    while(i<max){
+      int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
+      message.anaInput[i%2]=tempInt;
+      i=i+2;
+    }
+    
+   
+  }
+
   
+
  
   if (echoMode)
   {
     printL();
   }
-  confJoy();
+  //confJoy();
 
   if (Serial.available()) // lit les informations sur le port serie USB
   {
@@ -420,4 +469,5 @@ void loop()
     deserializeJson(doc, messageFromUSB);
     interprete();
   }
+  
 }

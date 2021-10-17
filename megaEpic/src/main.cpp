@@ -1,5 +1,9 @@
 #include <Arduino.h>
 #include "Wire.h"
+#include "SerialTransfer.h"
+
+
+SerialTransfer myTransfer;
 
 #define NB_INPUT 8
 #define NB_CHIP 24
@@ -8,7 +12,7 @@
 
 
 //#define DEBUG
-//#define DEBUG_EXECUTION_TIME
+#define DEBUG_EXECUTION_TIME
 
 const byte entete = 45;
 
@@ -19,11 +23,11 @@ const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11
 // port L pour les DATA
 const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 
-// liste des chip select
-const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+// liste des chip select    attention 18/19 serial
+const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 28, 29, 20, 21, 22, 23, 24, 25};
 
 #define synchroPinFromLeo 26
-
+#define synchroPinToLeo 27
 
 struct STRUCT
 {
@@ -223,11 +227,13 @@ void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
+  myTransfer.begin(Serial1);
   initchipselect();
   initInput();
   initMsg();
   pinMode(synchroPinFromLeo,INPUT_PULLUP);
-
+  pinMode(synchroPinToLeo,OUTPUT);
+  digitalWrite(synchroPinToLeo,HIGH);
   //Serial1.setTimeout(3000);
 }
 
@@ -256,18 +262,19 @@ void loop()
   analogReadInput();
 
   // Serial1.write(entete);
-  byte Mess[NB_CHIP + 1+(nbAnaInput*2)];
-  int index=0;
-  Mess[index] = entete;
+  byte Mess[NB_CHIP + (nbAnaInput*2)];
+  int index=-1;
 
   for (int i = 0; i < NB_CHIP; i++)
   {
     index++;
     Mess[index] = message.digInput[i];
+    
   }
+  /*
   Serial.print("index ");
   Serial.println(index);
-
+*/
   for (int i = 0; i < nbAnaInput; i++)
   {
     index++;
@@ -277,18 +284,24 @@ void loop()
     Mess[index]=ana>>8;
 
   }
-
-
-  Serial1.write(Mess, NB_CHIP + 1+(nbAnaInput*2));
- while(digitalRead(synchroPinFromLeo)){
+   /*
+ digitalWrite(synchroPinToLeo,LOW);
+  Serial1.write(Mess, NB_CHIP +(nbAnaInput*2));
+  
+  Serial.println("wait ");
+ while(!digitalRead(synchroPinFromLeo)){
    // #ifdef DEBUG
-  Serial.print("wait ");
   
-
- // #endif
+   // #endif
  }
-  
-  
+ Serial.println(" enwait ");
+ digitalWrite(synchroPinToLeo,HIGH);
+  */
+ myTransfer.txObj(Mess);
+
+ myTransfer.sendData(NB_CHIP +(nbAnaInput*2));
+
+delay(5);
  
  
 
