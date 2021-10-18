@@ -300,8 +300,15 @@ void loop()
  myTransfer.txObj(Mess);
 
  myTransfer.sendData(NB_CHIP +(nbAnaInput*2));
+ while(!myTransfer.available()){
 
-delay(5);
+ }
+ byte byt;
+ myTransfer.rxObj(byt);
+ Serial.println(byt);
+
+
+delay(30);
  
  
 

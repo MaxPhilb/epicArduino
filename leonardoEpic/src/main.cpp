@@ -441,15 +441,21 @@ void loop()
     Serial.print("recsize 2:");
     Serial.println(recSize);
 
+    myTransfer.txObj(45);
+    myTransfer.sendData(1);
+
 
     int i=0;
     int max=nbAnaInput*2;
     while(i<max){
       int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
       message.anaInput[i%2]=tempInt;
+      Serial.print(" ");
+      Serial.print(message.anaInput[i%2]);
       i=i+2;
     }
-    
+    Serial.println();
+    delay(200);
    
   }
 
