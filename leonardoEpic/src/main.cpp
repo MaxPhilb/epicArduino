@@ -1,12 +1,10 @@
-//#include "SerialTransfer.h"
+
 #include <Adafruit_MCP23017.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
 #include <Wire.h>
-
-/*
 #include <Joystick.h>
-*/
+
 
 // constante
 #define NB_INPUT 8
@@ -14,8 +12,6 @@
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
-#define synchroPinToMega 4
-#define synchroPinFromMega 5
 
 #define resolutionAnalog 1023
 
@@ -31,21 +27,21 @@ struct STRUCT
 
 const uint8_t entete = 45;
 
-//SerialTransfer myTransfer;
 
-/*
+
+
 #define JOYSTICK_COUNT 6
 
 Joystick_ Joystick[JOYSTICK_COUNT] = {
-    Joystick_(0x03, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x04, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x05, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x06, JOYSTICK_TYPE_JOYSTICK , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x03, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x04, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x05, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x06, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
     Joystick_(0x07, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false),
-    Joystick_(0x08, JOYSTICK_TYPE_MULTI_AXIS, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
+    Joystick_(0x08, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
 
 };
-*/
+
 
 // var global
 int addrEEPROM = 0; // pour variable echo sur EEPROM
@@ -67,35 +63,11 @@ StaticJsonDocument<256> doc;
  *
  *
  **/
-/*
+
 void confJoy()
 {
 
-  // analogique 0 à 7
-  
-  Joystick[4].setXAxis(message.anaInput[0]);
-  Joystick[4].setYAxis(message.anaInput[1]);
-  Joystick[4].setZAxis(message.anaInput[2]);
-  Joystick[4].setRxAxis(message.anaInput[3]);
-  Joystick[4].setRyAxis(message.anaInput[4]);
-  Joystick[4].setRzAxis(message.anaInput[5]);
-  Joystick[4].setRudder(message.anaInput[6]);
-  Joystick[4].setThrottle(message.anaInput[7]);
-
-  // analogique 8 à 15
-
-  Joystick[5].setXAxis(message.anaInput[8]);
-  Joystick[5].setYAxis(message.anaInput[9]);
-  Joystick[5].setZAxis(message.anaInput[10]);
-  Joystick[5].setRxAxis(message.anaInput[11]);
-  Joystick[5].setRyAxis(message.anaInput[12]);
-  Joystick[5].setRzAxis(message.anaInput[13]);
-  Joystick[5].setRudder(message.anaInput[14]);
-  Joystick[5].setThrottle(message.anaInput[15]);
-
-  
-  
-  for (int i = 0; i < JOYSTICK_COUNT; i++)
+ for (int i = 0; i < JOYSTICK_COUNT; i++)
   {
     for (int j = 0; j < 32; j++)
     {
@@ -105,7 +77,7 @@ void confJoy()
        int jit= num-(numTab*8);
        
        bool st=bitRead(message.digInput[numTab],jit);
-       
+       /*
       Serial.print("num ");
       Serial.print(num);
       Serial.print(" numTab ");
@@ -114,7 +86,7 @@ void confJoy()
       Serial.print(jit);
       Serial.print(" state ");
       Serial.println(st);
-      
+      */
       if (st)
       {
         Joystick[i].pressButton(j);
@@ -129,8 +101,12 @@ void confJoy()
     }
   }
    //Serial.println();
+
+  
+  
+  
 }
-*/
+
 
 /**
  *
@@ -354,7 +330,7 @@ void setup()
 
   //myTransfer.begin(Serial1);
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
-  /*
+  
   Joystick[4].setXAxisRange(0,resolutionAnalog);
   Joystick[4].setYAxisRange(0,resolutionAnalog);
   Joystick[4].setZAxisRange(0,resolutionAnalog);
@@ -377,11 +353,9 @@ void setup()
     Joystick[i].begin();
   }
 
-  */
+  
   digOutput1.begin(addressMCP1);
   digOutput2.begin(addressMCP2);
-  pinMode(synchroPinToMega,OUTPUT);
-  pinMode(synchroPinFromMega,INPUT_PULLUP);
   initDigOutput();
 }
 
@@ -407,6 +381,8 @@ void readDigIN(){
       Serial.print( " ");
     }
     Serial.println();
+
+    confJoy();
 
 }
 
@@ -437,27 +413,55 @@ void readAnaIN(){
       int val=byt1+(byt2<<8);
       message.anaInput[j]=val;
       Serial.print(" ");
+
     Serial.print(val);
     }
     Serial.println();
+
+     // analogique 0 à 7
+  
+  Joystick[4].setXAxis(message.anaInput[0]);
+  Joystick[4].setYAxis(message.anaInput[1]);
+  Joystick[4].setZAxis(message.anaInput[2]);
+  Joystick[4].setRxAxis(message.anaInput[3]);
+  Joystick[4].setRyAxis(message.anaInput[4]);
+  Joystick[4].setRzAxis(message.anaInput[5]);
+  Joystick[4].setRudder(message.anaInput[6]);
+  Joystick[4].setThrottle(message.anaInput[7]);
+
+  // analogique 8 à 15
+
+  Joystick[5].setXAxis(message.anaInput[8]);
+  Joystick[5].setYAxis(message.anaInput[9]);
+  Joystick[5].setZAxis(message.anaInput[10]);
+  Joystick[5].setRxAxis(message.anaInput[11]);
+  Joystick[5].setRyAxis(message.anaInput[12]);
+  Joystick[5].setRzAxis(message.anaInput[13]);
+  Joystick[5].setRudder(message.anaInput[14]);
+  Joystick[5].setThrottle(message.anaInput[15]);
 }
 
+unsigned long startTime;
 void loop()
 {
  
 
-
+startTime=millis();
 readDigIN();
 readAnaIN();
 
+unsigned long deltaTime=millis()-startTime;
+Serial.print("execution time: ");
+Serial.println(deltaTime);
 
- delay(1000);
+ //delay(1000);
  
   if (echoMode)
   {
     printL();
   }
-  //confJoy();
+  
+
 
   if (Serial.available()) // lit les informations sur le port serie USB
   {
