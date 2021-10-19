@@ -1,7 +1,9 @@
-#include "SerialTransfer.h"
+//#include "SerialTransfer.h"
 #include <Adafruit_MCP23017.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
+#include <Wire.h>
+
 /*
 #include <Joystick.h>
 */
@@ -29,7 +31,7 @@ struct STRUCT
 
 const uint8_t entete = 45;
 
-SerialTransfer myTransfer;
+//SerialTransfer myTransfer;
 
 /*
 #define JOYSTICK_COUNT 6
@@ -140,31 +142,27 @@ void confJoy()
  **/
 void printL()
 {
-
+   Serial.print(F("{\"cmd\": \"stAnaIn\",\"data\":"));
+  Serial.print(F("["));
   for (int i = 0; i < nbAnaInput; i++)
   {
-    Serial.print(F("{\"chan\""));
-    Serial.print(F(":"));
-    Serial.print(i);
+    Serial.print(message.anaInput[i]);
+     if(i!= nbAnaInput-1){
     Serial.print(F(","));
-    Serial.print(F("\"st\""));
-    Serial.print(F(":"));
-    // Serial.print(messageFromMega.anaInput[i]);
-    Serial.print(F("}"));
+     }
   }
+  Serial.print(F("]"));
+  Serial.println(F("}!"));
 
   Serial.print(F("{\"cmd\": \"stDigIn\",\"data\":"));
   Serial.print(F("["));
   for (int i = 0; i < nbDigInput; i++)
   {
-    Serial.print(F("{\"chan\""));
-    Serial.print(F(":"));
-    Serial.print(i);
-    Serial.print(F(","));
-    Serial.print(F("\"st\""));
-    Serial.print(F(":"));
-    // Serial.print(messageFromMega.digInput[i]);
-    Serial.print(F("}"));
+    Serial.print(message.digInput[i]);
+    if(i!= nbDigInput-1){
+      Serial.print(F(","));
+    }
+    
   }
   Serial.print(F("]"));
   Serial.println(F("}!"));
@@ -210,15 +208,7 @@ void setOutput(int channel, bool state)
     int tempChannel = channel - 15;
     digOutput2.digitalWrite(tempChannel, state);
   }
-  /*
-  //test local
-  if (channel == 0)
-  {
-    pinMode(LED_BUILTIN, OUTPUT);
-    Serial.println("builtin");
-    digitalWrite(LED_BUILTIN, state);
-  }
-  */
+ 
 }
 
 /**
@@ -349,11 +339,20 @@ void interprete()
   }
 }
 
+
+
+
+
+
+
 void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
-  myTransfer.begin(Serial1);
+  Wire.begin();
+
+
+  //myTransfer.begin(Serial1);
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
   /*
   Joystick[4].setXAxisRange(0,resolutionAnalog);
@@ -386,81 +385,73 @@ void setup()
   initDigOutput();
 }
 
-
-
-
-
-byte anaBrut[nbAnaInput*2];
-void loop()
-{
-
-  /*
-  if (!digitalRead(synchroPinFromMega))
-  {
-    //Serial.println("need read");
-    while(Serial1.available()){
-        
-        if (Serial1.read() == entete)
-        {
-          digitalWrite(synchroPinToMega,LOW);
-          Serial.println("REcu");
-          Serial1.readBytes(message.digInput, NB_CHIP);
-
-          Serial1.readBytes(anaBrut, nbAnaInput*2);
-          
-            int i=0;
-            int max=nbAnaInput*2;
-            while(i<max){
-              int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
-              message.anaInput[i%2]=tempInt;
-              i=i+2;
-          }
-          
-          //Serial.println();
-          digitalWrite(synchroPinToMega,HIGH);
-      
-        }
-    }
+ /***
+ * 
+ * 
+ *  Lecture des entrees dig
+ * 
+ * 
+ */
+void readDigIN(){
     
-  }
-  */
- 
- byte mess[nbAnaInput*2];
- if(myTransfer.available())
-  {
-    // use this variable to keep track of how many
-    // bytes we've processed from the receive buffer
-    uint16_t recSize = 0;
+    Wire.beginTransmission(8);
+    Wire.write(1); // send register to read, the 'result' register
+    Wire.endTransmission();
+    int nbbyte=Wire.requestFrom(8,NB_CHIP);
+    Serial.print("nb byte ");
+    Serial.println(nbbyte);
+    Wire.readBytes(message.digInput,NB_CHIP);
 
-    recSize = myTransfer.rxObj(message.digInput,recSize, NB_CHIP);
-    
-    Serial.print("recsize 1:");
-    Serial.println(recSize);
-
-    recSize = myTransfer.rxObj(mess,recSize, (nbAnaInput*2));
-    Serial.print("recsize 2:");
-    Serial.println(recSize);
-
-    myTransfer.txObj(45);
-    myTransfer.sendData(1);
-
-
-    int i=0;
-    int max=nbAnaInput*2;
-    while(i<max){
-      int tempInt=anaBrut[i]+(anaBrut[i+1]<<8);
-      message.anaInput[i%2]=tempInt;
-      Serial.print(" ");
-      Serial.print(message.anaInput[i%2]);
-      i=i+2;
+    for(int i=0;i<NB_CHIP;i++){
+      Serial.print(message.digInput[i],BIN);
+      Serial.print( " ");
     }
     Serial.println();
-    delay(200);
-   
-  }
 
-  
+}
 
+/***
+* 
+* 
+*  Lecture des entrees ana
+* 
+* 
+*/
+void readAnaIN(){
+    
+    byte Mess[(nbAnaInput*2)];
+    Wire.beginTransmission(8);
+    Wire.write(2); 
+    Wire.endTransmission();
+    int nbbyte=Wire.requestFrom(8,(nbAnaInput*2));
+    Serial.print("nb byte ");
+    Serial.println(nbbyte);
+    Wire.readBytes(Mess,(nbAnaInput*2));
+    int i=-1;
+    for(int j=0;j<nbAnaInput;j++)
+    {
+      i++;
+      byte byt1=Mess[i];
+      i++;
+      byte byt2=Mess[i];
+      int val=byt1+(byt2<<8);
+      message.anaInput[j]=val;
+      Serial.print(" ");
+    Serial.print(val);
+    }
+    Serial.println();
+}
+
+void loop()
+{
+ 
+
+
+readDigIN();
+readAnaIN();
+
+
+ delay(1000);
  
   if (echoMode)
   {

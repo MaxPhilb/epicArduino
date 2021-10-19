@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include "Wire.h"
-#include "SerialTransfer.h"
+//#include "SerialTransfer.h"
+//SerialTransfer myTransfer;
 
-
-SerialTransfer myTransfer;
+//#include "I2CTransfer.h"
+//I2CTransfer myTransfer;
 
 #define NB_INPUT 8
 #define NB_CHIP 24
@@ -12,7 +13,7 @@ SerialTransfer myTransfer;
 
 
 //#define DEBUG
-#define DEBUG_EXECUTION_TIME
+//#define DEBUG_EXECUTION_TIME
 
 const byte entete = 45;
 
@@ -23,16 +24,20 @@ const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11
 // port L pour les DATA
 const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 
-// liste des chip select    attention 18/19 serial
-const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 28, 29, 20, 21, 22, 23, 24, 25};
+// liste des chip select    attention 18/19 serial      20/21 I2C
+const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 28, 29, 30,31, 22, 23, 24, 25};
+
+const int timeoutTransfer=20;
 
 #define synchroPinFromLeo 26
 #define synchroPinToLeo 27
 
+
+
 struct STRUCT
 {
   byte digInput[NB_CHIP];
-  int anaInput[nbAnaInput]; // int
+  byte anaInput[nbAnaInput*2]; // int
 } message;
 
 /**
@@ -58,13 +63,18 @@ void analogReadInput()
   Serial.println(millis());
 
 #endif
+int index=0;
   for (int i = 0; i < nbAnaInput; i++)
   {
-    message.anaInput[i] = analogRead(anaPin[i]);
-    // message.anaInput[i]=random(nbAnaInput);
+    int val=analogRead(anaPin[i]);
+    message.anaInput[index] = val;
+    index++;
+     message.anaInput[index] = (val>>8);
+     index++;
+  
 #ifdef DEBUG
 
-    Serial.print(message.anaInput[i]);
+    Serial.print(val);
     Serial.print(" ");
 
 #endif
@@ -208,10 +218,43 @@ void initMsg()
     message.digInput[i] = 0;
   }
 
-  for (i = 0; i < nbAnaInput; i++)
+  for (i = 0; i < nbAnaInput*2; i++)
   {
     message.anaInput[i] = -1;
   }
+}
+
+uint8_t operation=0;
+
+// function that executes whenever data is received from master
+void receiveEvent(int size) {
+
+  Serial.print("expected size ");
+   Serial.println(size);
+   if(size==1){
+     operation=Wire.read();
+     Serial.println("operation "+String(operation));
+   }
+   
+}
+
+void requestEvent(){
+
+  digitalReadInput();
+  analogReadInput();
+
+ 
+ if(operation==1){
+   Wire.write(message.digInput,NB_CHIP );
+   operation=0;
+ }
+
+ if(operation==2){
+   Wire.write(message.anaInput,(nbAnaInput*2) );
+   operation=0;
+ }
+
+   
 }
 
 /**
@@ -227,7 +270,15 @@ void setup()
 {
   Serial.begin(115200);
   Serial1.begin(115200);
-  myTransfer.begin(Serial1);
+  //myTransfer.begin(Serial1);
+
+   
+   Wire.begin(8);
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
+
+  //myTransfer.begin(Wire);
+
   initchipselect();
   initInput();
   initMsg();
@@ -258,57 +309,8 @@ void loop()
 
 #endif
 
-  digitalReadInput();
-  analogReadInput();
+ 
 
-  // Serial1.write(entete);
-  byte Mess[NB_CHIP + (nbAnaInput*2)];
-  int index=-1;
-
-  for (int i = 0; i < NB_CHIP; i++)
-  {
-    index++;
-    Mess[index] = message.digInput[i];
-    
-  }
-  /*
-  Serial.print("index ");
-  Serial.println(index);
-*/
-  for (int i = 0; i < nbAnaInput; i++)
-  {
-    index++;
-    int ana= message.anaInput[i];
-    Mess[index]=ana;
-    index++;
-    Mess[index]=ana>>8;
-
-  }
-   /*
- digitalWrite(synchroPinToLeo,LOW);
-  Serial1.write(Mess, NB_CHIP +(nbAnaInput*2));
-  
-  Serial.println("wait ");
- while(!digitalRead(synchroPinFromLeo)){
-   // #ifdef DEBUG
-  
-   // #endif
- }
- Serial.println(" enwait ");
- digitalWrite(synchroPinToLeo,HIGH);
-  */
- myTransfer.txObj(Mess);
-
- myTransfer.sendData(NB_CHIP +(nbAnaInput*2));
- while(!myTransfer.available()){
-
- }
- byte byt;
- myTransfer.rxObj(byt);
- Serial.println(byt);
-
-
-delay(30);
  
  
 
