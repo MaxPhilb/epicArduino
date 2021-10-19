@@ -376,11 +376,13 @@ void readDigIN(){
     Serial.println(nbbyte);
     Wire.readBytes(message.digInput,NB_CHIP);
 
+/*
     for(int i=0;i<NB_CHIP;i++){
       Serial.print(message.digInput[i],BIN);
       Serial.print( " ");
     }
     Serial.println();
+    */
 
     confJoy();
 
@@ -412,11 +414,11 @@ void readAnaIN(){
       byte byt2=Mess[i];
       int val=byt1+(byt2<<8);
       message.anaInput[j]=val;
-      Serial.print(" ");
+      //Serial.print(" ");
 
-    Serial.print(val);
+    //Serial.print(val);
     }
-    Serial.println();
+    //Serial.println();
 
      // analogique 0 à 7
   
