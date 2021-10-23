@@ -16,8 +16,8 @@
 #define resolutionAnalog 1023
 
 
-#define DEBUG
-//#define DEBUG_EXECUTION_TIME
+//#define DEBUG
+#define DEBUG_EXECUTION_TIME
 
 struct STRUCT
 {
@@ -97,8 +97,9 @@ void confJoy()
       }
       //Joystick[i].sendState();
       //delay(500);
-      delayMicroseconds(5);
+      //delayMicroseconds(5);
     }
+    Joystick[i].sendState();
   }
    //Serial.println();
 
@@ -350,7 +351,7 @@ void setup()
   Joystick[5].setThrottleRange(0,resolutionAnalog);
 
   for(int i=0;i<JOYSTICK_COUNT;i++){
-    Joystick[i].begin();
+    Joystick[i].begin(false);
   }
 
   
@@ -376,17 +377,12 @@ void readDigIN(){
     Serial.println(nbbyte);
     Wire.readBytes(message.digInput,NB_CHIP);
 
-/*
-    for(int i=0;i<NB_CHIP;i++){
-      Serial.print(message.digInput[i],BIN);
-      Serial.print( " ");
-    }
-    Serial.println();
-    */
 
     confJoy();
 
 }
+
+
 
 /***
 * 
@@ -441,20 +437,27 @@ void readAnaIN(){
   Joystick[5].setRzAxis(message.anaInput[13]);
   Joystick[5].setRudder(message.anaInput[14]);
   Joystick[5].setThrottle(message.anaInput[15]);
+
+  Joystick[4].sendState();
+  Joystick[5].sendState();
 }
 
 unsigned long startTime;
 void loop()
 {
  
-
+#ifdef DEBUG_EXECUTION_TIME
 startTime=millis();
+#endif
+
 readDigIN();
 readAnaIN();
 
+#ifdef DEBUG_EXECUTION_TIME
 unsigned long deltaTime=millis()-startTime;
 Serial.print("execution time: ");
 Serial.println(deltaTime);
+#endif
 
  //delay(1000);
  
