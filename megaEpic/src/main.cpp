@@ -285,10 +285,34 @@ digitalReadInput(temp3);
 
 for(int i=0;i<NB_CHIP;i++){
 
-   byte tmp1= temp1[i];
-    byte tmp2=temp2[i];
-    byte tmp3=temp3[i];
+   byte tmp1= temp1[i]; //1010
+    byte tmp2=temp2[i]; //1100
+    byte tmp3=temp3[i]; //1001
+    
+    int nbT=0;
+    int nbF=0;
     byte res=0;
+    for(int j=0;j<8;j++){
+        bool st1=bitRead(tmp1,j);
+        if(st1){nbT++;}else{nbF++;}
+        bool st2=bitRead(tmp2,j);
+        if(st2){nbT++;}else{nbF++;}
+        bool st3=bitRead(tmp3,j);
+        if(st3){nbT++;}else{nbF++;}
+        if(nbF<nbT){
+          bitWrite(res,j,true);
+        }else{
+           bitWrite(res,j,false);
+        }
+    }
+    message.digInput[i]=res;
+/*
+byte exc12=tmp1^tmp2;   //0110
+byte exc23=tmp2^tmp3;   //0101
+byte exc13=tmp1^tmp3;   //0011
+
+byte exc1223=exc12^exc23; //0011
+
     if(tmp1==tmp2){
         res+=1;
     }
@@ -298,8 +322,9 @@ for(int i=0;i<NB_CHIP;i++){
     if(tmp2==tmp3){
       res+=4;
     }
-    todo
+    todo 
     message.digInput[i];
+    */
 
 
 }
