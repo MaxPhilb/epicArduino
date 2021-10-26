@@ -459,7 +459,7 @@ Serial.print("execution time: ");
 Serial.println(deltaTime);
 #endif
 
- //delay(1000);
+
  
   if (echoMode)
   {
