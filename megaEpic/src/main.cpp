@@ -8,8 +8,8 @@
 #define nbAnaInput 16
 
 
-//#define DEBUG
-#define DEBUG_EXECUTION_TIME
+//#define DEBUG   //permet d'afficher les traces
+#define DEBUG_EXECUTION_TIME //permet d'afficher les temps d'execution
 
 
 const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15};
@@ -20,7 +20,7 @@ const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 // liste des chip select    attention 18/19 serial      20/21 I2C
 const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 28, 29, 30,31, 22, 23, 24, 25};
 
-
+uint8_t operation=0;
 
 struct STRUCT
 {
@@ -62,7 +62,7 @@ int index=0;
   for (int i = 0; i < nbAnaInput; i++)
   {
     int val=analogRead(anaPin[i]);
-    message.anaInput[index] = val;
+    message.anaInput[index] = val; //decompose la lecture des ana en 2 byte
     index++;
      message.anaInput[index] = (val>>8);
      index++;
@@ -102,14 +102,19 @@ void resetchipselect()
     digitalWrite(chipsSelect[i], HIGH);
   }
 }
+
+/*
+*
+*
+*   Lecture du port L en entier
+*
+*/
 byte readPort()
 {
   return PINL;
 }
 
-//TODO
 
-//Faire un vote sur 3 lectures
 
 
 /**
@@ -156,7 +161,7 @@ void digitalReadInput(byte *table)
   Serial.println(millis());
 #endif
   resetchipselect();
-  delayMicroseconds(2);
+  //delayMicroseconds(2);
   for (int i = 0; i < NB_CHIP; i++)
   {
     if (i > 0)
@@ -167,7 +172,7 @@ void digitalReadInput(byte *table)
     delayMicroseconds(5);
 
     table[i] = ~readPort();
-    delayMicroseconds(5);
+    //delayMicroseconds(5);
 #ifdef DEBUG
     Serial.print(" ");
     Serial.print(message.digInput[i], BIN);
@@ -209,35 +214,41 @@ void initMsg()
   }
 }
 
-uint8_t operation=0;
 
-// function that executes whenever data is received from master
+
+/*
+*
+*
+*   ReceiveEvent
+*
+*   recoit un mot pour definir l'element que l'on souahaite lire avec la commande request voir fct requestEvent
+*   si operation =1 => demande lecture entree num
+*   si operation =2 => demande lecture entree analogique
+*
+*/
 void receiveEvent(int size) {
 
-  //Serial.print("expected size ");
-   //Serial.println(size);
+  
    if(size==1){
      operation=Wire.read();
-    // Serial.println("operation "+String(operation));
-     
    }
    
 }
 
+/*
+*
+*
+*   Lire les entrees num avec debounce
+*   
+*   3 lectures consecutives et vote
+*
+*/
 void readDebounceInput(){
   
 
-   // Serial.println("dem seq");
-   // delay(1500);
-    digitalReadInput(temp1);
-   // Serial.println(temp1[0],BIN);
-   // delay(1500);
-    digitalReadInput(temp2);
-   // Serial.println(temp2[0],BIN);
-   // delay(1500);
-    digitalReadInput(temp3);
-   // Serial.println(temp3[0],BIN);
-    //delay(1500);
+    digitalReadInput(temp1); //lecture 1
+    digitalReadInput(temp2);  //lecture 2
+    digitalReadInput(temp3); //lecture 3
 
     //reading=true;
   for(int i=0;i<NB_CHIP;i++){
@@ -278,10 +289,8 @@ void readDebounceInput(){
            
         }
         
-       // Serial.print("res ");
-       // Serial.println(res,BIN);
-        message.digInput[i]=res;
-      //reading=false;
+      
+        message.digInput[i]=res; //sauvegarde la valeur apres vote
 
 
   }
@@ -289,12 +298,16 @@ void readDebounceInput(){
  
 }
 
+/*
+*
+*
+* Recoit une demande de lecture
+* on recupere le numéro "operation" recu juste avant
+*
+*
+*/
 void requestEvent(){
 
-
- 
- 
- 
  if(operation==1){
    Wire.write(message.digInput,NB_CHIP );
    operation=0;
@@ -319,19 +332,15 @@ void setup()
 
   Serial.begin(115200);
   Serial1.begin(115200);
-  //myTransfer.begin(Serial1);
-
    
-   Wire.begin(8);
+  Wire.begin(8);                    //declare le device en slave "I2C"
   Wire.onReceive(receiveEvent);
   Wire.onRequest(requestEvent);
 
-  //myTransfer.begin(Wire);
-
+  //initialisation des I/O
   initchipselect();
   initInput();
   initMsg();
-  //Serial1.setTimeout(3000);
 }
 
 
@@ -341,8 +350,10 @@ void setup()
  *
  *          loop
  *
+ * 
+ *      lecture en continue des I/O
+ * 
  **/
-
 void loop()
 {
 
@@ -360,7 +371,7 @@ void loop()
   #endif
   #ifdef DEBUG_EXECUTION_TIME
     unsigned long deltaTime=millis()-startTime;
-  Serial.print("execution time DEbounce input: ");
+  Serial.print("execution time Debounce input: ");
   Serial.println(deltaTime);
     //delay(1000);
   #endif
