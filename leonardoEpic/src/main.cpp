@@ -373,8 +373,10 @@ void readDigIN(){
     Wire.write(1); // send register to read, the 'result' register
     Wire.endTransmission();
     int nbbyte=Wire.requestFrom(8,NB_CHIP);
+    #ifdef DEBUG
     Serial.print("nb byte ");
     Serial.println(nbbyte);
+    #endif
     Wire.readBytes(message.digInput,NB_CHIP);
 
 
@@ -398,8 +400,10 @@ void readAnaIN(){
     Wire.write(2); 
     Wire.endTransmission();
     int nbbyte=Wire.requestFrom(8,(nbAnaInput*2));
+    #ifdef DEBUG
     Serial.print("nb byte ");
     Serial.println(nbbyte);
+    #endif
     Wire.readBytes(Mess,(nbAnaInput*2));
     int i=-1;
     for(int j=0;j<nbAnaInput;j++)
@@ -410,11 +414,7 @@ void readAnaIN(){
       byte byt2=Mess[i];
       int val=byt1+(byt2<<8);
       message.anaInput[j]=val;
-      //Serial.print(" ");
-
-    //Serial.print(val);
     }
-    //Serial.println();
 
      // analogique 0 à 7
   
@@ -426,6 +426,7 @@ void readAnaIN(){
   Joystick[4].setRzAxis(message.anaInput[5]);
   Joystick[4].setRudder(message.anaInput[6]);
   Joystick[4].setThrottle(message.anaInput[7]);
+  Joystick[4].sendState();
 
   // analogique 8 à 15
 
@@ -438,7 +439,7 @@ void readAnaIN(){
   Joystick[5].setRudder(message.anaInput[14]);
   Joystick[5].setThrottle(message.anaInput[15]);
 
-  Joystick[4].sendState();
+  
   Joystick[5].sendState();
 }
 
@@ -452,6 +453,8 @@ startTime=millis();
 
 readDigIN();
 readAnaIN();
+
+delay(5);
 
 #ifdef DEBUG_EXECUTION_TIME
 unsigned long deltaTime=millis()-startTime;
