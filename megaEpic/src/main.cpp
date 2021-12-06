@@ -2,6 +2,7 @@
 #include "Wire.h"
 
 
+
 #define NB_INPUT 8
 #define NB_CHIP 24
 #define nbDigInput NB_CHIP *NB_INPUT
