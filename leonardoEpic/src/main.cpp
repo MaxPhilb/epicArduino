@@ -1,5 +1,6 @@
 
-#include <Adafruit_MCP23017.h>
+#include <Wire.h>
+#include <Adafruit_MCP23X17.h>
 #include <ArduinoJson.h>
 #include <EEPROM.h>
 #include <Wire.h>
@@ -17,7 +18,7 @@
 
 
 //#define DEBUG
-#define DEBUG_EXECUTION_TIME
+//#define DEBUG_EXECUTION_TIME
 
 struct STRUCT
 {
@@ -47,11 +48,11 @@ Joystick_ Joystick[JOYSTICK_COUNT] = {
 int addrEEPROM = 0; // pour variable echo sur EEPROM
 bool echoMode = false;
 
-Adafruit_MCP23017 digOutput1;
-Adafruit_MCP23017 digOutput2;
+Adafruit_MCP23X17 digOutput1;
+Adafruit_MCP23X17 digOutput2;
 
-uint8_t addressMCP1 = 0x00;
-uint8_t addressMCP2 = 0x01;
+uint8_t addressMCP1 = 0x20;
+uint8_t addressMCP2 = 0x21;
 
 StaticJsonDocument<256> doc;
 
@@ -148,25 +149,6 @@ void printL()
 /**
  *
  *
- *    initDigOutput
- *
- *
- *  initialiser les ports des composants MCP23017 en sortie
- *
- *
- **/
-void initDigOutput()
-{
-  for (int i = 0; i < 16; i++)
-  {
-    digOutput1.pinMode(i, OUTPUT);
-    digOutput2.pinMode(i, OUTPUT);
-  }
-}
-
-/**
- *
- *
  *    setOutput
  *
  *
@@ -187,6 +169,44 @@ void setOutput(int channel, bool state)
   }
  
 }
+
+
+/**
+ *
+ *
+ *    initDigOutput
+ *
+ *
+ *  initialiser les ports des composants MCP23017 en sortie
+ *
+ *
+ **/
+void initDigOutput()
+{
+  for (int i = 0; i < 16; i++)
+  {
+    digOutput1.pinMode(i, OUTPUT);
+    digOutput2.pinMode(i, OUTPUT);
+  }
+
+  Serial.println("set HIGH");
+
+  for (int i = 0; i < 32; i++)
+  {
+      setOutput(i,HIGH);
+      
+  }
+
+  delay(4000);
+  for (int i = 0; i < 32; i++)
+  {
+      setOutput(i,LOW);
+  }
+  Serial.println("set LOW");
+   delay(4000);
+
+}
+
 
 /**
  *
@@ -259,22 +279,24 @@ void interprete()
   if (!cmd.isNull())
   {
 
-    if (cmd == "digOutput")
+    if (cmd == "digOutput") //{"cmd":"digOutput","data":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,x,0,0,0,0,0,0,0,0,0,0]}!
     {
       JsonArray data = object["data"].as<JsonArray>();
       if (!data.isNull())
       {
-
-        for (JsonObject output : data)
+        int channelNb=0;
+        //Serial.print(" data size ");
+        //Serial.println(data.size());
+        for (JsonVariant state : data)
         {
-
-          JsonVariant channel = output["channel"];
-          JsonVariant state = output["state"];
-
-          if (channel.is<int>() && state.is<bool>())
+          //1 ou 0 ou x
+          //Serial.print("state is int: ");
+          //Serial.println(state.is<int>());
+          if ( state.is<int>())
           {
-            setOutput(channel.as<int>(), state.as<bool>());
+            setOutput(channelNb, state.as<int>());
           }
+          channelNb++;
         }
 
         returnCorrectCommand();
@@ -284,7 +306,7 @@ void interprete()
         returnIncorretCommand(F("data non présente"));
       }
     }
-    else if (cmd == "setEcho")
+    else if (cmd == "setEcho") // {"cmd":"setEcho","data":false}!
     {
       JsonVariant data = object["data"].as<JsonVariant>();
       if (!data.isNull())
@@ -354,9 +376,23 @@ void setup()
     Joystick[i].begin(false);
   }
 
-  
-  digOutput1.begin(addressMCP1);
-  digOutput2.begin(addressMCP2);
+   // uncomment appropriate mcp.begin
+  if (!digOutput1.begin_I2C(addressMCP1)) {
+  //if (!mcp.begin_SPI(CS_PIN)) {
+    Serial.println("Error. mcp1");
+    while (1){
+      Serial.print(1);
+    };
+  }
+   // uncomment appropriate mcp.begin
+  if (!digOutput2.begin_I2C(addressMCP2)) {
+  //if (!mcp.begin_SPI(CS_PIN)) {
+    Serial.println("Error. mcp2");
+    while (1){
+      Serial.print(2);
+    };
+  }
+
   initDigOutput();
 }
 
@@ -451,10 +487,10 @@ void loop()
 startTime=millis();
 #endif
 
-readDigIN();
-readAnaIN();
+//readDigIN();
+//readAnaIN();
 
-delay(5);
+//delay(5);
 
 #ifdef DEBUG_EXECUTION_TIME
 unsigned long deltaTime=millis()-startTime;
