@@ -54,7 +54,7 @@ Adafruit_MCP23X17 digOutput2;
 uint8_t addressMCP1 = 0x20;
 uint8_t addressMCP2 = 0x21;
 
-StaticJsonDocument<256> doc;
+StaticJsonDocument<350> doc;
 
 /**
  *
@@ -161,11 +161,21 @@ void setOutput(int channel, bool state)
   if (channel >= 0 && channel <= 15)
   {
     digOutput1.digitalWrite(channel, state);
+    /*
+    Serial.print("dig1 ");
+    Serial.print(channel);
+    Serial.print(" state ");
+    Serial.println(state);
+    */
   }
   if (channel >= 16 && channel <= 31)
   {
-    int tempChannel = channel - 15;
+    int tempChannel = channel - 16;
     digOutput2.digitalWrite(tempChannel, state);
+    Serial.print("dig2 ");
+   Serial.print(channel);
+    Serial.print(" state ");
+    Serial.println(state);
   }
  
 }
@@ -197,7 +207,7 @@ void initDigOutput()
       
   }
 
-  delay(4000);
+  delay(20000);
   for (int i = 0; i < 32; i++)
   {
       setOutput(i,LOW);
@@ -282,6 +292,7 @@ void interprete()
     if (cmd == "digOutput") //{"cmd":"digOutput","data":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,x,0,0,0,0,0,0,0,0,0,0]}!
     {
       JsonArray data = object["data"].as<JsonArray>();
+      Serial.println(data.size());
       if (!data.isNull())
       {
         int channelNb=0;
@@ -294,7 +305,13 @@ void interprete()
           //Serial.println(state.is<int>());
           if ( state.is<int>())
           {
-            setOutput(channelNb, state.as<int>());
+            if(state.as<int>()==1){
+              setOutput(channelNb, true);
+            }
+            if(state.as<int>()==0){
+              setOutput(channelNb, false );
+            }
+            
           }
           channelNb++;
         }

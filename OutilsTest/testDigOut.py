@@ -41,7 +41,7 @@ class MyApp():
             print(ser.name)         # check which port was really used
             if ser.isOpen():
             
-                while True:  // TODO tester avec un x pour voir si ignorer
+                while True:  # TODO tester avec un x pour voir si ignorer
                     for i in range(32):
                         print(i);
                         boolState=self.createBoolString(i,True)
@@ -53,6 +53,7 @@ class MyApp():
                     
                         sleep(0.3);
                     
+                    sleep(20);
                     for i in range(32):
                         print(i);
                         boolState=self.createBoolString(i,False)
