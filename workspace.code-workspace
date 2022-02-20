@@ -13,6 +13,10 @@
 		},
 		{
 			"path": "OutilsTest"
+		},
+		{
+			"name": "arduinoMegaTest",
+			"path": "arduinoMegaTest"
 		}
 	],
 	"settings": {
