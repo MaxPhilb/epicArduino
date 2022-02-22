@@ -393,12 +393,12 @@ void setup()
     Joystick[i].begin(false);
   }
 
-   // uncomment appropriate mcp.begin
+  
   if (!digOutput1.begin_I2C(addressMCP1)) {
   //if (!mcp.begin_SPI(CS_PIN)) {
     Serial.println("Error. mcp1");
     while (1){
-      Serial.print(1);
+      //Serial.print(1);
     };
   }
    // uncomment appropriate mcp.begin
@@ -406,11 +406,12 @@ void setup()
   //if (!mcp.begin_SPI(CS_PIN)) {
     Serial.println("Error. mcp2");
     while (1){
-      Serial.print(2);
+      //Serial.print(2);
     };
   }
 
   initDigOutput();
+  
 }
 
  /***
@@ -504,16 +505,12 @@ void loop()
 startTime=millis();
 #endif
 
-//readDigIN();
-//readAnaIN();
+readDigIN();
+readAnaIN();
 
 //delay(5);
 
-#ifdef DEBUG_EXECUTION_TIME
-unsigned long deltaTime=millis()-startTime;
-Serial.print("execution time: ");
-Serial.println(deltaTime);
-#endif
+
 
 
  
@@ -531,5 +528,9 @@ Serial.println(deltaTime);
     deserializeJson(doc, messageFromUSB);
     interprete();
   }
-  
+  #ifdef DEBUG_EXECUTION_TIME
+unsigned long deltaTime=millis()-startTime;
+Serial.print("execution time: ");
+Serial.println(deltaTime);
+#endif
 }

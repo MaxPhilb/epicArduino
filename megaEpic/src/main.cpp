@@ -9,7 +9,7 @@
 #define nbAnaInput 16
 
 
-#define DEBUG   //permet d'afficher les traces
+//#define DEBUG   //permet d'afficher les traces
 #define DEBUG_EXECUTION_TIME //permet d'afficher les temps d'execution
 
 
@@ -150,7 +150,7 @@ void initInput()
 
 /**
  *
- *          digitalReadInput
+ *          digitalReadInput pour debug
  *
  *
  **/
@@ -170,10 +170,13 @@ void digitalReadInput(byte *table)
       digitalWrite(chipsSelect[i - 1], HIGH);
     }
     digitalWrite(chipsSelect[i], LOW);
+    #ifdef DEBUG
     delay(1000);
+    #endif
 
     
     uint8_t val=45;
+    /*
     bool localstate=false;
 
     Serial.print("\n"+String(i)+"   ");
@@ -185,6 +188,9 @@ void digitalReadInput(byte *table)
       
     }
      Serial.println();
+     */
+
+    val=~readPort();
     table[i]=val;
     //delayMicroseconds(5);
 #ifdef DEBUG
@@ -424,12 +430,12 @@ void loop()
   #endif
 
    analogReadInput();
-  digitalReadInput(message.digInput);
-  //readDebounceInput();
+  //digitalReadInput(message.digInput);
+  readDebounceInput();
 
 
    #ifdef DEBUG
-    delay(1000);
+    //delay(1000);
   #endif
   #ifdef DEBUG_EXECUTION_TIME
     unsigned long deltaTime=millis()-startTime;
