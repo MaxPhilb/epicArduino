@@ -9,7 +9,7 @@
 #define nbAnaInput 16
 
 
-//#define DEBUG   //permet d'afficher les traces
+#define DEBUG   //permet d'afficher les traces
 #define DEBUG_EXECUTION_TIME //permet d'afficher les temps d'execution
 
 
@@ -430,8 +430,8 @@ void loop()
   #endif
 
    analogReadInput();
-  //digitalReadInput(message.digInput);
-  readDebounceInput();
+  digitalReadInput(message.digInput);
+  //readDebounceInput();
 
 
    #ifdef DEBUG
