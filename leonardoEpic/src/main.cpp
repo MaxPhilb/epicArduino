@@ -78,7 +78,7 @@ void confJoy()
        int jit= num-(numTab*8);
        
        bool st=bitRead(message.digInput[numTab],jit);
-       /*
+      #ifdef DEBUG
       Serial.print("num ");
       Serial.print(num);
       Serial.print(" numTab ");
@@ -87,7 +87,8 @@ void confJoy()
       Serial.print(jit);
       Serial.print(" state ");
       Serial.println(st);
-      */
+      #endif
+      
       if (st)
       {
         Joystick[i].pressButton(j);
@@ -289,7 +290,11 @@ void interprete()
   if (!cmd.isNull())
   {
 
-    if (cmd == "digOutput") //{"cmd":"digOutput","data":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,x,0,0,0,0,0,0,0,0,0,0]}!
+    //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}!
+    //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,'x',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]}!
+    //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}!
+
+    if (cmd == "digOutput") 
     {
       JsonArray data = object["data"].as<JsonArray>();
       Serial.println(data.size());
@@ -312,6 +317,8 @@ void interprete()
               setOutput(channelNb, false );
             }
             
+          }else{
+            Serial.println("state is not a int");
           }
           channelNb++;
         }
@@ -433,6 +440,15 @@ void readDigIN(){
     #endif
     Wire.readBytes(message.digInput,NB_CHIP);
 
+    #ifdef DEBUG
+    Serial.print("message  ");
+    for(int i=0;i<=NB_CHIP;i++){
+        Serial.print(message.digInput[i],BIN);
+        Serial.print(" ");
+    }
+     Serial.println();
+    
+    #endif
 
     confJoy();
 
@@ -455,8 +471,8 @@ void readAnaIN(){
     Wire.endTransmission();
     int nbbyte=Wire.requestFrom(8,(nbAnaInput*2));
     #ifdef DEBUG
-    Serial.print("nb byte ");
-    Serial.println(nbbyte);
+    //Serial.print("nb byte Ana ");
+    //Serial.println(nbbyte);
     #endif
     Wire.readBytes(Mess,(nbAnaInput*2));
     int i=-1;
@@ -508,7 +524,7 @@ startTime=millis();
 readDigIN();
 readAnaIN();
 
-//delay(5);
+delay(5);
 
 
 

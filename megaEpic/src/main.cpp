@@ -171,7 +171,7 @@ void digitalReadInput(byte *table)
     }
     digitalWrite(chipsSelect[i], LOW);
     #ifdef DEBUG
-    delay(1000);
+    delay(5);
     #endif
 
     
@@ -190,12 +190,14 @@ void digitalReadInput(byte *table)
      Serial.println();
      */
 
-    val=~readPort();
+    val=readPort(); //pour inverser ajouter ~ devant
     table[i]=val;
     //delayMicroseconds(5);
 #ifdef DEBUG
    Serial.print("val ");
-    Serial.print(val, BIN);
+   Serial.print(val);
+   Serial.print(" ");
+    Serial.println(val, BIN);
 #endif
   }
 #ifdef DEBUG
