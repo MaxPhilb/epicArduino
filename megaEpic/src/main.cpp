@@ -9,7 +9,7 @@
 #define nbAnaInput 16
 
 
-#define DEBUG   //permet d'afficher les traces
+//#define DEBUG   //permet d'afficher les traces
 #define DEBUG_EXECUTION_TIME //permet d'afficher les temps d'execution
 
 
@@ -170,10 +170,8 @@ void digitalReadInput(byte *table)
       digitalWrite(chipsSelect[i - 1], HIGH);
     }
     digitalWrite(chipsSelect[i], LOW);
-    #ifdef DEBUG
-    delay(5);
-    #endif
-
+    
+   delayMicroseconds(5);
     
     uint8_t val=45;
     /*
@@ -194,10 +192,12 @@ void digitalReadInput(byte *table)
     table[i]=val;
     //delayMicroseconds(5);
 #ifdef DEBUG
+/*
    Serial.print("val ");
    Serial.print(val);
    Serial.print(" ");
     Serial.println(val, BIN);
+    */
 #endif
   }
 #ifdef DEBUG
@@ -274,31 +274,24 @@ void readDebounceInput(){
           Serial.print("\tRead digital Input start at ");
           Serial.println(millis());
         #endif
+
+        
+        
         for(int indexLecture=0;indexLecture<NB_LEC_DEBOUNCE;indexLecture++){
-              resetchipselect();
-              //delayMicroseconds(2);
-              for (int i = 0; i < NB_CHIP; i++)
-              {
-                if (i > 0)
-                {
-                  digitalWrite(chipsSelect[i - 1], HIGH);
-                }
-                digitalWrite(chipsSelect[i], LOW);
-                delayMicroseconds(5);
 
-                tempLec[indexLecture][i] = ~readPort();
-                //delayMicroseconds(5);
-            #ifdef DEBUG
-                Serial.print(" ");
-                Serial.print(message.digInput[i], BIN);
-            #endif
+              digitalReadInput(tempLec[indexLecture]);
+              for(int i=0;i<NB_CHIP;i++){
+                #ifdef DEBUG
+                    Serial.print(" ");
+                    Serial.print(tempLec[indexLecture][i], BIN);
+                #endif
+                
               }
-            #ifdef DEBUG
-              Serial.println();
-              // delay(1000);
-            #endif
-
-              digitalWrite(chipsSelect[NB_CHIP - 1], LOW);
+              #ifdef DEBUG
+                    Serial.println();
+                    // delay(1000);
+                #endif
+             
         }
           
 
@@ -334,6 +327,7 @@ void readDebounceInput(){
             if(st3){nbT++;}else{nbF++;}
 
 
+            #ifdef DEBUG
             /*
             Serial.print("nbT:");
             Serial.print(nbT);
@@ -341,6 +335,8 @@ void readDebounceInput(){
             Serial.print(nbF);
             Serial.println();
             */
+            #endif
+            
             if(nbF<nbT){
               bitWrite(res,j,true);
             }else{
@@ -432,8 +428,8 @@ void loop()
   #endif
 
    analogReadInput();
-  digitalReadInput(message.digInput);
-  //readDebounceInput();
+  //digitalReadInput(message.digInput);
+  readDebounceInput();
 
 
    #ifdef DEBUG
