@@ -34,12 +34,12 @@ const uint8_t entete = 45;
 #define JOYSTICK_COUNT 6
 
 Joystick_ Joystick[JOYSTICK_COUNT] = {
-    Joystick_(0x03, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x04, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x03, JOYSTICK_TYPE_GAMEPAD , 32, 0, true, true, true, true, true, true, true, true, false, false, false),
+    Joystick_(0x04, JOYSTICK_TYPE_GAMEPAD , 32, 0, true, true, true, true, true, true, true, true, false, false, false),
     Joystick_(0x05, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
     Joystick_(0x06, JOYSTICK_TYPE_GAMEPAD , 32, 0, false, false, false, false, false, false, false, false, false, false, false),
-    Joystick_(0x07, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false),
-    Joystick_(0x08, JOYSTICK_TYPE_GAMEPAD, 32, 0, true, true, true, true, true, true, true, true, false, false, false)
+    Joystick_(0x07, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false),
+    Joystick_(0x08, JOYSTICK_TYPE_GAMEPAD, 32, 0, false, false, false, false, false, false, false, false, false, false, false)
 
 };
 
@@ -48,7 +48,7 @@ Joystick_ Joystick[JOYSTICK_COUNT] = {
 int addrEEPROM = 0; // pour variable echo sur EEPROM
 bool echoMode = false;
 
-Adafruit_MCP23X17 digOutput1;
+Adafruit_MCP23X17 digOutput1; // carte sorties digital
 Adafruit_MCP23X17 digOutput2;
 
 uint8_t addressMCP1 = 0x20;
@@ -61,6 +61,7 @@ StaticJsonDocument<350> doc;
  *          ConfJoy
  *
  *  transformer le message en provenance du mega vers les joysticks
+ *  on recupere la trame de 32*Joystick_count et on affecte chaque bit des joysticks
  *
  *
  **/
@@ -173,10 +174,12 @@ void setOutput(int channel, bool state)
   {
     int tempChannel = channel - 16;
     digOutput2.digitalWrite(tempChannel, state);
+    /*
     Serial.print("dig2 ");
    Serial.print(channel);
     Serial.print(" state ");
     Serial.println(state);
+    */
   }
  
 }
@@ -378,43 +381,52 @@ void setup()
   //myTransfer.begin(Serial1);
   EEPROM.get(addrEEPROM, echoMode); // lit dans leeprom si le mode echo est active
   
-  Joystick[4].setXAxisRange(0,resolutionAnalog);
-  Joystick[4].setYAxisRange(0,resolutionAnalog);
-  Joystick[4].setZAxisRange(0,resolutionAnalog);
-  Joystick[4].setRxAxisRange(0,resolutionAnalog);
-  Joystick[4].setRyAxisRange(0,resolutionAnalog);
-  Joystick[4].setRzAxisRange(0,resolutionAnalog);
-  Joystick[4].setRudderRange(0,resolutionAnalog);
-  Joystick[4].setThrottleRange(0,resolutionAnalog);
+ 
+  /* initialise les analogiques des joysticks , on definit la resolution de 10 bits*/
+  Joystick[0].setXAxisRange(0,resolutionAnalog);
+  Joystick[0].setYAxisRange(0,resolutionAnalog);
+  Joystick[0].setZAxisRange(0,resolutionAnalog);
+  Joystick[0].setRxAxisRange(0,resolutionAnalog);
+  Joystick[0].setRyAxisRange(0,resolutionAnalog);
+  Joystick[0].setRzAxisRange(0,resolutionAnalog);
+  Joystick[0].setRudderRange(0,resolutionAnalog);
+  Joystick[0].setThrottleRange(0,resolutionAnalog);
 
-  Joystick[5].setXAxisRange(0,resolutionAnalog);
-  Joystick[5].setYAxisRange(0,resolutionAnalog);
-  Joystick[5].setZAxisRange(0,resolutionAnalog);
-  Joystick[5].setRxAxisRange(0,resolutionAnalog);
-  Joystick[5].setRyAxisRange(0,resolutionAnalog);
-  Joystick[5].setRzAxisRange(0,resolutionAnalog);
-  Joystick[5].setRudderRange(0,resolutionAnalog);
-  Joystick[5].setThrottleRange(0,resolutionAnalog);
+  Joystick[1].setXAxisRange(0,resolutionAnalog);
+  Joystick[1].setYAxisRange(0,resolutionAnalog);
+  Joystick[1].setZAxisRange(0,resolutionAnalog);
+  Joystick[1].setRxAxisRange(0,resolutionAnalog);
+  Joystick[1].setRyAxisRange(0,resolutionAnalog);
+  Joystick[1].setRzAxisRange(0,resolutionAnalog);
+  Joystick[1].setRudderRange(0,resolutionAnalog);
+  Joystick[1].setThrottleRange(0,resolutionAnalog);
 
+  /* active les joystisks */
   for(int i=0;i<JOYSTICK_COUNT;i++){
     Joystick[i].begin(false);
   }
 
-  
+  /* initialise les cartes sorties bool */
+
   if (!digOutput1.begin_I2C(addressMCP1)) {
   //if (!mcp.begin_SPI(CS_PIN)) {
-    Serial.println("Error. mcp1");
+    Serial.println("Impossible de demarrer le module mcp1 de la carte sortie digital");
+    /*
     while (1){
       //Serial.print(1);
     };
+    */
   }
-   // uncomment appropriate mcp.begin
+
+  
   if (!digOutput2.begin_I2C(addressMCP2)) {
   //if (!mcp.begin_SPI(CS_PIN)) {
-    Serial.println("Error. mcp2");
+    Serial.println("Impossible de demarrer le module mcp2 de la carte sortie digital");
+    /*
     while (1){
       //Serial.print(2);
     };
+    */
   }
 
   initDigOutput();
@@ -488,29 +500,29 @@ void readAnaIN(){
 
      // analogique 0 à 7
   
-  Joystick[4].setXAxis(message.anaInput[0]);
-  Joystick[4].setYAxis(message.anaInput[1]);
-  Joystick[4].setZAxis(message.anaInput[2]);
-  Joystick[4].setRxAxis(message.anaInput[3]);
-  Joystick[4].setRyAxis(message.anaInput[4]);
-  Joystick[4].setRzAxis(message.anaInput[5]);
-  Joystick[4].setRudder(message.anaInput[6]);
-  Joystick[4].setThrottle(message.anaInput[7]);
-  Joystick[4].sendState();
+  Joystick[0].setXAxis(message.anaInput[0]);
+  Joystick[0].setYAxis(message.anaInput[1]);
+  Joystick[0].setZAxis(message.anaInput[2]);
+  Joystick[0].setRxAxis(message.anaInput[3]);
+  Joystick[0].setRyAxis(message.anaInput[4]);
+  Joystick[0].setRzAxis(message.anaInput[5]);
+  Joystick[0].setRudder(message.anaInput[6]);
+  Joystick[0].setThrottle(message.anaInput[7]);
+  Joystick[0].sendState();
 
   // analogique 8 à 15
 
-  Joystick[5].setXAxis(message.anaInput[8]);
-  Joystick[5].setYAxis(message.anaInput[9]);
-  Joystick[5].setZAxis(message.anaInput[10]);
-  Joystick[5].setRxAxis(message.anaInput[11]);
-  Joystick[5].setRyAxis(message.anaInput[12]);
-  Joystick[5].setRzAxis(message.anaInput[13]);
-  Joystick[5].setRudder(message.anaInput[14]);
-  Joystick[5].setThrottle(message.anaInput[15]);
+  Joystick[1].setXAxis(message.anaInput[8]);
+  Joystick[1].setYAxis(message.anaInput[9]);
+  Joystick[1].setZAxis(message.anaInput[10]);
+  Joystick[1].setRxAxis(message.anaInput[11]);
+  Joystick[1].setRyAxis(message.anaInput[12]);
+  Joystick[1].setRzAxis(message.anaInput[13]);
+  Joystick[1].setRudder(message.anaInput[14]);
+  Joystick[1].setThrottle(message.anaInput[15]);
 
   
-  Joystick[5].sendState();
+  Joystick[1].sendState();
 }
 
 unsigned long startTime;
