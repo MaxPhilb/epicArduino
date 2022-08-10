@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "megaSerialTest"
+		},
+		{
+			"path": "chenillard"
 		}
 	],
 	"settings": {
