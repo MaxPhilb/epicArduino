@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 import serial
 import glob
 import sys
@@ -13,10 +14,14 @@ class MyApp():
       
         self.window = -1
         self.gridBool = QGridLayout()
+        self.serial=NULL
         pass
 
     def connectSerial(self):
+        nomPort=self.window.comboSerial.currentText()
+        self.serial=serial.Serial(nomPort,115200)
         print("serial")
+        print(nomPort)
 
 
     def listSerialPort(self):
@@ -57,7 +62,7 @@ class MyApp():
             sys.exit(-1)
         self.window.show()
 
-        sys.exit(app.exec_())
+        sys.exit(app.exec())
 
 
 if __name__ == "__main__":
