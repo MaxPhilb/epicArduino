@@ -2,11 +2,13 @@ from asyncio.windows_events import NULL
 import serial
 import glob
 import sys
+import time
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import *
-from PySide6.QtCore import QFile, QIODevice
+from PySide6.QtCore import QFile, QIODevice, QObject, QThread
 from PySide6.QtGui import *
 import serial.tools.list_ports
+from threading import Thread
 
 
 class MyApp():
@@ -18,10 +20,15 @@ class MyApp():
         pass
 
     def connectSerial(self):
-        nomPort=self.window.comboSerial.currentText()
-        self.serial=serial.Serial(nomPort,115200)
-        print("serial")
-        print(nomPort)
+        if not self.serial:
+            nomPort=self.window.comboSerial.currentText()
+            self.serial=serial.Serial(nomPort,115200)
+            print("serial")
+            print(nomPort)
+        if self.serial:
+            self.window.startChen.setEnabled(True)
+            self.window.etatSerial.setText("Port série connecté")
+            self.window.btnSerial.setText("Deconnecter")
 
 
     def listSerialPort(self):
@@ -32,8 +39,47 @@ class MyApp():
             listPorts.append(port)
         return listPorts
 
+    def createBoolString(self,id,state):
+        str="";
+        for i in range(32):
+            if state:
+                if i==id:
+                    str+="1,";
+                else:
+                    str+="0,";
+            else:
+                str+="0,";
+        str=str[0:len(str)-1];
+        return str
+
+    
+    def pgmChen(self):
+        for i in range(32):
+            
+            print(i)
+            boolState=self.createBoolString(i,True)
+            #print (boolState)
+            data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
+            print (data)
+            self.serial.write(data.encode('ascii'))
+           
+            print(self.serial.read_all())
+                    
+            time.sleep(0.5)
+
+            boolState=self.createBoolString(i,False)
+            #print (boolState)
+            data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
+            print (data)
+            self.serial.write(data.encode('ascii'))
+            print(self.serial.read_all())
+                    
+            time.sleep(0.5)
+
+
     def startChen(self):
-        print(" lancer routine");
+        new_thread=Thread(target=self.pgmChen)
+        new_thread.start()
  
     def startWindow(self):
 
@@ -59,10 +105,14 @@ class MyApp():
         ui_file.close()
         if not self.window:
             print(loader.errorString())
+            if self.serial:
+                self.serial.close()
             sys.exit(-1)
         self.window.show()
-
+        if self.serial:
+                self.serial.close()
         sys.exit(app.exec())
+        
 
 
 if __name__ == "__main__":
