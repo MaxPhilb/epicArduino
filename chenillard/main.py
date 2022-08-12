@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from operator import index
 import serial
 import glob
 import sys
@@ -17,6 +18,7 @@ class MyApp():
         self.window = -1
         self.gridBool = QGridLayout()
         self.serial=NULL
+        self.listBtn=[]
         pass
 
     def connectSerial(self):
@@ -29,6 +31,8 @@ class MyApp():
             self.window.startChen.setEnabled(True)
             self.window.etatSerial.setText("Port série connecté")
             self.window.btnSerial.setText("Deconnecter")
+            for btn in self.listBtn:
+                btn.setEnabled(True)
 
 
     def listSerialPort(self):
@@ -80,6 +84,9 @@ class MyApp():
     def startChen(self):
         new_thread=Thread(target=self.pgmChen)
         new_thread.start()
+
+    def clickBtnGrid(self,index):
+        print (index)
  
     def startWindow(self):
 
@@ -98,6 +105,14 @@ class MyApp():
             self.window.comboSerial.addItem(port)
         self.window.btnSerial.clicked.connect(self.connectSerial)
       
+        for row in range(4):
+            for column in range(8):
+                index=(row*8)+(column+1)
+                btn=QPushButton(str(index), self.window)
+                btn.setEnabled(False)
+                self.listBtn.append(btn)
+                btn.clicked.connect(lambda : self.clickBtnGrid(index))
+                self.window.gridBtn.addWidget(btn,row,column)
 
         self.window.startChen.clicked.connect(self.startChen)
 

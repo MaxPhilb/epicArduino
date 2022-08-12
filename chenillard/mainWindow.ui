@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
-    <height>316</height>
+    <width>781</width>
+    <height>335</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -71,7 +71,7 @@
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Lancer le test</string>
+             <string>Chenillard</string>
             </property>
            </widget>
           </item>
@@ -91,6 +91,28 @@
       </item>
      </layout>
     </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Unitaire</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridBtn">
+          <property name="horizontalSpacing">
+           <number>7</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -98,7 +120,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>683</width>
+     <width>781</width>
      <height>26</height>
     </rect>
    </property>
