@@ -8,6 +8,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import *
 from PySide6.QtCore import QFile, QIODevice, QObject, QThread, Signal
 from PySide6.QtGui import *
+import traceback
 import serial.tools.list_ports
 from threading import Thread
 
@@ -41,14 +42,14 @@ class chenThread(QThread):
         
         for i in range(32):
             
-            print(i)
+            #print(i)
             boolState=self.createBoolString(i,True)
             #print (boolState)
             data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
             print (data)
             self.serial.write(data.encode('ascii'))
             self.signal.sig.emit(data)
-            print(self.serial.read_all())
+            #print(self.serial.read_all())
                     
             time.sleep(0.5)
 
@@ -57,7 +58,7 @@ class chenThread(QThread):
             data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
             print (data)
             self.serial.write(data.encode('ascii'))
-            print(self.serial.read_all())
+            #print(self.serial.read_all())
             self.signal.sig.emit(data)
             time.sleep(0.5)
         
@@ -87,8 +88,8 @@ class MyApp():
             if not self.serial:
                 nomPort=self.window.comboSerial.currentText()
                 self.serial=serial.Serial(nomPort,115200)
-                print("serial")
-                print(nomPort)
+                #print("serial")
+                #print(nomPort)
             if self.serial:
                 self.window.startChen.setEnabled(True)
                 self.window.etatSerial.setText("Port série connecté")
@@ -112,7 +113,7 @@ class MyApp():
         ports = serial.tools.list_ports.comports()
         listPorts = []
         for port, desc, hwid in sorted(ports):
-            print("{}: {} [{}]".format(port, desc, hwid))
+            #print("{}: {} [{}]".format(port, desc, hwid))
             listPorts.append(port)
         return listPorts
 
@@ -132,26 +133,25 @@ class MyApp():
         return str
     
     def started(self):
-        print('Continuous batch started')
+        #print('Continuous batch started')
         self.window.btnSerial.setEnabled(False)
         self.window.startChen.setEnabled(False)
         for btn in self.buttons.buttons():
                 btn.setEnabled(False)
 
     def finished(self):
-        print('Continuous batch stopped')
+        #print('Continuous batch stopped')
         self.window.btnSerial.setEnabled(True)
         self.window.startChen.setEnabled(True)
         for btn in self.buttons.buttons():
                 btn.setEnabled(True)
 
-    def terminated(self):
-        print('Continuous batch terminated')
+
 
     def startChen(self):
 
         self.threadChen = chenThread(self.serial)
-        print("init ok")
+        #print("init ok")
         self.threadChen.started.connect(self.started)
         self.threadChen.finished.connect(self.finished)
         #self.threadChen.terminated.connect(self.terminated)
@@ -176,7 +176,7 @@ class MyApp():
         print (data)
         self.serial.write(data.encode('ascii'))
            
-        print(self.serial.read_all())
+        #print(self.serial.read_all())
         self.window.retourCmd.insertPlainText(data+"\n")
 
            
@@ -188,7 +188,7 @@ class MyApp():
         ui_file_name = "mainWindow.ui"
         ui_file = QFile(ui_file_name)
         if not ui_file.open(QIODevice.ReadOnly):
-            print(f"Cannot open {ui_file_name}: {ui_file.errorString()}")
+            #print(f"Cannot open {ui_file_name}: {ui_file.errorString()}")
             sys.exit(-1)
         loader = QUiLoader()
         self.window = loader.load(ui_file)
@@ -219,7 +219,7 @@ class MyApp():
     
         ui_file.close()
         if not self.window:
-            print(loader.errorString())
+            #print(loader.errorString())
             if self.serial:
                 self.serial.close()
             sys.exit(-1)
@@ -231,5 +231,6 @@ class MyApp():
 
 
 if __name__ == "__main__":
-    myApp = MyApp()
-    myApp.startWindow()
+        myApp = MyApp()
+        myApp.startWindow()
+
