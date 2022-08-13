@@ -6,42 +6,22 @@ import sys
 import time
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import *
-from PySide6.QtCore import QFile, QIODevice, QObject, QThread
+from PySide6.QtCore import QFile, QIODevice, QObject, QThread, Signal
 from PySide6.QtGui import *
 import serial.tools.list_ports
 from threading import Thread
 
+class MySignal(QObject):
+        sig = Signal(str)
 
-class MyApp():
-    def __init__(self):
-      
-        self.window = -1
-        self.gridBool = QGridLayout()
-        self.serial=NULL
-        self.listBtn=[]
-        pass
+class chenThread(QThread):
 
-    def connectSerial(self):
-        if not self.serial:
-            nomPort=self.window.comboSerial.currentText()
-            self.serial=serial.Serial(nomPort,115200)
-            print("serial")
-            print(nomPort)
-        if self.serial:
-            self.window.startChen.setEnabled(True)
-            self.window.etatSerial.setText("Port série connecté")
-            self.window.btnSerial.setText("Deconnecter")
-            for btn in self.listBtn:
-                btn.setEnabled(True)
+    avancement = Signal(object)
 
-
-    def listSerialPort(self):
-        ports = serial.tools.list_ports.comports()
-        listPorts = []
-        for port, desc, hwid in sorted(ports):
-            print("{}: {} [{}]".format(port, desc, hwid))
-            listPorts.append(port)
-        return listPorts
+    def __init__(self,serial):
+        QThread.__init__(self)
+        self.serial=serial
+        self.signal =MySignal()
 
     def createBoolString(self,id,state):
         str="";
@@ -56,8 +36,9 @@ class MyApp():
         str=str[0:len(str)-1];
         return str
 
-    
     def pgmChen(self):
+        
+        
         for i in range(32):
             
             print(i)
@@ -66,7 +47,7 @@ class MyApp():
             data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
             print (data)
             self.serial.write(data.encode('ascii'))
-           
+            self.signal.sig.emit(data)
             print(self.serial.read_all())
                     
             time.sleep(0.5)
@@ -77,16 +58,128 @@ class MyApp():
             print (data)
             self.serial.write(data.encode('ascii'))
             print(self.serial.read_all())
-                    
+            self.signal.sig.emit(data)
             time.sleep(0.5)
+        
 
+
+    def run(self):
+       self.pgmChen()
+
+
+
+
+    
+
+class MyApp():
+    def __init__(self):
+      
+        self.window = -1
+        self.gridBool = QGridLayout()
+        self.serial=NULL
+        self.listBtn=[]
+        self.buttons=[]
+        self.threadChen=NULL
+        pass
+
+    def connectSerial(self,checked):
+        if checked:
+            if not self.serial:
+                nomPort=self.window.comboSerial.currentText()
+                self.serial=serial.Serial(nomPort,115200)
+                print("serial")
+                print(nomPort)
+            if self.serial:
+                self.window.startChen.setEnabled(True)
+                self.window.etatSerial.setText("Port série connecté")
+                self.window.btnSerial.setText("Deconnecter")
+                for btn in self.buttons.buttons():
+                    btn.setEnabled(True)
+            else:
+                self.window.etatSerial.setText("Connexion impossible")
+
+        else:
+            self.serial.close()
+            self.window.etatSerial.setText("Port série deconnecté")
+            self.window.btnSerial.setText("Connecter")
+            self.serial=NULL
+            self.window.startChen.setEnabled(False)
+            for btn in self.buttons.buttons():
+                    btn.setEnabled(False)
+
+
+    def listSerialPort(self):
+        ports = serial.tools.list_ports.comports()
+        listPorts = []
+        for port, desc, hwid in sorted(ports):
+            print("{}: {} [{}]".format(port, desc, hwid))
+            listPorts.append(port)
+        return listPorts
+
+    
+
+    def createBoolStringExclusive(self,id,state):
+        str="";
+        for i in range(32):
+            if i==id:
+                if state:
+                    str+="1,";
+                else:
+                    str+="0,";
+            else:
+                str+="x,";
+        str=str[0:len(str)-1];
+        return str
+    
+    def started(self):
+        print('Continuous batch started')
+        self.window.btnSerial.setEnabled(False)
+        self.window.startChen.setEnabled(False)
+        for btn in self.buttons.buttons():
+                btn.setEnabled(False)
+
+    def finished(self):
+        print('Continuous batch stopped')
+        self.window.btnSerial.setEnabled(True)
+        self.window.startChen.setEnabled(True)
+        for btn in self.buttons.buttons():
+                btn.setEnabled(True)
+
+    def terminated(self):
+        print('Continuous batch terminated')
 
     def startChen(self):
-        new_thread=Thread(target=self.pgmChen)
-        new_thread.start()
 
-    def clickBtnGrid(self,index):
-        print (index)
+        self.threadChen = chenThread(self.serial)
+        print("init ok")
+        self.threadChen.started.connect(self.started)
+        self.threadChen.finished.connect(self.finished)
+        #self.threadChen.terminated.connect(self.terminated)
+        self.threadChen.signal.sig.connect(self.on_data_ready)
+        if self.serial:
+            self.threadChen.start()
+       
+    
+   
+        
+
+    def on_data_ready(self, data):
+        print (data)
+        self.window.retourCmd.insertPlainText(data+"\n")
+        self.window.retourCmd.moveCursor(QTextCursor.End)
+    
+
+    def clickBtnGrid(self,index,checked):
+        boolState=self.createBoolStringExclusive(index-1,checked)
+        
+        data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
+        print (data)
+        self.serial.write(data.encode('ascii'))
+           
+        print(self.serial.read_all())
+        self.window.retourCmd.insertPlainText(data+"\n")
+
+           
  
     def startWindow(self):
 
@@ -103,17 +196,24 @@ class MyApp():
         listSerial = self.listSerialPort()
         for port in listSerial:
             self.window.comboSerial.addItem(port)
-        self.window.btnSerial.clicked.connect(self.connectSerial)
+
+        self.window.btnSerial.setCheckable(True)
+        self.window.btnSerial.toggled.connect(self.connectSerial)
       
+        self.buttons = QButtonGroup(self.window)
+        self.buttons.setExclusive(False)
         for row in range(4):
             for column in range(8):
                 index=(row*8)+(column+1)
                 btn=QPushButton(str(index), self.window)
                 btn.setEnabled(False)
-                self.listBtn.append(btn)
-                btn.clicked.connect(lambda : self.clickBtnGrid(index))
+                btn.setCheckable(True)
+                self.buttons.addButton(btn,index)
                 self.window.gridBtn.addWidget(btn,row,column)
+        
+        self.buttons.idToggled.connect(self.clickBtnGrid)
 
+       
         self.window.startChen.clicked.connect(self.startChen)
 
     
