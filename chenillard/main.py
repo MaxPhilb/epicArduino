@@ -128,7 +128,7 @@ class MyApp():
                 else:
                     str+="0,";
             else:
-                str+="'x',";
+                str+="7,";
         str=str[0:len(str)-1];
         return str
     
@@ -173,11 +173,13 @@ class MyApp():
         boolState=self.createBoolStringExclusive(index-1,checked)
         
         data="{\"cmd\":\"digOutput\",\"data\":["+boolState+"]}!"
-        print (data)
+        #print (data)
         self.serial.write(data.encode('ascii'))
            
-        #print(self.serial.read_all())
+        print(self.serial.read_all())
         self.window.retourCmd.insertPlainText(data+"\n")
+
+
 
            
  

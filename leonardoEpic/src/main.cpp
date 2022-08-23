@@ -55,6 +55,7 @@ uint8_t addressMCP1 = 0x20;
 uint8_t addressMCP2 = 0x21;
 
 StaticJsonDocument<350> doc;
+//DynamicJsonDocument doc(450);
 
 /**
  *
@@ -296,17 +297,17 @@ void interprete()
   {
 
     //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}!
-    //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,'x',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]}!
+    //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]}!
     //        {"cmd":"digOutput","data":[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}!
     //        {"cmd":"digOutput","data":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}!
     // 0 sortie off
     // 1 sortie On
-    // x ne change pas l'etat d'avant
+    // 7 ne change pas l'etat d'avant
 
     if (cmd == "digOutput") 
     {
       JsonArray data = object["data"].as<JsonArray>();
-      Serial.println(data.size());
+      //Serial.println(data.size());
       if (!data.isNull())
       {
         int channelNb=0;
@@ -314,7 +315,7 @@ void interprete()
         //Serial.println(data.size());
         for (JsonVariant state : data)
         {
-          //1 ou 0 ou x
+          //1 ou 0 ou 7
           //Serial.print("state is int: ");
           //Serial.println(state.is<int>());
           if ( state.is<int>())
@@ -325,6 +326,7 @@ void interprete()
             if(state.as<int>()==0){
               setOutput(channelNb, false );
             }
+            
             
           }else{
             Serial.println("state is not a int");
