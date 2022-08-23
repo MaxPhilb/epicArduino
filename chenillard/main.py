@@ -128,7 +128,7 @@ class MyApp():
                 else:
                     str+="0,";
             else:
-                str+="x,";
+                str+="'x',";
         str=str[0:len(str)-1];
         return str
     

@@ -203,6 +203,7 @@ void initDigOutput()
     digOutput2.pinMode(i, OUTPUT);
   }
 
+  /*
   Serial.println("set HIGH");
 
   for (int i = 0; i < 32; i++)
@@ -218,6 +219,7 @@ void initDigOutput()
   }
   Serial.println("set LOW");
    delay(4000);
+   */
 
 }
 
