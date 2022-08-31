@@ -4,7 +4,7 @@
 
 
 #define NB_INPUT 8
-#define NB_CHIP 25
+#define NB_CHIP 24
 #define nbDigInput NB_CHIP *NB_INPUT
 #define nbAnaInput 16
 
@@ -19,7 +19,7 @@ const int anaPin[nbAnaInput] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11
 const int dataPin[NB_INPUT] = {49, 48, 47, 46, 45, 44, 43, 42};
 
 // liste des chip select    attention 18/19 serial      20/21 I2C
-const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 22, 23, 24, 25, 26, 27, 28,29,34};
+const int chipsSelect[NB_CHIP] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 22, 23, 24, 25, 26, 27, 28,29};
 
 uint8_t operation=0;
 
@@ -193,12 +193,12 @@ void digitalReadInput(byte *table)
     table[i]=val;
     //delayMicroseconds(5);
 #ifdef DEBUG
-/*
+
    Serial.print("val ");
    Serial.print(val);
    Serial.print(" ");
     Serial.println(val, BIN);
-    */
+    
 #endif
   }
 #ifdef DEBUG
@@ -206,7 +206,7 @@ void digitalReadInput(byte *table)
   // delay(1000);
 #endif
 
-  digitalWrite(chipsSelect[NB_CHIP - 1], LOW);
+ // digitalWrite(chipsSelect[NB_CHIP - 1], HIGH);
 
 #ifdef DEBUG_EXECUTION_TIME
 
