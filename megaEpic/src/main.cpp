@@ -311,34 +311,33 @@ void readDebounceInput(){
         //tempLec[1][i]; //1100
         //tempLec[2][i]; //1001
         
-        int nbT=0;
-        int nbF=0;
+        int nb=0;
+        
         byte res=0b00000000;
 
         for(int j=0;j<8;j++){
-            nbF=0;
-            nbT=0;
+            nb=0;
+           
             bool st1=bitRead(tempLec[0][i],j);
-            if(st1){nbT++;}else{nbF++;}
+            if(st1){nb++;}else{nb--;}
 
             bool st2=bitRead(tempLec[1][i],j);
-            if(st2){nbT++;}else{nbF++;}
+            if(st2){nb++;}else{nb--;}
 
             bool st3=bitRead(tempLec[2][i],j);
-            if(st3){nbT++;}else{nbF++;}
+            if(st3){nb++;}else{nb--;}
 
 
             #ifdef DEBUG
             /*
-            Serial.print("nbT:");
-            Serial.print(nbT);
-            Serial.print(" nbF:");
-            Serial.print(nbF);
+            Serial.print("nb:");
+            Serial.print(nb);
+            
             Serial.println();
             */
             #endif
             
-            if(nbF<nbT){
+            if(nb>0){
               bitWrite(res,j,true);
             }else{
               bitWrite(res,j,false);

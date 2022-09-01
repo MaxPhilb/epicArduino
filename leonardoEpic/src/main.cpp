@@ -133,7 +133,7 @@ void printL()
      }
   }
   Serial.print(F("]"));
-  Serial.println(F("}!"));
+  Serial.println(F("}"));
 
   Serial.print(F("{\"cmd\": \"stDigIn\",\"data\":"));
   Serial.print(F("["));
@@ -146,7 +146,7 @@ void printL()
     
   }
   Serial.print(F("]"));
-  Serial.println(F("}!"));
+  Serial.println(F("}"));
 }
 
 /**
