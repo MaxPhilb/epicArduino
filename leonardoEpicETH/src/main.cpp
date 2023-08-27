@@ -5,7 +5,8 @@
 #include <EEPROM.h>
 #include <Wire.h>
 #include <Joystick.h>
-
+#include <SPI.h>
+#include <Ethernet.h>
 
 // constante
 #define NB_INPUT 8
