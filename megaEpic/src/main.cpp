@@ -398,6 +398,7 @@ void setup()
 
   Serial.begin(115200);
   //Serial1.begin(115200);
+  Serial.println("Start Mega");
    
   Wire.begin(8);                    //declare le device en slave "I2C"
   Wire.onReceive(receiveEvent);
